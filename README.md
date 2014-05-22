@@ -1,6 +1,4 @@
-#High-Quality Programming Code
-
-## Team Projects – May – July 2014
+#High-Quality Programming Code Team Projects – May – July 2014
 
 Contributors:
 * Martin Nikolov ([@ flextry](https://github.com/flextry))
