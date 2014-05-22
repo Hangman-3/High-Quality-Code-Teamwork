@@ -1,7 +1,7 @@
 High-Quality-Code-Teamwork
 ==========================
 
-Contributors
+Contributors:
 * Martin Nikolov ([@ flextry](https://github.com/flextry))
 * Martin Tonkov ([@ mTonkov](https://github.com/mTonkov))
 * Hristo Bakalov ([@ hristobakalov](https://github.com/hristobakalov))
