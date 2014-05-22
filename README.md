@@ -6,5 +6,5 @@ Contributors:
 * Hristo Bakalov ([@ hristobakalov](https://github.com/hristobakalov))
 * Stefan Mihailov ([@ StefanMihaylov](https://github.com/StefanMihaylov))
 * Aleksandyr Djajev ([@ flextry](https://github.com/flextry))
-* Stanislav Iliev ([@ flextry](https://github.com/flextry))
+* Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
 * Lubomir Vetskov ([@ flextry](https://github.com/flextry))
