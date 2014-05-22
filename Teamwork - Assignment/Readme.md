@@ -70,6 +70,7 @@ project development efforts are shared between the team members and over the tim
 ##Discussion Forum
 * You can freely discuss the course projects and ask questions in the official discussion forum of the course: http://forums.academy.telerik.com/csharp-programming/c%23-qpc
 
+
 ###Sample Refactoring Documentation for Project “Game 15”
 
 1. Redesigned the project structure: Team “…”
@@ -81,12 +82,15 @@ project development efforts are shared between the team members and over the tim
    * Removed all unneeded empty lines, e.g. in the method **PlayGame()**.
    * Inserted empty lines between the methods.
    * Split the lines containing several statements into several simple lines, e.g.:
+   ```c# 
    if (input[i] != ' ') break;
-   
+   ```
+   ```c#
    if (input[i] != ' ')
    {
-   break;
+      break;
    }
+```
    * Formatted the curly braces { and } according to the best practices for the C# language.
    * Put { and } after all conditionals and loops (when missing).
    * Character casing: variables and fields made camelCase; types and methods made PascalCase.
