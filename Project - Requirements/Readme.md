@@ -1,4 +1,4 @@
-#High-Quality Code Construction – “Hangman” Game
+#High-Quality Code Construction <br/>“Hangman” Game
 
 Your task is to write an interactive **console-based implementation of the game “Hangman”** in which the player tries to guess a secret word by guessing its letters sequentially. At the start of the game the computer generates a **random secret word** from a predefined set of 10 words: _computer, programmer, software, debugger, compiler, developer, algorithm, array, method and variable_. The generated word is initially shown as **underscores** (e.g. if the secret letter is developer, it is shown as _ _ _ _ _ _ _ _ _). At each step the player enters a **guess letter** to the computer and the computer **reveals all occurrences of this letter** in the secret word while the other letters remain shown as underscores. For example, if the secret word is developer and the guess letter is e, after revealing this letter, the result will be as follows:  _ e _ e _ _ _ e _. In case of incorrect letter guess, appropriate message is shown. If the player guesses all the letters in the secret word, the **game finishes** and the total number of mistakes (incorrect letter guesses) is shown. When the game is finished, a new game automatically starts.
 
@@ -86,5 +86,5 @@ Scoreboard:
 1. Bay Ivan --> 1 mistake
 Enter your guess or command: exit
 Good bye!
-Some players could try to cheat by entering illegal moves, so be cautious and prevent illegal input.
 ```
+Some players could try to cheat by entering illegal moves, so be cautious and **prevent illegal input**.
