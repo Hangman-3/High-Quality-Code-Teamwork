@@ -12,7 +12,7 @@ You are given a **C# software project** designed to implement some of the follow
 * Labyrinth
 * Minesweeper 
 
-The project consists of one or more **source code files** and sometimes contains other files and is provided as ZIP archive. You need to refactor the project in order to **improve its quality** following the best practices learned in the course “High-Quality Programming Code” and to **implement unit tests** that ensure that the code has correct behavior.
+The project consists of one or more **source code files** and sometimes contains other files and is provided as ZIP archive. You need to refactor the project in order to **improve its quality** following the best practices learned in the course [“High-Quality Programming Code”](http://telerikacademy.com/Courses/Courses/Details/174) and to **implement unit tests** that ensure that the code has correct behavior.
 
 ##Detailed Assignment Description
 
