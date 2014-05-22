@@ -69,6 +69,7 @@ project development efforts are shared between the team members and over the tim
 
 ##Discussion Forum
 * You can freely discuss the course projects and ask questions in the official discussion forum of the course: http://forums.academy.telerik.com/csharp-programming/c%23-qpc
+
 Sample Refactoring Documentation for Project “Game 15”
 1. Redesigned the project structure: Team “…”
 * Renamed the project to Game-15.
