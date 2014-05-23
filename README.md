@@ -8,3 +8,9 @@ Contributors:
 * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
 * Aleksandyr Djajev ([@ adzhazhev](https://github.com/adzhazhev))
 * Lubomir Vetskov ([@ flextry](https://github.com/flextry))
+
+##Team Work Requirements
+* **Each team member** should have contributions to the project and **commits in the source control
+repository in 3 different days**. We acknowledge that this requirement seems a bit unnatural, but
+we want to track **how the team collaborates over the time** and that the **project is developed
+incrementally**, not in the “last minute”.
