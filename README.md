@@ -7,7 +7,7 @@
 * Stefan Mihailov ([@ StefanMihaylov](https://github.com/StefanMihaylov))
 * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
 * Aleksandyr Djajev ([@ adzhazhev](https://github.com/adzhazhev))
-* Lubomir Vetskov ([@ flextry](https://github.com/flextry))
+* Lubomir Vetskov ([@ prestress](https://github.com/prestress))
 
 ##Team Work Requirements
 * **Each team member** should have contributions to the project and **commits in the source control
