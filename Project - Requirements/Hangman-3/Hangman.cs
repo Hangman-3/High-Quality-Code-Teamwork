@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 
 // ej tuka sha me spomenavate s dobro. dobre che ne ma znajte koj sym, che ne byagam mnogo byrzo... ama na CS sha va spukaaaaaaaaaam.
-//test
 class Hangman
 {
     static string[] someWords = { 
