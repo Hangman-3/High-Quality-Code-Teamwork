@@ -2,12 +2,13 @@
 {
     using System;
     using System.Linq;
+    using Hangman.Models;
 
-    public class HangmanDemo
+    public class ConsoleHangmanDemo
     {
         internal static void Main()
         {
-            Hangman hangmanGame = new Hangman();
+            Hangman hangmanGame = new ConsoleHangman();
             hangmanGame.Start();
         }
     }

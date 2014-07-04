@@ -1,7 +1,7 @@
 ﻿namespace Hangman.ConsoleApp.IOEngine
 {
     using System;
-    using global::Hangman.Data.Interfaces;
+    using Hangman.Data.Interfaces;
 
     public class ConsoleWriter : IWriter
     {
@@ -17,10 +17,9 @@
             throw new NotImplementedException();
         }
 
-        public void ShowMessage(string message)
+        public void ShowMessage(string message, params object[] @params)
         {
-            // TODO: Implement this method
-            throw new NotImplementedException();
+            Console.Write(message, @params);
         }
     }
 }

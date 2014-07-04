@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1CC15C7C-0AA6-4925-8569-29D74664A6FE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{E1B08F6B-64B4-45A1-AC16-CF764428E8ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Hangman.ConsoleApp</RootNamespace>
-    <AssemblyName>Hangman</AssemblyName>
+    <RootNamespace>Hangman.Models</RootNamespace>
+    <AssemblyName>Hangman.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,20 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleHangman.cs" />
-    <Compile Include="ConsoleHangmanDemo.cs" />
-    <Compile Include="IOEngine\ConsoleReader.cs" />
-    <Compile Include="IOEngine\ConsoleWriter.cs" />
+    <Compile Include="Hangman.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scoreboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hangman.Data\Hangman.Data.csproj">
-      <Project>{fa418101-2d21-42ee-83ab-d09da01436f7}</Project>
+      <Project>{FA418101-2D21-42EE-83AB-D09DA01436F7}</Project>
       <Name>Hangman.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Hangman.Models\Hangman.Models.csproj">
-      <Project>{e1b08f6b-64b4-45a1-ac16-cf764428e8ed}</Project>
-      <Name>Hangman.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

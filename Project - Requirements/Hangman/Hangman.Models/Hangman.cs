@@ -1,9 +1,8 @@
-﻿namespace Hangman.ConsoleApp
+﻿namespace Hangman.Models
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Hangman.Data;
     using global::Hangman.Data.Interfaces;
     using global::Hangman.Data.Utility;
 
@@ -12,7 +11,12 @@
         private const string StartMessage = "Welcome to “Hangman” game. Please try to guess my secret word. \n" +
                                             "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
                                             "to quit the game.";
-        
+
+        private readonly IReader reader;
+        private readonly IWriter writer;
+        private readonly IWordsRepository wordsRepository;
+        private readonly Scoreboard scoreboard;
+
         private bool isCheated = false;
         private bool isRestartRequested = false;
          
@@ -21,10 +25,17 @@
         private char[] unknownWord;
         private Dictionary<string, int> score;
 
+        public Hangman(IReader reader, IWriter writer, IWordsRepository wordsRepository)
+        {
+            this.reader = reader;
+            this.writer = writer;
+            this.wordsRepository = wordsRepository;
+            this.scoreboard = new Scoreboard();
+        }
+
         public void Start()
         {
-            IWordsRepository wordRepository = new WordsRepository();
-            string[] someWords = wordRepository.EnglishWords.ToArray();
+            string[] someWords = this.wordsRepository.EnglishWords.ToArray();
 
             this.score = new Dictionary<string, int>();
             do
@@ -35,8 +46,8 @@
                 this.mistakeCounter = 0;
                 do
                 {
-                    this.PrintTheWord();
-                    Console.Write("Enter your guess: ");
+                    this.PrintGuessedWord();
+                    this.writer.ShowMessage("Enter your guess: ");
                     string enteredString = Console.ReadLine();
                     this.ProcessCommand(enteredString);
                     if (this.isRestartRequested)
@@ -52,47 +63,41 @@
                     Console.WriteLine();
                     continue;
                 }
+
                 if (!this.isCheated)
                 {
-                    Console.WriteLine("You won with {0} mistakes.", this.mistakeCounter);
-                    this.PrintTheWord();
-                    Console.Write("Please enter your name for the top scoreboard: ");
+                    this.writer.ShowMessage("You won with {0} mistakes.\n", this.mistakeCounter);
+                    this.PrintGuessedWord();
+                    this.writer.ShowMessage("Please enter your name for the top scoreboard: ");
                     this.AddInScoreboard(this.score);
-
-                    this.printboard(this.score);
+                    this.Printboard(this.score);
                 }
                 else
                 {
-                    Console.WriteLine("You won with {0} mistakes but you have cheated. You are not allowed", this.mistakeCounter);
-                    Console.WriteLine("to enter into the scoreboard.");
-                    this.PrintTheWord();
+                    this.writer.ShowMessage("You won with {0} mistakes but you have cheated. You are not allowed\n", this.mistakeCounter);
+                    this.writer.ShowMessage("to enter into the scoreboard.\n");
+                    this.PrintGuessedWord();
                 }
             }
             while (true);
         }
 
-        bool check(string enteredString)
+        bool IsValidLetter(string enteredString)
         {
             char enteredSymbol;
-            if ((char.TryParse(enteredString, out enteredSymbol)) &&
-                ((int)enteredSymbol >= 97 && (int)enteredSymbol <= 122))
-            {
-                return true;
-            }
-            return false;
+            var isLetterValid = char.TryParse(enteredString, out enteredSymbol) &&
+                                char.IsLetter(enteredSymbol);
+            return isLetterValid;
         }
 
-        void PrintTheWord()
+        private void PrintGuessedWord()
         {
-            Console.Write("The secret word is: ");
-            for (int i = 0; i < this.unknownWord.Length; i++)
-            {
-                Console.Write("{0} ", this.unknownWord[i]);
-            }
-            Console.WriteLine();
+            this.writer.ShowMessage("The secret word is: ");
+            this.writer.ShowMessage(string.Join(" ", this.unknownWord));
+            this.writer.ShowMessage(Environment.NewLine);
         }
 
-        void ProcessCommand(string command)
+        private void ProcessCommand(string command)
         {
             command = command.ToLower();
 
@@ -100,7 +105,7 @@
             {
                 case "top":
                     {
-                        this.printboard(this.score);
+                        this.Printboard(this.score);
                         break;
                     }
                 case "restart":
@@ -130,33 +135,33 @@
  
         private void ReadLetter(string command)
         {
-            if (this.check(command))
+            if (!this.IsValidLetter(command))
             {
-                bool isLetterInTheWord = false;
-                int letterKnown = 0;
-                char enteredSymbol = char.Parse(command);
-                for (int i = 0; i < this.unknownWord.Length; i++)
+                this.writer.ShowMessage("Incorrect guess or command!\n");
+                return;
+            }
+
+            bool isLetterInTheWord = false;
+            int letterKnown = 0;
+            char enteredSymbol = char.Parse(command);
+            for (int i = 0; i < this.unknownWord.Length; i++)
+            {
+                if (this.theChosenWord[i] == enteredSymbol)
                 {
-                    if (this.theChosenWord[i] == enteredSymbol)
-                    {
-                        this.unknownWord[i] = enteredSymbol;
-                        letterKnown++;
-                        isLetterInTheWord = true;
-                    }
+                    this.unknownWord[i] = enteredSymbol;
+                    letterKnown++;
+                    isLetterInTheWord = true;
                 }
-                if (isLetterInTheWord)
-                {
-                    Console.WriteLine("Good job! You revealed {0} letters.", letterKnown);
-                }
-                else
-                {
-                    Console.WriteLine("Sorry! There are no unrevealed letters \"{0}\".", command);
-                    this.mistakeCounter++;
-                }
+            }
+
+            if (isLetterInTheWord)
+            {
+                Console.WriteLine("Good job! You revealed {0} letters.", letterKnown);
             }
             else
             {
-                Console.WriteLine("Incorrect guess or command!");
+                Console.WriteLine("Sorry! There are no unrevealed letters \"{0}\".", command);
+                this.mistakeCounter++;
             }
         }
 
@@ -172,7 +177,7 @@
             }
         }
 
-        bool IsWordKnown()
+        private bool IsWordKnown()
         {
             for (int i = 0; i < this.unknownWord.Length; i++)
             {
@@ -184,7 +189,7 @@
             return true;
         }
 
-        void AddInScoreboard(Dictionary<string, int> score)
+        private void AddInScoreboard(Dictionary<string, int> score)
         {
             string name = string.Empty;
             bool hasDouble = false;
@@ -206,7 +211,7 @@
             this.mistakeCounter = 0;
         }
 
-        void printboard(Dictionary<string, int> score)
+        private void Printboard(Dictionary<string, int> score)
         {
             if (score.Count == 0)
             {
@@ -232,7 +237,7 @@
             Console.WriteLine();
         }
 
-        void ExecuteHelpCommand()
+        private void ExecuteHelpCommand()
         {
             this.isCheated = true;
             for (int i = 0; i < this.unknownWord.Length; i++)

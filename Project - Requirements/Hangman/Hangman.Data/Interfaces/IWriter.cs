@@ -8,6 +8,6 @@
 
         void ShowPlayground(char[,] playground);
 
-        void ShowMessage(string message);
+        void ShowMessage(string message, params object[] placeHolders);
     }
 }

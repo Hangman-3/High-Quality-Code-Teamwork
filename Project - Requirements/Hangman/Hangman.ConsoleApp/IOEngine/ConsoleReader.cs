@@ -1,7 +1,7 @@
 ﻿namespace Hangman.ConsoleApp.IOEngine
 {
     using System;
-    using global::Hangman.Data.Interfaces;
+    using Hangman.Data.Interfaces;
 
     public class ConsoleReader : IReader
     {
