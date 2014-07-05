@@ -1,8 +1,8 @@
-﻿namespace Hangman.Console.IOEngine
+﻿namespace Hangman.Console.IOEngines
 {
     using System;
     using System.Linq;
-    using Hangman.Models.Interfaces;
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// 
@@ -24,7 +24,7 @@
         public void ShowScoreboard(IScoreboard scoreboard)
         {
             var players = scoreboard.Players
-                                    .OrderBy(p => p.Points)
+                                    .OrderBy(p => p.MistakesCount)
                                     .ToList();
 
             if (players.Count == 0)
@@ -36,8 +36,8 @@
             Console.WriteLine("Scoreboard:");
             for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("#{0}. {1} --> {2} mistake",
-                    i + 1, players[i].Name, players[i].Points);
+                Console.WriteLine("#{0}. {1} --> {2} mistake(s)",
+                    i + 1, players[i].Name, players[i].MistakesCount);
             }
             Console.WriteLine();
         }

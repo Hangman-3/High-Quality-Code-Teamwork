@@ -1,8 +1,8 @@
-﻿namespace Hangman.Console.IOEngine
+﻿namespace Hangman.Console.IOEngines
 {
     using System;
-    using Hangman.Models.Interfaces;
-    
+    using Hangman.Common.Interfaces;
+
     /// <summary>
     /// 
     /// </summary>

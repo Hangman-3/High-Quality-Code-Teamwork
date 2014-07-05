@@ -1,4 +1,4 @@
-﻿namespace Hangman.Models.Interfaces
+﻿namespace Hangman.Common.Interfaces
 {
     using System;
     using System.Linq;
@@ -10,6 +10,6 @@
     {
         string Name { get; set; }
 
-        int Points { get; set; }
+        int MistakesCount { get; set; }
     }
 }

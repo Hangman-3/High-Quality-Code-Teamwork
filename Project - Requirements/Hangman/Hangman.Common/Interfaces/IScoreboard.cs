@@ -1,4 +1,4 @@
-﻿namespace Hangman.Models.Interfaces
+﻿namespace Hangman.Common.Interfaces
 {
     using System;
     using System.Collections.Generic;

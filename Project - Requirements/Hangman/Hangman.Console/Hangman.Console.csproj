@@ -43,14 +43,18 @@
   <ItemGroup>
     <Compile Include="ConsoleHangman.cs" />
     <Compile Include="ConsoleHangmanDemo.cs" />
-    <Compile Include="IOEngine\ConsoleReader.cs" />
-    <Compile Include="IOEngine\ConsoleWriter.cs" />
+    <Compile Include="IOEngines\ConsoleReader.cs" />
+    <Compile Include="IOEngines\ConsoleWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Hangman.Console_Diagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">
+      <Project>{C0CDDCC1-C870-4A40-91E1-1ED48C790EAA}</Project>
+      <Name>Hangman.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hangman.Data\Hangman.Data.csproj">
       <Project>{fa418101-2d21-42ee-83ab-d09da01436f7}</Project>
       <Name>Hangman.Data</Name>

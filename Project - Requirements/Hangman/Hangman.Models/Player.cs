@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using global::Hangman.Models.Interfaces;
+    using global::Hangman.Common.Interfaces;
 
     /// <summary>
     /// 
@@ -11,6 +11,6 @@
     {
         public string Name { get; set; }
 
-        public int Points { get; set; }
+        public int MistakesCount { get; set; }
     }
 }

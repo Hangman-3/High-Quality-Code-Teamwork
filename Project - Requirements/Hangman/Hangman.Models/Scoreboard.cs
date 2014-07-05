@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
-    using global::Hangman.Models.Interfaces;
+    using global::Hangman.Common.Interfaces;
 
     /// <summary>
     /// 

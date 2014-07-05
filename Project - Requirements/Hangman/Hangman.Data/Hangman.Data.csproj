@@ -40,17 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Utility.cs" />
     <Compile Include="WordsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Hangman.Data_Diagram.cd" />
+    <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">
+      <Project>{c0cddcc1-c870-4a40-91e1-1ed48c790eaa}</Project>
+      <Name>Hangman.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Hangman.Models\Hangman.Models.csproj">
-      <Project>{E1B08F6B-64B4-45A1-AC16-CF764428E8ED}</Project>
-      <Name>Hangman.Models</Name>
-    </ProjectReference>
+    <None Include="Hangman.Data_Diagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
