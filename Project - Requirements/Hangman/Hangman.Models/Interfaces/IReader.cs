@@ -1,7 +1,10 @@
-﻿namespace Hangman.Data.Interfaces
+﻿namespace Hangman.Models.Interfaces
 {
     using System;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IReader
     {
         string ReadCommand();

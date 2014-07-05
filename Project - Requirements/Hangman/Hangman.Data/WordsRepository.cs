@@ -4,8 +4,11 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
-    using Hangman.Data.Interfaces;
+    using global::Hangman.Models.Interfaces;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class WordsRepository : IWordsRepository
     {
         private readonly IList<string> englishWords = new List<string>()

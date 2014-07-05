@@ -2,8 +2,10 @@
 {
     using System;
     using System.Linq;
-    using System.Text;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public static class Utility
     {
         //public static int GetNumberOfGuessedLetters(this string word, char letterForGuess)

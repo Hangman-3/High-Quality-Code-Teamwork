@@ -4,35 +4,40 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using global::Hangman.Models.Interfaces;
 
-    public class Scoreboard
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Scoreboard : IScoreboard
     {
-        private List<Player> players;
+        private readonly IList<IPlayer> players;
 
-        public Scoreboard(params Player[] seedPlayers)
+        public Scoreboard(params IPlayer[] seedPlayers)
         {
-            this.players = new List<Player>();
-
-            if (seedPlayers != null)
-            {
-                this.players.AddRange(this.players);
-            }
+            this.players = new List<IPlayer>(seedPlayers);
         }
 
-        public IReadOnlyCollection<Player> Players
+        public IReadOnlyCollection<IPlayer> Players
         {
-            get { return new ReadOnlyCollection<Player>(this.players); }
+            get { return new ReadOnlyCollection<IPlayer>(this.players); }
         }
 
-        public bool AddNewPlayer(Player player)
+        public bool AddPlayer(IPlayer player)
         {
-            if (this.players.Any(p => string.Equals(p.Name, player.Name)))
+            if (this.ContainsPlayer(player))
             {
                 return false;
             }
 
             this.players.Add(player);
             return true;
+        }
+
+        private bool ContainsPlayer(IPlayer player)
+        {
+            var playerAlreadyExists = this.players.Any(p => string.Equals(p.Name, player.Name));
+            return playerAlreadyExists;
         }
     }
 }

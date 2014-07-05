@@ -2,8 +2,12 @@
 {
     using System;
     using System.Linq;
+    using global::Hangman.Models.Interfaces;
 
-    public class Player
+    /// <summary>
+    /// 
+    /// </summary>
+    public class Player : IPlayer
     {
         public string Name { get; set; }
 
