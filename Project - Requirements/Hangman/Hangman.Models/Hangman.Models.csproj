@@ -52,6 +52,13 @@
       <Project>{c0cddcc1-c870-4a40-91e1-1ed48c790eaa}</Project>
       <Name>Hangman.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hangman.Data\Hangman.Data.csproj">
+      <Project>{fa418101-2d21-42ee-83ab-d09da01436f7}</Project>
+      <Name>Hangman.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RemovedMembers.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

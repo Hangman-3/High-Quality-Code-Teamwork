@@ -11,7 +11,7 @@
     /// </summary>
     public class WordsRepository : IWordsRepository
     {
-        private readonly IList<string> englishWords = new List<string>()
+        private readonly IList<string> words = new List<string>()
         {
             "computer",
             "programmer",
@@ -25,18 +25,9 @@
             "variable"
         };
 
-        public IReadOnlyCollection<string> EnglishWords
+        public IReadOnlyCollection<string> Words
         {
-            get { return new ReadOnlyCollection<string>(this.englishWords); }
-        }
-
-        public IReadOnlyCollection<string> BulgarianWords
-        {
-            get
-            {
-                // TODO: Implement this property getter
-                throw new NotImplementedException();
-            }
+            get { return new ReadOnlyCollection<string>(this.words); }
         }
     }
 }

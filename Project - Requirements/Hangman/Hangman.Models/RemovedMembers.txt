@@ -1,0 +1,12 @@
+﻿///// <summary>
+///// Must be overridden from derivered class that choose how to stop (exit from) application.
+///// Figure out that game works on Console, WPF or ASP.NET application.
+///// </summary>
+//protected virtual void ExitFromApplication()
+//{
+//    Environment.Exit(1);
+//    //throw new ApplicationException(
+//    //    "ExitFromApplication() method is not implemented from derivered class.");
+//}
+// TODO: The method must be overridden from derivered class
+// while(true) is appropriate for Console, but not for WPF or ASP.NET Application?

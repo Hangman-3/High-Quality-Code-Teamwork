@@ -7,8 +7,6 @@ namespace Hangman.Common.Interfaces
     /// </summary>
     public interface IWordsRepository
     {
-        IReadOnlyCollection<string> EnglishWords { get; }
-
-        IReadOnlyCollection<string> BulgarianWords { get; }
+        IReadOnlyCollection<string> Words { get; }
     }
 }

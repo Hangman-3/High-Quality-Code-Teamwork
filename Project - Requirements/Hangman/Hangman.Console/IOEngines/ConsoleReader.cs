@@ -8,10 +8,10 @@
     /// </summary>
     public class ConsoleReader : IReader
     {
-        public string ReadCommand()
+        public string ReadLine()
         {
-            string command = Console.ReadLine();
-            return command;
+            string @string = Console.ReadLine();
+            return @string;
         }
     }
 }

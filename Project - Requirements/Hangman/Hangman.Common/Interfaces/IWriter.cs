@@ -7,12 +7,10 @@
     /// </summary>
     public interface IWriter
     {
-        void ShowCommands();
+        void ShowMessage(string message, params object[] placeHolders);
 
-        void ShowPlayground(char[,] playground);
+        void ShowSecretWord(char[] secretWord);
 
         void ShowScoreboard(IScoreboard scoreboard);
-
-        void ShowMessage(string message, params object[] placeHolders);
     }
 }

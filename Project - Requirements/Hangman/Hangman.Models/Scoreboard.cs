@@ -25,6 +25,11 @@
 
         public bool AddPlayer(IPlayer player)
         {
+            if (player == null)
+            {
+                throw new NullReferenceException("Player instance cannot be null.");
+            }
+
             if (this.ContainsPlayer(player))
             {
                 return false;
@@ -36,8 +41,8 @@
 
         private bool ContainsPlayer(IPlayer player)
         {
-            var playerAlreadyExists = this.players.Any(p => string.Equals(p.Name, player.Name));
-            return playerAlreadyExists;
+            var isPlayerAlreadyExists = this.players.Any(p => string.Equals(p.Name, player.Name));
+            return isPlayerAlreadyExists;
         }
     }
 }

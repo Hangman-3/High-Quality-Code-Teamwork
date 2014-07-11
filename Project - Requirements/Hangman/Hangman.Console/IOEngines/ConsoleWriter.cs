@@ -9,16 +9,16 @@
     /// </summary>
     public class ConsoleWriter : IWriter
     {
-        public void ShowCommands()
+        public void ShowMessage(string message, params object[] @params)
         {
-            // TODO: Implement this method
-            throw new NotImplementedException();
+            Console.Write(message, @params);
         }
 
-        public void ShowPlayground(char[,] playground)
+        public void ShowSecretWord(char[] secretWord)
         {
-            // TODO: Implement this method
-            throw new NotImplementedException();
+            this.ShowMessage("\nThe secret word is: ");
+            this.ShowMessage(string.Join(" ", secretWord));
+            this.ShowMessage(Environment.NewLine);
         }
 
         public void ShowScoreboard(IScoreboard scoreboard)
@@ -29,22 +29,15 @@
 
             if (players.Count == 0)
             {
-                Console.WriteLine("Empty Scoreboard!");
+                this.ShowMessage("\nEmpty Scoreboard!\n");
                 return;
             }
 
-            Console.WriteLine("Scoreboard:");
+            this.ShowMessage("\nScoreboard:\n");
             for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("#{0}. {1} --> {2} mistake(s)",
-                    i + 1, players[i].Name, players[i].MistakesCount);
+                this.ShowMessage("#{0}. {1} --> {2} mistake(s)\n", i + 1, players[i].Name, players[i].MistakesCount);
             }
-            Console.WriteLine();
-        }
-
-        public void ShowMessage(string message, params object[] @params)
-        {
-            Console.Write(message, @params);
         }
     }
 }

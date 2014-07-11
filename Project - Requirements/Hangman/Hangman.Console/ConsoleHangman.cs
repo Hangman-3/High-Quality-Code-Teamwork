@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Hangman.Common.Interfaces;
     using Hangman.Console.IOEngines;
     using Hangman.Data;
     using Hangman.Models;
@@ -12,11 +13,17 @@
     public class ConsoleHangman : Hangman
     {
         public ConsoleHangman()
-            : base(new ConsoleReader(), new ConsoleWriter(), new WordsRepository(), new Scoreboard())
+            : this(new WordsRepository())
+           
+        {
+        }
+ 
+        public ConsoleHangman(IWordsRepository wordsRepository)
+            : base(new ConsoleReader(), new ConsoleWriter(), wordsRepository, new Scoreboard())
         {
             this.SeedPlayers();
         }
- 
+
         protected override void ExitFromApplication()
         {
             Environment.Exit(1);

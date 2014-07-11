@@ -3,42 +3,42 @@
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAEAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utility\Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
-    <Position X="5.5" Y="1.25" Width="1.5" />
+    <Position X="5.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IReader" Collapsed="true">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
-    <Position X="5.5" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Interfaces\IScoreboard.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWordsRepository" Collapsed="true">
-    <Position X="5.5" Y="2" Width="1.5" />
+    <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Interfaces\IWordsRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWriter" Collapsed="true">
-    <Position X="3.5" Y="1.25" Width="1.5" />
+    <Position X="3.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAgAAIAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
