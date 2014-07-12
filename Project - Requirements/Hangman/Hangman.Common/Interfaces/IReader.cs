@@ -7,6 +7,6 @@
     /// </summary>
     public interface IReader
     {
-        string ReadLine();
+        string Read();
     }
 }

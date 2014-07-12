@@ -42,6 +42,7 @@
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IReader.cs" />
     <Compile Include="Interfaces\IScoreboard.cs" />
+    <Compile Include="Interfaces\IWord.cs" />
     <Compile Include="Interfaces\IWordsRepository.cs" />
     <Compile Include="Interfaces\IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

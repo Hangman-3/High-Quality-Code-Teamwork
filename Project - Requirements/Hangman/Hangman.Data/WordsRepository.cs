@@ -6,9 +6,10 @@
     using System.Linq;
     using Hangman.Common.Interfaces;
 
-    /// <summary>
-    /// 
-    /// </summary>
+    // 1. Document all members
+    // 2. Ensure all methods are unit-testable
+    // 3. Ensure property/members/methods validation
+    //
     public class WordsRepository : IWordsRepository
     {
         private readonly IList<string> words = new List<string>()

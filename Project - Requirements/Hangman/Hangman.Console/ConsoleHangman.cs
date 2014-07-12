@@ -7,9 +7,10 @@
     using Hangman.Data;
     using Hangman.Models;
 
-    /// <summary>
-    /// 
-    /// </summary>
+    // 1. Document all members
+    // 2. Ensure all methods are unit-testable
+    // 3. Ensure property/members/methods validation
+    //
     public class ConsoleHangman : Hangman
     {
         public ConsoleHangman()
@@ -26,12 +27,15 @@
 
         protected override void ExitFromApplication()
         {
+            this.writer.ShowMessage("Good bye!\n");
             Environment.Exit(1);
         }
 
+        /// <summary>
+        /// Seeds players for test purposes
+        /// </summary>
         private void SeedPlayers()
         {
-            // Seed players
             this.scoreboard.AddPlayer(new Player()
             {
                 Name = "Martin Nikolov",

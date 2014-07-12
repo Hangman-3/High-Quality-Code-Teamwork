@@ -4,9 +4,10 @@
     using System.Linq;
     using Hangman.Models;
 
-    /// <summary>
-    /// 
-    /// </summary>
+    // 1. Document all members
+    // 2. Ensure all methods are unit-testable
+    // 3. Ensure property/members/methods validation
+    //
     public class ConsoleHangmanDemo
     {
         internal static void Main()
