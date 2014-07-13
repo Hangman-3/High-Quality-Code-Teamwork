@@ -13,20 +13,19 @@
     {
         // TODO: Fix IWord interface
         // TODO: property validation
-
         private char[] original;
         private char[] secret;
 
         public char[] Original
         {
-            get { return original; }
-            set { original = value; }
+            get { return this.original; }
+            set { this.original = value; }
         }
 
         public char[] Secret
         {
-            get { return secret; }
-            set { secret = value; }
+            get { return this.secret; }
+            set { this.secret = value; }
         }
 
         public bool IsGuessed()

@@ -31,8 +31,8 @@
                                             "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
                                             "to quit the game.\n";
 
-        private bool isCheated = false; // TODO: FIX
-        private bool isRestartRequested = false; // TODO: FIX
+        private bool isCheated = false;// TODO: FIX
+        private bool isRestartRequested = false;// TODO: FIX
 
         // TODO: Simplify object creational
         public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)

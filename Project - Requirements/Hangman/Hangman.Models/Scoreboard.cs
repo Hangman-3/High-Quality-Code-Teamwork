@@ -21,10 +21,7 @@
 
         public IReadOnlyCollection<IPlayer> Players
         {
-            get
-            {
-                return new ReadOnlyCollection<IPlayer>(this.players);                            ;
-            }
+            get { return new ReadOnlyCollection<IPlayer>(this.players); }
         }
 
         public void AddPlayer(IPlayer player)
@@ -34,16 +31,18 @@
                 throw new NullReferenceException("Player instance cannot be null.");
             }
 
-            IPlayer playerInScoreBoard = this.players.FirstOrDefault(p => string.Equals(p.Name, player.Name));
+            var playerInScoreBoard = this.players.FirstOrDefault(p => string.Equals(p.Name, player.Name));
+
             if (playerInScoreBoard == null)
             {
                 this.players.Add(player);
             }
             else
             {
-                var score = playerInScoreBoard.MistakesCount;
-                var newScore = player.MistakesCount;
-                if (score > newScore)
+                int oldScore = playerInScoreBoard.MistakesCount;
+                int newScore = player.MistakesCount;
+
+                if (oldScore < newScore)
                 {
                     int playerIndex = this.players.IndexOf(playerInScoreBoard);
                     this.players[playerIndex].MistakesCount = newScore;
