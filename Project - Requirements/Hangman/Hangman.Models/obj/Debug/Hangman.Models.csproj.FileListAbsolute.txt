@@ -1,9 +1,0 @@
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Models.dll
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Models.pdb
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Common.dll
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Data.dll
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Common.pdb
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\bin\Debug\Hangman.Data.pdb
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\obj\Debug\Hangman.Models.csprojResolveAssemblyReference.cache
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\obj\Debug\Hangman.Models.dll
-C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Models\obj\Debug\Hangman.Models.pdb

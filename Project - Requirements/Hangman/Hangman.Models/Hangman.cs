@@ -3,10 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Hangman.Common.Interfaces;
-    using global::Hangman.Common.Utility;
+    using Hangman.Common.Interfaces;
+    using Hangman.Common.Utility;
 
-    public abstract class Hangman
+    public abstract class HangmanGame
     {
         // 1. Word : IWord -> secretWord + originalWord
         // 1.1 Make this class word with IWord instead secretWord and originalWord
@@ -41,7 +41,7 @@
         private string originalWord = string.Empty; // TODO: FIX
 
         // TODO: Simplify object creational
-        public Hangman(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
+        public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
         {
             this.reader = reader;
             this.writer = writer;

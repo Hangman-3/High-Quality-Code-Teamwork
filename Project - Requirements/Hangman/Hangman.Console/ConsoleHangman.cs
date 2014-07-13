@@ -11,7 +11,7 @@
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
     //
-    public class ConsoleHangman : Hangman
+    public class ConsoleHangman : HangmanGame
     {
         public ConsoleHangman()
             : this(new WordsRepository())

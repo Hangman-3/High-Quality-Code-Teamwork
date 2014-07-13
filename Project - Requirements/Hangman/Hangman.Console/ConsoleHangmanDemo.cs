@@ -13,7 +13,7 @@
     {
         internal static void Main()
         {
-            Hangman hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
+            HangmanGame hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
             hangmanGame.Start();
         }
     }
