@@ -1,0 +1,5 @@
+C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Common\bin\Debug\Hangman.Common.dll
+C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Common\bin\Debug\Hangman.Common.pdb
+C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Common\obj\Debug\Hangman.Common.csprojResolveAssemblyReference.cache
+C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Common\obj\Debug\Hangman.Common.dll
+C:\Users\Bressan\Documents\GitHub\High-Quality-Code-Teamwork\Project - Requirements\Hangman\Hangman.Common\obj\Debug\Hangman.Common.pdb
