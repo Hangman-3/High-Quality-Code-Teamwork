@@ -1,8 +1,10 @@
 ﻿namespace Hangman.Common.Utility
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
+    using Hangman.Common.Interfaces;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -10,6 +12,8 @@
     //
     public static class Utility
     {
+        private const char EmptyCellLetter = '_';
+
         private static readonly Random randomGenerator = new Random();
 
         public static int GetRandomNumber(int max)
@@ -22,6 +26,16 @@
         {
             var randomNumber = randomGenerator.Next(max);
             return randomNumber;
+        }
+
+        public static void GetRandomWord(IList<string> words, IWord word)
+        {
+            var randomIndex = Utility.GetRandomNumber(words.Count);
+            word.Original = (words[randomIndex]).ToCharArray();
+
+            int timesToRepeatSymbol = word.Original.Length;
+            string stringToConvert = new string(EmptyCellLetter, timesToRepeatSymbol);
+            word.Secret = stringToConvert.ToCharArray();
         }
 
         public static bool IsValidLetter(this string @string)

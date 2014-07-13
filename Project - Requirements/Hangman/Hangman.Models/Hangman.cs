@@ -31,8 +31,6 @@
                                             "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
                                             "to quit the game.\n";
 
-        private const char EmptyCellLetter = '_';
-
         private bool isCheated = false; // TODO: FIX
         private bool isRestartRequested = false; // TODO: FIX
 
@@ -57,7 +55,7 @@
         {
             do
             {
-                this.GetRandomWord(this.Words);
+                Utility.GetRandomWord(this.Words, word);
                 this.writer.ShowMessage(StartMessage);
                 this.isCheated = false;
                 this.player.MistakesCount = 0;
@@ -194,20 +192,6 @@
             {
                 this.writer.ShowMessage("Sorry! There are no unrevealed letters \"{0}\".\n", command);
                 this.player.MistakesCount++;
-            }
-        }
-
-        // TODO: Move logic in other class
-        // Before that see points 1 and 1.1 from ToDo list
-        private void GetRandomWord(IList<string> words)
-        {
-            var randomIndex = Utility.GetRandomNumber(words.Count);
-            this.word.Original = (words[randomIndex]).ToCharArray();
-            this.word.Secret = new char[this.word.Original.Length];
-
-            for (int i = 0; i < this.word.Original.Length; i++)
-            {
-                this.word.Secret[i] = EmptyCellLetter;
             }
         }
 
