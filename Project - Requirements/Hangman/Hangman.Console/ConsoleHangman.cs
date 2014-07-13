@@ -25,7 +25,7 @@
             this.SeedPlayers();
         }
 
-        protected override void ExitFromApplication()
+        protected override void EndGame()
         {
             this.writer.ShowMessage("Good bye!\n");
             Environment.Exit(1);

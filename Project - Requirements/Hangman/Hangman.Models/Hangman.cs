@@ -63,12 +63,14 @@
                 this.writer.ShowMessage(StartMessage);
                 this.isCheated = false;
                 this.player.MistakesCount = 0;
+
                 do
                 {
                     this.ShowSecretWord();
                     this.writer.ShowMessage("Enter your guess: ");
                     string enteredString = this.reader.Read();
                     this.ProcessCommand(enteredString);
+
                     if (this.isRestartRequested)
                     {
                         break;
@@ -149,7 +151,7 @@
                     }
                 case "exit":
                     {
-                        this.ExitFromApplication();
+                        this.EndGame();
                         break;
                     }
                 default:
@@ -163,7 +165,7 @@
         // Figure out that application works on Console, WPF, ASP.NET, Win8 Phone
         // How is the right way to exit from application on all this 'platforms'?
         // Solution: derivers make decision how to..
-        protected abstract void ExitFromApplication();
+        protected abstract void EndGame();
 
         private void ReadLetter(string command)
         {

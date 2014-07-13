@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Hangman.Data;
     using Hangman.Models;
 
     // 1. Document all members
@@ -12,7 +13,7 @@
     {
         internal static void Main()
         {
-            Hangman hangmanGame = new ConsoleHangman();
+            Hangman hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
             hangmanGame.Start();
         }
     }

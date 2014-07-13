@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordsFromFileRepository.cs" />
     <Compile Include="WordsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
