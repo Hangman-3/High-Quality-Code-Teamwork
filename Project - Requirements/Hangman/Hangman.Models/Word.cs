@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using Hangman.Common.Interfaces;
+    using Hangman.Common.Utility;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -11,9 +12,31 @@
     public class Word : IWord
     {
         // TODO: Fix IWord interface
-        // TODO: string SecretWord (from Hangman.cs)
-        // TODO: string OriginalWord (from Hangman.cs)
         // TODO: property validation
-        // TODO: Override ToString() method
+
+        private char[] original;
+        private char[] secret;
+
+        public char[] Original
+        {
+            get { return original; }
+            set { original = value; }
+        }
+
+        public char[] Secret
+        {
+            get { return secret; }
+            set { secret = value; }
+        }
+
+        public bool IsGuessed()
+        {
+            return Utility.Matches(this.original, this.secret);
+        }
+
+        public override string ToString()
+        {
+            return new string(this.secret);
+        }
     }
 }

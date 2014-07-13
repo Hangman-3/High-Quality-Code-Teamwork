@@ -26,19 +26,15 @@
         protected IScoreboard scoreboard;
         protected IPlayer player;
 
-        protected char[] secretWord;
-
         // TODO: Remove all private fields below
         private const string StartMessage = "Welcome to “Hangman” game. Please try to guess my secret word. \n" +
                                             "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
                                             "to quit the game.\n";
 
-        private const char EmptyCellLetter = '_';
-
         private bool isCheated = false; // TODO: FIX
         private bool isRestartRequested = false; // TODO: FIX
 
-        private string originalWord = string.Empty; // TODO: FIX
+        private IWord word = new Word(); // TODO: FIX
 
         // TODO: Simplify object creational
         public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
@@ -59,7 +55,7 @@
         {
             do
             {
-                this.GetRandomWord(this.Words);
+                Utility.GetRandomWord(this.Words, word);
                 this.writer.ShowMessage(StartMessage);
                 this.isCheated = false;
                 this.player.MistakesCount = 0;
@@ -76,7 +72,7 @@
                         break;
                     }
                 }
-                while (!this.secretWord.Matches(this.originalWord));
+                while (!word.IsGuessed());
 
                 if (this.isRestartRequested)
                 {
@@ -171,11 +167,11 @@
             bool isLetterInTheWord = false;
             int letterKnown = 0;
             char enteredSymbol = char.Parse(command);
-            for (int i = 0; i < this.secretWord.Length; i++)
+            for (int i = 0; i < word.Secret.Length; i++)
             {
-                if (this.originalWord[i] == enteredSymbol)
+                if (this.word.Original[i] == enteredSymbol)
                 {
-                    this.secretWord[i] = enteredSymbol;
+                    this.word.Secret[i] = enteredSymbol;
                     letterKnown++;
                     isLetterInTheWord = true;
                 }
@@ -192,27 +188,13 @@
             }
         }
 
-        // TODO: Move logic in other class
-        // Before that see points 1 and 1.1 from ToDo list
-        private void GetRandomWord(IList<string> words)
-        {
-            var randomIndex = Utility.GetRandomNumber(words.Count);
-            this.originalWord = words[randomIndex];
-            this.secretWord = new char[this.originalWord.Length];
-
-            for (int i = 0; i < this.originalWord.Length; i++)
-            {
-                this.secretWord[i] = EmptyCellLetter;
-            }
-        }
-
         /// <summary>
         /// Shows secret word as its unknown letters are masked with specific special symbol
         /// Special symbol in this case is the value of char constant 'EmptyCellLetter'
         /// </summary>
         private void ShowSecretWord()
         {
-            this.writer.ShowSecretWord(this.secretWord);
+            this.writer.ShowSecretWord(this.word.Secret);
         }
 
         /// <summary>
@@ -229,7 +211,7 @@
         private void TipOffFirstUnknownLetter()
         {
             this.isCheated = true; // TODO: FIX
-            this.secretWord.TipOffFirstUnknownLetter(this.originalWord);
+            this.word.Secret.TipOffFirstUnknownLetter(new string(this.word.Original));
         }
     }
 }
