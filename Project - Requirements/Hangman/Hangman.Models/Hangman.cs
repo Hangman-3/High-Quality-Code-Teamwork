@@ -34,8 +34,6 @@
         private bool isCheated = false; // TODO: FIX
         private bool isRestartRequested = false; // TODO: FIX
 
-        private IWord word = new Word(); // TODO: FIX
-
         // TODO: Simplify object creational
         public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
         {
@@ -55,6 +53,7 @@
         {
             do
             {
+                IWord word = new Word();
                 Utility.GetRandomWord(this.Words, word);
                 this.writer.ShowMessage(StartMessage);
                 this.isCheated = false;
@@ -62,10 +61,10 @@
 
                 do
                 {
-                    this.ShowSecretWord();
+                    this.ShowSecretWord(word);
                     this.writer.ShowMessage("Enter your guess: ");
                     string enteredString = this.reader.Read();
-                    this.ProcessCommand(enteredString);
+                    this.ProcessCommand(enteredString, word);
 
                     if (this.isRestartRequested)
                     {
@@ -84,7 +83,7 @@
                 if (!this.isCheated)
                 {
                     this.writer.ShowMessage("You won with {0} mistakes.\n", this.player.MistakesCount);
-                    this.ShowSecretWord();
+                    this.ShowSecretWord(word);
 
                     this.AddPlayerInScoreboard();
                     this.ShowScoreboard();
@@ -93,7 +92,7 @@
                 {
                     this.writer.ShowMessage("You won with {0} mistakes but you have cheated. You are not allowed\n", this.player.MistakesCount);
                     this.writer.ShowMessage("to enter into the scoreboard.\n");
-                    this.ShowSecretWord();
+                    this.ShowSecretWord(word);
                 }
             }
             while (true);
@@ -116,7 +115,7 @@
         // TODO: FIX -> Possible solutions:
         // 1) Replace string command with Enum -> better solution for beginning
         // 2) Remove switch -> separate login in class
-        protected void ProcessCommand(string command)
+        protected void ProcessCommand(string command, IWord word)
         {
             command = command.ToLower();
 
@@ -135,7 +134,7 @@
                 case "help":
                     {
                         this.isCheated = true; // TODO: FIX
-                        this.TipOffFirstUnknownLetter();
+                        this.TipOffFirstUnknownLetter(word);
                         break;
                     }
                 case "exit":
@@ -145,7 +144,7 @@
                     }
                 default:
                     {
-                        this.ReadLetter(command);
+                        this.ReadLetter(command, word);
                         break;
                     }
             }
@@ -156,7 +155,7 @@
         // Solution: derivers make decision how to..
         protected abstract void EndGame();
 
-        private void ReadLetter(string command)
+        private void ReadLetter(string command, IWord word)
         {
             if (!command.IsValidLetter())
             {
@@ -169,9 +168,9 @@
             char enteredSymbol = char.Parse(command);
             for (int i = 0; i < word.Secret.Length; i++)
             {
-                if (this.word.Original[i] == enteredSymbol)
+                if (word.Original[i] == enteredSymbol)
                 {
-                    this.word.Secret[i] = enteredSymbol;
+                    word.Secret[i] = enteredSymbol;
                     letterKnown++;
                     isLetterInTheWord = true;
                 }
@@ -192,9 +191,9 @@
         /// Shows secret word as its unknown letters are masked with specific special symbol
         /// Special symbol in this case is the value of char constant 'EmptyCellLetter'
         /// </summary>
-        private void ShowSecretWord()
+        private void ShowSecretWord(IWord word)
         {
-            this.writer.ShowSecretWord(this.word.Secret);
+            this.writer.ShowSecretWord(word.Secret);
         }
 
         /// <summary>
@@ -208,10 +207,10 @@
         /// <summary>
         /// Executes 'help' command
         /// </summary>
-        private void TipOffFirstUnknownLetter()
+        private void TipOffFirstUnknownLetter(IWord word)
         {
             this.isCheated = true; // TODO: FIX
-            this.word.Secret.TipOffFirstUnknownLetter(new string(this.word.Original));
+            word.Secret.TipOffFirstUnknownLetter(new string(word.Original));
         }
     }
 }
