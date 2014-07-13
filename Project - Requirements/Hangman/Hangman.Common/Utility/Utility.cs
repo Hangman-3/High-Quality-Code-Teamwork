@@ -32,7 +32,7 @@
         }
 
         // TODO: Should works with IWord
-        public static bool Matches(this char[] secretWord, string originalWord)
+        public static bool Matches(this char[] secretWord, char[] originalWord)
         {
             Debug.Assert(secretWord != null, "maskedWord cannot be null!");
             Debug.Assert(secretWord.Length != 0, "maskedWord length cannot be equal to zero!");
