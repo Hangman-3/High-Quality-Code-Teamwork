@@ -89,7 +89,7 @@
                 {
                     this.writer.ShowMessage("You won with {0} mistakes.\n", this.player.MistakesCount);
                     this.ShowSecretWord();
-                    this.writer.ShowMessage("Please enter your name for the top scoreboard: ");
+
                     this.AddPlayerInScoreboard();
                     this.ShowScoreboard();
                 }
@@ -110,17 +110,10 @@
         // TODO: Check for valid name
         protected virtual void AddPlayerInScoreboard()
         {
+            this.writer.ShowMessage("Please enter your name for the top scoreboard: ");
             string playerName = this.reader.Read();
             this.player.Name = playerName;
-            bool isPlayerAlreadyExists = !this.scoreboard.AddPlayer(this.player);
-
-            if (isPlayerAlreadyExists)
-            {
-                this.writer.ShowMessage("This name already exists in the Scoreboard! Type another: ");
-                this.AddPlayerInScoreboard();
-                return;
-            }
-
+            this.scoreboard.AddPlayer(this.player);
             this.player = new Player();
         }
 

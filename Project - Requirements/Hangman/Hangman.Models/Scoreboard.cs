@@ -21,29 +21,34 @@
 
         public IReadOnlyCollection<IPlayer> Players
         {
-            get { return new ReadOnlyCollection<IPlayer>(this.players); }
+            get
+            {
+                return new ReadOnlyCollection<IPlayer>(this.players);                            ;
+            }
         }
 
-        public bool AddPlayer(IPlayer player)
+        public void AddPlayer(IPlayer player)
         {
             if (player == null)
             {
                 throw new NullReferenceException("Player instance cannot be null.");
             }
 
-            if (this.ContainsPlayer(player))
+            IPlayer playerInScoreBoard = this.players.FirstOrDefault(p => string.Equals(p.Name, player.Name));
+            if (playerInScoreBoard == null)
             {
-                return false;
+                this.players.Add(player);
             }
-
-            this.players.Add(player);
-            return true;
-        }
-
-        private bool ContainsPlayer(IPlayer player)
-        {
-            var isPlayerAlreadyExists = this.players.Any(p => string.Equals(p.Name, player.Name));
-            return isPlayerAlreadyExists;
+            else
+            {
+                var score = playerInScoreBoard.MistakesCount;
+                var newScore = player.MistakesCount;
+                if (score > newScore)
+                {
+                    int playerIndex = this.players.IndexOf(playerInScoreBoard);
+                    this.players[playerIndex].MistakesCount = newScore;
+                }
+            }
         }
     }
 }

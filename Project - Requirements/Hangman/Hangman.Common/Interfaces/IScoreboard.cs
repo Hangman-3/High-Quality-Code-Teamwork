@@ -11,6 +11,6 @@
     {
         IReadOnlyCollection<IPlayer> Players { get; }
 
-        bool AddPlayer(IPlayer player);
+        void AddPlayer(IPlayer player);
     }
 }
