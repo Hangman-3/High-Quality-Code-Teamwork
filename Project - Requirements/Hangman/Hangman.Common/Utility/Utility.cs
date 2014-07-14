@@ -31,11 +31,11 @@
         public static void GetRandomWord(IList<string> words, IWord word)
         {
             var randomIndex = Utility.GetRandomNumber(words.Count);
-            word.Original = (words[randomIndex]).ToCharArray();
+            word.Original.Append(words[randomIndex]);// removed ToCharArray()
 
             int timesToRepeatSymbol = word.Original.Length;
             string stringToConvert = new string(EmptyCellLetter, timesToRepeatSymbol);
-            word.Secret = stringToConvert.ToCharArray();
+            word.Secret.Append(stringToConvert);// removed ToCharArray()
         }
 
         public static bool IsValidLetter(this string @string)
@@ -46,17 +46,18 @@
         }
 
         // TODO: Should works with IWord
-        public static bool Matches(this char[] secretWord, char[] originalWord)
+        //think its done
+        public static bool Matches(this IWord word)
         {
-            Debug.Assert(secretWord != null, "maskedWord cannot be null!");
-            Debug.Assert(secretWord.Length != 0, "maskedWord length cannot be equal to zero!");
-            Debug.Assert(originalWord != null, "originalWord cannot be null!");
-            Debug.Assert(originalWord.Length != 0, "originalWord length cannot be equal to zero!");
-            Debug.Assert(secretWord.Length == originalWord.Length, "maskedWord length must be equals to originalWord length!");
+            Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
+            Debug.Assert(word.Secret.Length != 0, "maskedWord length cannot be equal to zero!");
+            Debug.Assert(word.Original != null, "originalWord cannot be null!");
+            Debug.Assert(word.Original.Length != 0, "originalWord length cannot be equal to zero!");
+            Debug.Assert(word.Secret.Length == word.Original.Length, "maskedWord length must be equal to originalWord length!");
 
-            for (int i = 0; i < secretWord.Length; i++)
+            for (int i = 0; i < word.Secret.Length; i++)
             {
-                if (secretWord[i] != originalWord[i])
+                if (word.Secret[i] != word.Original[i])
                 {
                     return false;
                 }
@@ -66,24 +67,24 @@
         }
 
         // TODO: Should works with IWord
-        public static char[] TipOffFirstUnknownLetter(this char[] secretWord, string originalWord)
+        public static void TipOffFirstUnknownLetter(this IWord word)
         {
-            Debug.Assert(secretWord != null, "maskedWord cannot be null!");
-            Debug.Assert(secretWord.Length != 0, "maskedWord length cannot be equal to zero!");
-            Debug.Assert(originalWord != null, "originalWord cannot be null!");
-            Debug.Assert(originalWord.Length != 0, "originalWord length cannot be equal to zero!");
-            Debug.Assert(secretWord.Length == originalWord.Length, "maskedWord length must be equals to originalWord length!");
+            Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
+            Debug.Assert(word.Secret.Length != 0, "maskedWord length cannot be equal to zero!");
+            Debug.Assert(word.Original != null, "originalWord cannot be null!");
+            Debug.Assert(word.Original.Length != 0, "originalWord length cannot be equal to zero!");
+            Debug.Assert(word.Secret.Length == word.Original.Length, "maskedWord length must be equals to originalWord length!");
 
-            for (int i = 0; i < secretWord.Length; i++)
+            for (int i = 0; i < word.Secret.Length; i++)
             {
-                if (!char.IsLetter(secretWord[i]))
+                if (!char.IsLetter(word.Secret[i]))
                 {
-                    secretWord[i] = originalWord[i];
+                    word.Secret[i] = word.Original[i];
                     break;
                 }
             }
 
-            return secretWord;
+            //return word.Secret;
         }
     }
 }
