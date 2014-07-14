@@ -1,6 +1,7 @@
 ﻿namespace Hangman.Common.Interfaces
 {
     using System;
+    using System.Text;
 
     /// <summary>
     /// 
@@ -9,7 +10,7 @@
     {
         void ShowMessage(string message, params object[] placeHolders);
 
-        void ShowSecretWord(char[] secretWord);
+        void ShowSecretWord(StringBuilder secretWord);
 
         void ShowScoreboard(IScoreboard scoreboard);
     }
