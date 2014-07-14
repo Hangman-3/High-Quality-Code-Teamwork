@@ -42,7 +42,7 @@
                 int oldScore = playerInScoreBoard.MistakesCount;
                 int newScore = player.MistakesCount;
 
-                if (oldScore < newScore)
+                if (oldScore > newScore)
                 {
                     int playerIndex = this.players.IndexOf(playerInScoreBoard);
                     this.players[playerIndex].MistakesCount = newScore;
