@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using Hangman.Common.Interfaces;
+    using System.Text;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -15,10 +16,10 @@
             Console.Write(message, @params);
         }
 
-        public void ShowSecretWord(char[] secretWord)
+        public void ShowSecretWord(StringBuilder secretWord)
         {
             this.ShowMessage("\nThe secret word is: ");
-            this.ShowMessage(string.Join(" ", secretWord));
+            this.ShowMessage(secretWord.ToString());
             this.ShowMessage(Environment.NewLine);
         }
 
@@ -37,5 +38,6 @@
                 this.ShowMessage("#{0}. {1} --> {2} mistake(s)\n", i + 1, players[i].Name, players[i].MistakesCount);
             }
         }
+
     }
 }

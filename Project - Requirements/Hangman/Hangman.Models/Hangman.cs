@@ -210,7 +210,7 @@
         private void TipOffFirstUnknownLetter(IWord word)
         {
             this.isCheated = true; // TODO: FIX
-            word.Secret.TipOffFirstUnknownLetter(new string(word.Original));
+            Utility.TipOffFirstUnknownLetter(word);
         }
     }
 }
