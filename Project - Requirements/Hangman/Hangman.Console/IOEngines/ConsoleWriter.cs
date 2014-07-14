@@ -16,10 +16,10 @@
             Console.Write(message, @params);
         }
 
-        public void ShowSecretWord(char[] secretWord)
+        public void ShowSecretWord(StringBuilder secretWord)
         {
             this.ShowMessage("\nThe secret word is: ");
-            this.ShowMessage(string.Join(" ", secretWord));
+            this.ShowMessage(secretWord.ToString());
             this.ShowMessage(Environment.NewLine);
         }
 
@@ -39,9 +39,5 @@
             }
         }
 
-        public void ShowSecretWord(StringBuilder secretWord)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
