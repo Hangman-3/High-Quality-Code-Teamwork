@@ -5,6 +5,7 @@
     using System.Diagnostics;
     using System.Linq;
     using Hangman.Common.Interfaces;
+    using System.Text;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -31,11 +32,11 @@
         public static void GetRandomWord(IList<string> words, IWord word)
         {
             var randomIndex = Utility.GetRandomNumber(words.Count);
-            word.Original.Append(words[randomIndex]);// removed ToCharArray()
+            word.Original = new StringBuilder(words[randomIndex].Trim(',', ' ', '.', ':', ';'));// removed .ToCharArray()
 
             int timesToRepeatSymbol = word.Original.Length;
             string stringToConvert = new string(EmptyCellLetter, timesToRepeatSymbol);
-            word.Secret.Append(stringToConvert);// removed ToCharArray()
+            word.Secret = new StringBuilder(stringToConvert);// removed .ToCharArray()
         }
 
         public static bool IsValidLetter(this string @string)
@@ -79,7 +80,10 @@
             {
                 if (!char.IsLetter(word.Secret[i]))
                 {
-                    word.Secret[i] = word.Original[i];
+                    char currentSymbol = word.Secret[i];
+                    char newSymbol = word.Original[i];
+
+                    word.Secret.Replace(currentSymbol, newSymbol, i, 1);
                     break;
                 }
             }

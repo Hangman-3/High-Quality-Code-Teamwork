@@ -20,13 +20,32 @@
         public StringBuilder Original
         {
             get { return this.original; }
-            set { this.original = value; }
+            set 
+            {
+                if ( !char.IsLetter(value[0]) || !char.IsLetter(value[value.Length-1]))
+                {
+                    throw new ArgumentException("Word contains non-letter symbols in its start or end!");
+                }
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new ArgumentException("There is no word to be assigned!");
+                }
+                this.original = value; 
+            }
         }
 
         public StringBuilder Secret
         {
             get { return this.secret; }
-            set { this.secret = value; }
+            set
+            {
+                if (string.IsNullOrEmpty(value.ToString()))
+                {
+                    throw new ArgumentException("There is no secret word to be assigned!");
+                }
+                
+                this.secret = value;
+            }
         }
 
         public bool IsGuessed()
@@ -43,3 +62,6 @@
 // assigning of original and secret words to Word fixed to comply with StringBuilder
 //Utility.Matches fixed to work with IWord 
 //TipOffFirstUnknownLetter() in Utility turned from char[] to void (the secret word will be passed by reference, so as a letter is revealed, there is no need for the method to return anything)
+
+// TipOffFirstUnknownLetter() in Utility shows letter working with StringBuilder
+// Some word validations in Word and in GetRandomWord() in Utility
