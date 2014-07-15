@@ -50,8 +50,23 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="HangmanTests.cs" />
+    <Compile Include="HangmanWordClassTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HangmanUtilityClassTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">
+      <Project>{c0cddcc1-c870-4a40-91e1-1ed48c790eaa}</Project>
+      <Name>Hangman.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hangman.Data\Hangman.Data.csproj">
+      <Project>{fa418101-2d21-42ee-83ab-d09da01436f7}</Project>
+      <Name>Hangman.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hangman.Models\Hangman.Models.csproj">
+      <Project>{e1b08f6b-64b4-45a1-ac16-cf764428e8ed}</Project>
+      <Name>Hangman.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

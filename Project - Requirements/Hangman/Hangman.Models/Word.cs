@@ -20,17 +20,21 @@
         public StringBuilder Original
         {
             get { return this.original; }
-            set 
+            set
             {
-                if ( !char.IsLetter(value[0]) || !char.IsLetter(value[value.Length-1]))
+                for (int i = 0; i < value.Length; i++)
                 {
-                    throw new ArgumentException("Word contains non-letter symbols in its start or end!");
+                    if (!char.IsLetter(value[i]) && value[i] != '-')
+                    {
+                        throw new ArgumentException("Word contains non-letter symbols!");
+                    }
                 }
                 if (string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new ArgumentException("There is no word to be assigned!");
                 }
-                this.original = value; 
+
+                this.original = value;
             }
         }
 
@@ -43,7 +47,7 @@
                 {
                     throw new ArgumentException("There is no secret word to be assigned!");
                 }
-                
+
                 this.secret = value;
             }
         }

@@ -31,8 +31,17 @@
 
         public static void GetRandomWord(IList<string> words, IWord word)
         {
+            if (words == null || word == null)
+            {
+                throw new ArgumentNullException("One or more 'null' parameters have been passed to method!");
+            }
+            if (words.Count == 0)
+            {
+                throw new ArgumentException("Can't get a word from empty repository!");
+            }
+
             var randomIndex = Utility.GetRandomNumber(words.Count);
-            word.Original = new StringBuilder(words[randomIndex].Trim(',', ' ', '.', ':', ';'));// removed .ToCharArray()
+            word.Original = new StringBuilder(words[randomIndex].Trim(',', ' ', '.', ':', ';', '-'));// removed .ToCharArray()
 
             int timesToRepeatSymbol = word.Original.Length;
             string stringToConvert = new string(EmptyCellLetter, timesToRepeatSymbol);
