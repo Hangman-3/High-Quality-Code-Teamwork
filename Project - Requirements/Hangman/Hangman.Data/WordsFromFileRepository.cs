@@ -11,7 +11,7 @@
     {
         private const string WordsFilePath = "../../words.txt";
 
-        private IList<string> words;
+        private readonly IList<string> words;
 
         public WordsFromFileRepository()
         {

@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hangman.Console
+﻿namespace Hangman.Console
 {
+    using System;
+    using System.Linq;
+
     public sealed class NinjectoThreadSafe
     {
-        private static volatile NinjectoThreadSafe instance; // volatile modifier is used to show that the variable will be accessed by multiple threads concurrently.
+        private static readonly object syncLock = new object();
 
-        private static object syncLock = new object();
+        private static volatile NinjectoThreadSafe instance;// volatile modifier is used to show that the variable will be accessed by multiple threads concurrently.
 
-        private NinjectoThreadSafe() { }
+        private NinjectoThreadSafe()
+        {
+        }
 
         public static NinjectoThreadSafe Instance
         {

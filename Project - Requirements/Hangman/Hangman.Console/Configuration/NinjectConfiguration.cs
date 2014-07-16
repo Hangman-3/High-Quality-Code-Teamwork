@@ -1,9 +1,11 @@
-﻿namespace Hangman.Models
+﻿namespace Hangman.Console.Configuration
 {
     using Hangman.Common.Interfaces;
     using Hangman.Console.IOEngines;
     using Hangman.Data;
+    using Hangman.Models;
     using Ninject.Modules;
+
     public class NinjectConfiguration : NinjectModule
     {
         public override void Load()
