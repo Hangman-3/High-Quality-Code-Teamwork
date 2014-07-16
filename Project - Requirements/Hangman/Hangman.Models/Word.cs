@@ -25,7 +25,7 @@
                     throw new ArgumentException("There is no word to be assigned!");
                 }
 
-                if (this.IsContainsNonLetterSymbols(value))
+                if (value.IsContainsNonLetterSymbols())
                 {
                     throw new ArgumentException("Word contains non-letter symbols!");
                 }
@@ -47,28 +47,10 @@
                 this.secret = value;
             }
         }
-
-        public bool IsGuessed()
-        {
-            return Utility.Matches(this);
-        }
-
+       
         public override string ToString()
         {
             return this.Secret.ToString();
-        }
-
-        private bool IsContainsNonLetterSymbols(StringBuilder value)
-        {
-            for (int i = 0; i < value.Length; i++)
-            {
-                if (!char.IsLetter(value[i]) && value[i] != '-')
-                {
-                    return true;
-                }
-            }
-
-            return false;
         }
     }
 }

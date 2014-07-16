@@ -56,7 +56,7 @@
             return isValidLetter;
         }
 
-        public static bool Matches(this IWord word)
+        public static bool IsGuessed(this IWord word)
         {
             Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
             Debug.Assert(word.Secret.Length != 0, "maskedWord length cannot be equal to zero!");
@@ -108,6 +108,19 @@
             }
 
             return numberOfGuessedLetters;
+        }
+
+        public static bool IsContainsNonLetterSymbols(this StringBuilder value)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (!char.IsLetter(value[i]) && value[i] != '-')
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

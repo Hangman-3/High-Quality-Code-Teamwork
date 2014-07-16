@@ -1,4 +1,5 @@
 using System.Text;
+
 namespace Hangman.Common.Interfaces
 {
     public interface IWord
@@ -6,7 +7,5 @@ namespace Hangman.Common.Interfaces
         StringBuilder Original { get; set; }
 
         StringBuilder Secret { get; set; }
-
-        bool IsGuessed();
     }
 }
