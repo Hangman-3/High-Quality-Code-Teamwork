@@ -1,11 +1,11 @@
-﻿using Hangman.Common.Utility;
-using Hangman.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-
-namespace Hangman.Tests
+﻿namespace Hangman.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using Hangman.Common.Utility;
+    using Hangman.Models;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class HangmanUtilityClassTest
     {
