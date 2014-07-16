@@ -55,6 +55,7 @@
   <ItemGroup>
     <None Include="Hangman.Console_Diagram.cd" />
     <None Include="packages.config" />
+    <None Include="Solution_Diagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">

@@ -7,7 +7,7 @@
     {
         private static readonly object syncLock = new object();
 
-        private static volatile NinjectoThreadSafe instance;// volatile modifier is used to show that the variable will be accessed by multiple threads concurrently.
+        private static volatile NinjectoThreadSafe instance;
 
         private NinjectoThreadSafe()
         {
