@@ -62,10 +62,4 @@
             return this.Secret.ToString();
         }
     }
-}// char[] to Stringbuilder here and in IWord
-// assigning of original and secret words to Word fixed to comply with StringBuilder
-//Utility.Matches fixed to work with IWord 
-//TipOffFirstUnknownLetter() in Utility turned from char[] to void (the secret word will be passed by reference, so as a letter is revealed, there is no need for the method to return anything)
-
-// TipOffFirstUnknownLetter() in Utility shows letter working with StringBuilder
-// Some word validations in Word and in GetRandomWord() in Utility
+}

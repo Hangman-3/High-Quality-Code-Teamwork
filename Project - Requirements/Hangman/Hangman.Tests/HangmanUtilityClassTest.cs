@@ -23,9 +23,10 @@ namespace Hangman.Tests
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestGetRandomWordForNullWord()
         {
-            var wordsListSample = new List<string>();
+            var wordsListSample = new List<string> { "testWord" };
+            Word word = null;
 
-            Utility.GetRandomWord(wordsListSample, null);
+            Utility.GetRandomWord(wordsListSample, word);
         }
 
         [TestMethod]

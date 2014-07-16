@@ -25,6 +25,7 @@
 
         public void ShowScoreboard(IScoreboard scoreboard)
         {
+            
             var players = scoreboard.Players.OrderBy(p => p.MistakesCount).ToList();
             if (players.Count == 0)
             {
