@@ -33,7 +33,7 @@
         {
             if (words == null || words.Count == 0)
             {
-                throw new ArgumentNullException("Words collection cannot be null or empty.");
+                throw new ArgumentException("Words collection cannot be null or empty.");
             }
 
             if (word == null)

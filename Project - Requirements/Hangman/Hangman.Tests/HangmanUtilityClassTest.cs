@@ -30,7 +30,7 @@
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void TestGetRandomWordForNullWordsReposiotry()
         {
             var word = new Word();
