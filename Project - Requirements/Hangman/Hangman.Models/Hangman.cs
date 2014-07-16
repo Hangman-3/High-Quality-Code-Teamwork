@@ -54,7 +54,7 @@
             do
             {
                 IWord word = new Word();
-                Utility.GetRandomWord(this.Words, word);
+                Utility.SetRandomWord(word, this.Words);
                 this.writer.ShowMessage(StartMessage);
                 this.isCheated = false;
                 this.player.MistakesCount = 0;

@@ -12,8 +12,6 @@
     //
     public class Word : IWord
     {
-        // TODO: Fix IWord interface
-        // TODO: property validation
         private StringBuilder original;
         private StringBuilder secret;
 
@@ -22,22 +20,20 @@
             get { return this.original; }
             set
             {
-                for (int i = 0; i < value.Length; i++)
-                {
-                    if (!char.IsLetter(value[i]) && value[i] != '-')
-                    {
-                        throw new ArgumentException("Word contains non-letter symbols!");
-                    }
-                }
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (value == null || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new ArgumentException("There is no word to be assigned!");
+                }
+
+                if (this.IsContainsNonLetterSymbols(value))
+                {
+                    throw new ArgumentException("Word contains non-letter symbols!");
                 }
 
                 this.original = value;
             }
         }
-
+ 
         public StringBuilder Secret
         {
             get { return this.secret; }
@@ -60,6 +56,19 @@
         public override string ToString()
         {
             return this.Secret.ToString();
+        }
+
+        private bool IsContainsNonLetterSymbols(StringBuilder value)
+        {
+            for (int i = 0; i < value.Length; i++)
+            {
+                if (!char.IsLetter(value[i]) && value[i] != '-')
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

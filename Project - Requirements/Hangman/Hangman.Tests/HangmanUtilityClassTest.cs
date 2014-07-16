@@ -16,7 +16,7 @@ namespace Hangman.Tests
             var word = new Word();
             var wordsListSample = new List<string>();
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace Hangman.Tests
             var wordsListSample = new List<string> { "testWord" };
             Word word = null;
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace Hangman.Tests
         {
             var word = new Word();
 
-            Utility.GetRandomWord(null, word);
+            Utility.SetRandomWord(word, null);
         }
     }
 }

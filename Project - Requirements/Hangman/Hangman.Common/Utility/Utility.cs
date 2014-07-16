@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
-    using Hangman.Common.Interfaces;
     using System.Text;
+    using Hangman.Common.Interfaces;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -13,9 +13,9 @@
     //
     public static class Utility
     {
-        private const char EmptyCellLetter = '_';
-
         private static readonly Random randomGenerator = new Random();
+
+        private const char EmptyCellLetter = '_';
 
         public static int GetRandomNumber(int max)
         {
@@ -29,23 +29,24 @@
             return randomNumber;
         }
 
-        public static void GetRandomWord(IList<string> words, IWord word)
+        public static void SetRandomWord(IWord word, IList<string> words)
         {
-            if (words == null || word == null)
+            if (words == null || words.Count == 0)
             {
-                throw new ArgumentNullException("One or more 'null' parameters have been passed to method!");
+                throw new ArgumentNullException("Words collection cannot be null or empty.");
             }
-            if (words.Count == 0)
+
+            if (word == null)
             {
-                throw new ArgumentException("Can't get a word from empty repository!");
+                throw new ArgumentNullException("Instance of IWord object cannot be null.");
             }
 
             var randomIndex = Utility.GetRandomNumber(words.Count);
-            word.Original = new StringBuilder(words[randomIndex].Trim(',', ' ', '.', ':', ';', '-'));// removed .ToCharArray()
+            word.Original = new StringBuilder(words[randomIndex].Trim(',', ' ', '.', ':', ';', '-'));
 
             int timesToRepeatSymbol = word.Original.Length;
             string stringToConvert = new string(EmptyCellLetter, timesToRepeatSymbol);
-            word.Secret = new StringBuilder(stringToConvert);// removed .ToCharArray()
+            word.Secret = new StringBuilder(stringToConvert);
         }
 
         public static bool IsValidLetter(this string @string)
@@ -55,8 +56,6 @@
             return isValidLetter;
         }
 
-        // TODO: Should works with IWord
-        //think its done
         public static bool Matches(this IWord word)
         {
             Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
@@ -76,7 +75,6 @@
             return true;
         }
 
-        // TODO: Should works with IWord
         public static void TipOffFirstUnknownLetter(this IWord word)
         {
             Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
@@ -89,15 +87,11 @@
             {
                 if (!char.IsLetter(word.Secret[i]))
                 {
-                    char currentSymbol = word.Secret[i];
-                    char newSymbol = word.Original[i];
-
-                    word.Secret.Replace(currentSymbol, newSymbol, i, 1);
+                    char newSymbolToReplace = word.Original[i];
+                    word.Secret[i] = newSymbolToReplace;
                     break;
                 }
             }
-
-            //return word.Secret;
         }
     }
 }

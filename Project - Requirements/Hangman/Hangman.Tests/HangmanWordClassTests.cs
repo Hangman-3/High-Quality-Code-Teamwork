@@ -17,7 +17,7 @@
             var word = new Word();
             var wordsListSample = new List<string> { "invalidWord;" };
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
 
             Assert.AreEqual("invalidWord", word.Original.ToString(), "Original word is not correct!");
         }
@@ -30,7 +30,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
 
             Assert.AreEqual(word.Secret.Length, word.Original.Length, "Original and secret words have different lengths!");
         }
@@ -43,7 +43,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -91,7 +91,7 @@
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
         }
 
         [TestMethod]
@@ -101,7 +101,7 @@
             string sampleWord = "testWord";
             var wordsListSample = new List<string> { sampleWord };
 
-            Utility.GetRandomWord(wordsListSample, word);
+            Utility.SetRandomWord(word, wordsListSample);
             word.Secret = new StringBuilder(sampleWord);
 
             Assert.IsTrue(word.IsGuessed());

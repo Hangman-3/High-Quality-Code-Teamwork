@@ -32,21 +32,19 @@
             }
 
             var playerInScoreBoard = this.players.FirstOrDefault(p => string.Equals(p.Name, player.Name));
-
             if (playerInScoreBoard == null)
             {
                 this.players.Add(player);
+                return;
             }
-            else
-            {
-                int oldScore = playerInScoreBoard.MistakesCount;
-                int newScore = player.MistakesCount;
 
-                if (oldScore > newScore)
-                {
-                    int playerIndex = this.players.IndexOf(playerInScoreBoard);
-                    this.players[playerIndex].MistakesCount = newScore;
-                }
+            int oldScore = playerInScoreBoard.MistakesCount;
+            int newScore = player.MistakesCount;
+
+            if (oldScore > newScore)
+            {
+                int playerIndex = this.players.IndexOf(playerInScoreBoard);
+                this.players[playerIndex].MistakesCount = newScore;
             }
         }
     }
