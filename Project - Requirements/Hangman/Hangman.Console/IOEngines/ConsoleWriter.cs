@@ -2,8 +2,8 @@
 {
     using System;
     using System.Linq;
-    using Hangman.Common.Interfaces;
     using System.Text;
+    using Hangman.Common.Interfaces;
 
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
@@ -18,14 +18,14 @@
 
         public void ShowSecretWord(StringBuilder secretWord)
         {
+            var secretWordToString = string.Join(" ", secretWord.ToString().ToCharArray());
             this.ShowMessage("\nThe secret word is: ");
-            this.ShowMessage(secretWord.ToString());
+            this.ShowMessage(secretWordToString);
             this.ShowMessage(Environment.NewLine);
         }
 
         public void ShowScoreboard(IScoreboard scoreboard)
         {
-            
             var players = scoreboard.Players.OrderBy(p => p.MistakesCount).ToList();
             if (players.Count == 0)
             {
@@ -36,9 +36,9 @@
             this.ShowMessage("\nScoreboard:\n");
             for (int i = 0; i < players.Count; i++)
             {
-                this.ShowMessage("#{0}. {1} --> {2} mistake(s)\n", i + 1, players[i].Name, players[i].MistakesCount);
+                this.ShowMessage("#{0}. {1} --> {2} mistake(s)\n",
+                    i + 1, players[i].Name, players[i].MistakesCount);
             }
         }
-
     }
 }

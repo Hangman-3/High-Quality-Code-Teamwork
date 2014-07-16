@@ -24,15 +24,6 @@
         protected IWriter writer;
         protected IWordsRepository wordsRepository;
         protected IScoreboard scoreboard;
-        protected IPlayer player;
-
-        // TODO: Remove all private fields below
-        private const string StartMessage = "Welcome to “Hangman” game. Please try to guess my secret word. \n" +
-                                            "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
-                                            "to quit the game.\n";
-
-        private bool isCheated = false;// TODO: FIX
-        private bool isRestartRequested = false;// TODO: FIX
 
         // TODO: Simplify object creational
         public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
@@ -41,85 +32,41 @@
             this.writer = writer;
             this.wordsRepository = wordsRepository;
             this.scoreboard = scoreboard;
-            this.player = new Player(); // TODO: Should works with IPlayer
             this.Words = wordsRepository.Words.ToList();
         }
 
-        private IList<string> Words { get; set; }
+        protected IList<string> Words { get; set; }
 
-        // TODO: Remove (do-)while -> figure out that application works on Console, WPF, ASP.NET, etc.
-        // TODO: FIX -> Method do too many things
+        protected bool IsPlayerUsedHelpCommand { get; set; }
+
         public void Start()
         {
-            do
-            {
-                IWord word = new Word();
-                Utility.SetRandomWord(word, this.Words);
-                this.writer.ShowMessage(StartMessage);
-                this.isCheated = false;
-                this.player.MistakesCount = 0;
-
-                do
-                {
-                    this.ShowSecretWord(word);
-                    this.writer.ShowMessage("Enter your guess: ");
-                    string enteredString = this.reader.Read();
-                    this.ProcessCommand(enteredString, word);
-
-                    if (this.isRestartRequested)
-                    {
-                        break;
-                    }
-                }
-                while (!word.IsGuessed());
-
-                if (this.isRestartRequested)
-                {
-                    this.isRestartRequested = false;
-                    this.writer.ShowMessage(Environment.NewLine);
-                    continue;
-                }
-
-                if (!this.isCheated)
-                {
-                    this.writer.ShowMessage("You won with {0} mistakes.\n", this.player.MistakesCount);
-                    this.ShowSecretWord(word);
-
-                    this.AddPlayerInScoreboard();
-                    this.ShowScoreboard();
-                }
-                else
-                {
-                    this.writer.ShowMessage("You won with {0} mistakes but you have cheated. You are not allowed\n", this.player.MistakesCount);
-                    this.writer.ShowMessage("to enter into the scoreboard.\n");
-                    this.ShowSecretWord(word);
-                }
-            }
-            while (true);
+            this.StartGameProcess();
         }
 
-        // TODO: Derivers should implements part of the logic here
-        // 1) Reading of player name and checking if it exists can be do here
-        // 2) but printing messages must be do in derivers
-        //
-        // TODO: Check for valid name
-        protected virtual void AddPlayerInScoreboard()
-        {
-            this.writer.ShowMessage("Please enter your name for the top scoreboard: ");
-            string playerName = this.reader.Read();
-            this.player.Name = playerName;
-            this.scoreboard.AddPlayer(this.player);
-            this.player = new Player();
-        }
+        #region [Abstract methods]
 
-        // TODO: FIX -> Possible solutions:
-        // 1) Replace string command with Enum -> better solution for beginning
-        // 2) Remove switch -> separate login in class
-        protected void ProcessCommand(string command, IWord word)
-        {
-            command = command.ToLower();
+        protected abstract void StartGameProcess();
 
-            switch (command)
+        /// <summary>
+        /// Executes 'top' command
+        /// </summary>
+        protected abstract void RestartGame();
+
+        // Figure out that application works on Console, WPF, ASP.NET, Win8 Phone
+        // How is the right way to exit from application on all this 'platforms'?
+        // Solution: derivers make decision how to..
+        protected abstract void EndGame();
+
+        #endregion
+
+        #region [Non-virtual shared methods]
+
+        protected void ProcessCommand(string command, IWord word, IPlayer player)
+        {
+            var commandToLowerCase = command.ToLower();
+
+            switch (commandToLowerCase)
             {
                 case "top":
                     {
@@ -128,13 +75,12 @@
                     }
                 case "restart":
                     {
-                        this.isRestartRequested = true; // TODO: FIX
+                        this.RestartGame();
                         break;
                     }
                 case "help":
                     {
-                        this.isCheated = true; // TODO: FIX
-                        this.TipOffFirstUnknownLetter(word);
+                        this.ExecuteHelpCommand(word);
                         break;
                     }
                 case "exit":
@@ -144,46 +90,9 @@
                     }
                 default:
                     {
-                        this.ReadLetter(command, word);
+                        this.GuessLetter(commandToLowerCase, word, player);
                         break;
                     }
-            }
-        }
-
-        // Figure out that application works on Console, WPF, ASP.NET, Win8 Phone
-        // How is the right way to exit from application on all this 'platforms'?
-        // Solution: derivers make decision how to..
-        protected abstract void EndGame();
-
-        private void ReadLetter(string command, IWord word)
-        {
-            if (!command.IsValidLetter())
-            {
-                this.writer.ShowMessage("Incorrect guess or command!\n");
-                return;
-            }
-
-            bool isLetterInTheWord = false;
-            int letterKnown = 0;
-            char enteredSymbol = char.Parse(command);
-            for (int i = 0; i < word.Secret.Length; i++)
-            {
-                if (word.Original[i] == enteredSymbol)
-                {
-                    word.Secret[i] = enteredSymbol;
-                    letterKnown++;
-                    isLetterInTheWord = true;
-                }
-            }
-
-            if (isLetterInTheWord)
-            {
-                this.writer.ShowMessage("Good job! You revealed {0} letters.\n", letterKnown);
-            }
-            else
-            {
-                this.writer.ShowMessage("Sorry! There are no unrevealed letters \"{0}\".\n", command);
-                this.player.MistakesCount++;
             }
         }
 
@@ -191,26 +100,61 @@
         /// Shows secret word as its unknown letters are masked with specific special symbol
         /// Special symbol in this case is the value of char constant 'EmptyCellLetter'
         /// </summary>
-        private void ShowSecretWord(IWord word)
+
+        protected void ShowSecretWord(IWord word)
         {
             this.writer.ShowSecretWord(word.Secret);
         }
 
-        /// <summary>
-        /// Executes 'top' command
-        /// </summary>
-        private void ShowScoreboard()
+        protected void ShowScoreboard()
         {
             this.writer.ShowScoreboard(this.scoreboard);
         }
+
+        #endregion
+
+        #region [Virtual methods]
+
+        // TODO: Check for valid name
+        protected virtual void AddPlayerInScoreboard(IPlayer player)
+        {
+            string playerName = this.reader.Read();
+            player.Name = playerName;
+            this.scoreboard.AddPlayer(player.Clone() as IPlayer);
+        }
+
+        protected virtual void ExecuteHelpCommand(IWord word)
+        {
+            this.IsPlayerUsedHelpCommand = true;
+            this.TipOffFirstUnknownLetter(word);
+        }
+
+        protected virtual int GuessLetter(string command, IWord word, IPlayer player)
+        {
+            char letter = char.Parse(command);
+            int numberOfGuessedLetters = word.GetNumberOfGuessedLetters(letter);
+
+            if (numberOfGuessedLetters == 0)
+            {
+                player.MistakesCount++;
+            }
+
+            return numberOfGuessedLetters;
+        }
+
+        #endregion
+
+        #region [Private methods]
 
         /// <summary>
         /// Executes 'help' command
         /// </summary>
         private void TipOffFirstUnknownLetter(IWord word)
         {
-            this.isCheated = true; // TODO: FIX
-            Utility.TipOffFirstUnknownLetter(word);
+            this.IsPlayerUsedHelpCommand = true;
+            word.TipOffFirstUnknownLetter();
         }
+        
+        #endregion
     }
 }

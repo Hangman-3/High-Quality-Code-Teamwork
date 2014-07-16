@@ -29,7 +29,7 @@
             return randomNumber;
         }
 
-        public static void SetRandomWord(IWord word, IList<string> words)
+        public static void SetRandomWord(this IWord word, IList<string> words)
         {
             if (words == null || words.Count == 0)
             {
@@ -92,6 +92,22 @@
                     break;
                 }
             }
+        }
+
+        public static int GetNumberOfGuessedLetters(this IWord word, char letter)
+        {
+            int numberOfGuessedLetters = 0;
+
+            for (int i = 0; i < word.Secret.Length; i++)
+            {
+                if (word.Original[i] == letter)
+                {
+                    word.Secret[i] = letter;
+                    numberOfGuessedLetters++;
+                }
+            }
+
+            return numberOfGuessedLetters;
         }
     }
 }

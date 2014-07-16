@@ -40,5 +40,16 @@
                 this.mistakesCount = value;
             }
         }
+
+        public object Clone()
+        {
+            var clonedPlayer = new Player()
+            {
+                Name = this.name,
+                MistakesCount = this.MistakesCount
+            };
+
+            return clonedPlayer;
+        }
     }
 }

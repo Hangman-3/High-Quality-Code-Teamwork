@@ -6,7 +6,7 @@
     /// <summary>
     /// 
     /// </summary>
-    public interface IPlayer
+    public interface IPlayer : ICloneable
     {
         string Name { get; set; }
 
