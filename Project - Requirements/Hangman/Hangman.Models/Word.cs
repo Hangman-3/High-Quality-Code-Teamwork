@@ -47,10 +47,5 @@
                 this.secret = value;
             }
         }
-       
-        public override string ToString()
-        {
-            return this.Secret.ToString();
-        }
     }
 }

@@ -86,7 +86,7 @@
         public void TestOriginalWordValidationOnEmptyWordsRepository()
         {
             var word = new Word();
-            string sampleWord = "";
+            string sampleWord = string.Empty;
             var wordsListSample = new List<string>();
             wordsListSample.Add(sampleWord);
 

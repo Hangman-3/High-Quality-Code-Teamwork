@@ -12,7 +12,7 @@
         [TestMethod]
         public void TestClonePlayer()
         {
-            var player = new Player() { Name="Gosho", MistakesCount = 2};
+            var player = new Player() { Name = "Gosho", MistakesCount = 2 };
             var score = new Scoreboard();
             score.AddPlayer(player.Clone() as Player);
 
@@ -27,6 +27,5 @@
         {
             var player = new Player() { Name = "Gosho", MistakesCount = -2 };
         }
-
     }
 }
