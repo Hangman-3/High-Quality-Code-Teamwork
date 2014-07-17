@@ -5,6 +5,7 @@
     using Hangman.Common.Utility;
     using Hangman.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Text;
 
     [TestClass]
     public class HangmanUtilityClassTest
@@ -37,5 +38,14 @@
 
             Utility.SetRandomWord(word, null);
         }
+
+        [TestMethod]
+        public void TestIsContainsNonLetterSymbols()
+        {
+            var sampleWord = new StringBuilder("invalidWord`");
+
+            Assert.IsTrue(sampleWord.IsContainsNonLetterSymbols());
+        }
+
     }
 }
