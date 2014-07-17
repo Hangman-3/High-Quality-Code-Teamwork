@@ -8,18 +8,16 @@
 
     public abstract class HangmanGame
     {
-        // 1. Word : IWord -> secretWord + originalWord
-        // 1.1 Make this class word with IWord instead secretWord and originalWord
-        //
-        // 2. This class should works with IPlayer instead concrete Player class
-        // 2.1. Make decision where to pass IPlayer implementation -> in constructor -> too many params?
-        //
-        // 3. Remove all private class's fields
         // 4. Separate messages in class 
         // 5. Implement method -> ShowStartMessage()
         //
         // 6. Fix class initialization -> constructor takes too many params
         //
+        protected const string TopCommand = "top";
+        protected const string RestartCommand = "restart";
+        protected const string HelpCommand = "help";
+        protected const string ExitCommand = "exit";
+
         protected IReader reader;
         protected IWriter writer;
         protected IWordsRepository wordsRepository;
@@ -68,22 +66,22 @@
 
             switch (commandToLowerCase)
             {
-                case "top":
+                case TopCommand:
                     {
                         this.ShowScoreboard();
                         break;
                     }
-                case "restart":
+                case RestartCommand:
                     {
                         this.RestartGame();
                         break;
                     }
-                case "help":
+                case HelpCommand:
                     {
                         this.ExecuteHelpCommand(word);
                         break;
                     }
-                case "exit":
+                case ExitCommand:
                     {
                         this.EndGame();
                         break;

@@ -1,7 +1,7 @@
-using System.Text;
-
 namespace Hangman.Common.Interfaces
 {
+    using System.Text;
+
     public interface IWord
     {
         StringBuilder Original { get; set; }
