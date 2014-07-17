@@ -15,13 +15,13 @@
             var player = new Player() { Name = "Gosho", MistakesCount = 2 };
             var score = new Scoreboard();
             var samePlayerNewGame = player.Clone() as Player;
-            samePlayerNewGame.MistakesCount = 1;
+            samePlayerNewGame.MistakesCount = 0;
             score.AddPlayer(samePlayerNewGame);
 
             var players = new List<IPlayer>(score.Players);
 
             Assert.AreEqual(player.Name, players[0].Name, "Name of the cloned person is not the same");
-            Assert.AreEqual(1, players[0].MistakesCount, "Player's score was not overwritten!");
+            Assert.AreEqual(0, players[0].MistakesCount, "Player's score was not overwritten!");
         }
 
         [TestMethod]

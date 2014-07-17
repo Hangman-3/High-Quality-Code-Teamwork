@@ -42,7 +42,7 @@
         [TestMethod]
         public void TestIsContainsNonLetterSymbols()
         {
-            var sampleWord = new StringBuilder("invalidWord`");
+            var sampleWord = new StringBuilder("invalidWor`d");
 
             Assert.IsTrue(sampleWord.IsContainsNonLetterSymbols());
         }
