@@ -15,7 +15,7 @@
         {
             try
             {
-                HangmanGame hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
+                HangmanGame hangmanGame = new ConsoleHangman(new WordsFromDbRepository());
                 hangmanGame.Start();
             }
             catch (Exception ex)
