@@ -29,7 +29,10 @@
 
             if (!File.Exists(WordsFilePath))
             {
-                throw new FileNotFoundException("Words file does not exists.");
+                string fullFilepath = Path.GetFullPath(WordsFilePath);
+                string errorMessage = String.Format("Words file: \"{0}\" does not exists.", fullFilepath);
+
+                throw new FileNotFoundException(errorMessage);
             }
 
             using (var reader = new StreamReader(WordsFilePath))

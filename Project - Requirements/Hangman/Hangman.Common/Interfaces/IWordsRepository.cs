@@ -11,7 +11,7 @@ namespace Hangman.Common.Interfaces
     public interface IWordsRepository
     {
         /// <summary>
-        /// Gets a collection containing words to guess(original words)
+        /// Gets a collection containing words to guess (original words)
         /// </summary>
         IReadOnlyCollection<string> Words { get; }
     }
