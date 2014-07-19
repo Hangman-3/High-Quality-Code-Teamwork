@@ -16,7 +16,7 @@ namespace Hangman.Common.Interfaces
         StringBuilder Original { get; set; }
 
         /// <summary>
-        /// Gets or sets the value of the player's guessed up until now word
+        /// Gets or sets the value of the player's guessed word up until now
         /// </summary>
         StringBuilder Secret { get; set; }
     }
