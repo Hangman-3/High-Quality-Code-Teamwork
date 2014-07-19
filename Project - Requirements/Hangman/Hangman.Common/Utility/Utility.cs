@@ -1,4 +1,7 @@
-﻿namespace Hangman.Common.Utility
+﻿// <copyright file="Utility.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Common.Utility
 {
     using System;
     using System.Collections.Generic;
@@ -10,25 +13,50 @@
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
-    //
+
+    /// <summary>
+    /// Static class responsible for selecting the original word and comparing the secret to the original word
+    /// </summary>
     public static class Utility
     {
-        private static readonly Random randomGenerator = new Random();
-
+        /// <summary>
+        /// constant replacing the unknown char of the secret word
+        /// </summary>
         private const char EmptyCellLetter = '_';
 
+        /// <summary>
+        /// Random generator instance
+        /// </summary>
+        private static readonly Random RandomGenerator = new Random();
+
+        /// <summary>
+        /// Generates random number between 0 and max
+        /// </summary>
+        /// <param name="max">Upper limit of the random generated number</param>
+        /// <returns>Random integer between 0 and max</returns>
         public static int GetRandomNumber(int max)
         {
             var randomNumber = GetRandomNumber(0, max);
             return randomNumber;
         }
 
+        /// <summary>
+        /// Generates random number between min and max
+        /// </summary>
+        /// <param name="min">Lower limit of the random generated number</param>
+        /// <param name="max">Upper limit of the random generated number</param>
+        /// <returns>Random integer between min and max</returns>
         public static int GetRandomNumber(int min, int max)
         {
-            var randomNumber = randomGenerator.Next(max);
+            var randomNumber = RandomGenerator.Next(max);
             return randomNumber;
         }
 
+        /// <summary>
+        /// Select a random word from a collection to be the original word
+        /// </summary>
+        /// <param name="word">Word object to set values to</param>
+        /// <param name="words">Collection of word to choose from</param>
         public static void SetRandomWord(this IWord word, IList<string> words)
         {
             if (words == null || words.Count == 0)
@@ -49,6 +77,11 @@
             word.Secret = new StringBuilder(stringToConvert);
         }
 
+        /// <summary>
+        /// Checks if the input is a valid letter
+        /// </summary>
+        /// <param name="string">Input string</param>
+        /// <returns>Boolean value depending on whether the letter is valid</returns>
         public static bool IsValidLetter(this string @string)
         {
             char letter;
@@ -56,6 +89,11 @@
             return isValidLetter;
         }
 
+        /// <summary>
+        /// Compares the original and secret word
+        /// </summary>
+        /// <param name="word">Word object containing the original and the secret word</param>
+        /// <returns>Boolean value depending on whether the word is guess</returns>
         public static bool IsGuessed(this IWord word)
         {
             Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
@@ -75,6 +113,10 @@
             return true;
         }
 
+        /// <summary>
+        /// Reveals the first letter of the original word
+        /// </summary>
+        /// <param name="word">Word object containing the original and the secret word</param>
         public static void TipOffFirstUnknownLetter(this IWord word)
         {
             Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
@@ -94,6 +136,12 @@
             }
         }
 
+        /// <summary>
+        /// Counts the guessed letters
+        /// </summary>
+        /// <param name="word">Word object containing the original and the secret word</param>
+        /// <param name="letter">Character containing the user's guess</param>
+        /// <returns>Integer counting the guessed letters</returns>
         public static int GetNumberOfGuessedLetters(this IWord word, char letter)
         {
             int numberOfGuessedLetters = 0;
@@ -110,6 +158,11 @@
             return numberOfGuessedLetters;
         }
 
+        /// <summary>
+        /// Check for non-letter symbols
+        /// </summary>
+        /// <param name="value">Value to check for non-letter symbols</param>
+        /// <returns>Boolean depending on whether the value contains non-letter symbols</returns>
         public static bool IsContainsNonLetterSymbols(this StringBuilder value)
         {
             for (int i = 0; i < value.Length; i++)
