@@ -13,8 +13,15 @@
     {
         internal static void Main()
         {
-            HangmanGame hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
-            hangmanGame.Start();
+            try
+            {
+                HangmanGame hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
+                hangmanGame.Start();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
     }
 }
