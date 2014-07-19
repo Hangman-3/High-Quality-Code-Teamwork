@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using Hangman.Data;
+    using Hangman.Data.Repositories;
     using Hangman.Models;
 
     // 1. Document all members
@@ -18,9 +18,9 @@
                 HangmanGame hangmanGame = new ConsoleHangman(new WordsFromFileRepository());
                 hangmanGame.Start();
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

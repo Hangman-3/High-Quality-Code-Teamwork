@@ -1,4 +1,4 @@
-﻿namespace Hangman.Data
+﻿namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -7,25 +7,18 @@
     using System.Linq;
     using Hangman.Common.Interfaces;
 
-    public class WordsFromFileRepository : IWordsRepository
+    public class WordsFromFileRepository : WordsRepository
     {
         private const string WordsFilePath = "../../words.txt";
 
-        private readonly IList<string> words;
-
         public WordsFromFileRepository()
         {
-            this.words = this.ReadWordsFromFile(out this.words);
+            this.Words = ReadWordsFromFile();
         }
 
-        public IReadOnlyCollection<string> Words
+        private IList<string> ReadWordsFromFile()
         {
-            get { return new ReadOnlyCollection<string>(this.words); }
-        }
-
-        private IList<string> ReadWordsFromFile(out IList<string> wordsCollection)
-        {
-            wordsCollection = new List<string>();
+            IList<string> wordsCollection = new List<string>();
 
             if (!File.Exists(WordsFilePath))
             {

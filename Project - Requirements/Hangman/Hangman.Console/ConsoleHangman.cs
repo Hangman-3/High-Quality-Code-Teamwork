@@ -5,7 +5,7 @@
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Console.IOEngines;
-    using Hangman.Data;
+    using Hangman.Data.Repositories;
     using Hangman.Models;
 
     // 1. Document all members
@@ -22,10 +22,10 @@
 
         private readonly string NewLine = Environment.NewLine;
 
-        public ConsoleHangman()
-            : this(new WordsRepository())
-        {
-        }
+        //public ConsoleHangman()
+        //    : this(new WordsRepository())
+        //{
+        //}
 
         public ConsoleHangman(IWordsRepository wordsRepository)
             : base(new ConsoleReader(), new ConsoleWriter(), wordsRepository, new Scoreboard())
@@ -84,7 +84,7 @@
 
             if (numberOfGuessedLetters == 0)
             {
-                this.writer.ShowMessage(GameMessages.NoSuchLetter+this.NewLine, command);
+                this.writer.ShowMessage(GameMessages.NoSuchLetter + this.NewLine, command);
             }
             else
             {

@@ -1,4 +1,4 @@
-﻿namespace Hangman.Data
+﻿namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -10,9 +10,9 @@
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
     //
-    public class WordsRepository : IWordsRepository
+    public class WordsFromStaticListRepository : WordsRepository
     {
-        private readonly IList<string> words = new List<string>()
+        private readonly IList<string> staticListWords = new List<string>()
         {
             "computer",
             "programmer",
@@ -26,9 +26,9 @@
             "variable"
         };
 
-        public IReadOnlyCollection<string> Words
+        public WordsFromStaticListRepository()
         {
-            get { return new ReadOnlyCollection<string>(this.words); }
+            this.Words = staticListWords;
         }
     }
 }
