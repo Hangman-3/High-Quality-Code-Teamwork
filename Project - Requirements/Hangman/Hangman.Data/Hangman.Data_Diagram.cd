@@ -1,18 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Data.WordsFromFileRepository">
-    <Position X="2" Y="0.75" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromDbRepository">
+    <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
-      <FileName>WordsFromFileRepository.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\WordsFromDbRepository.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Hangman.Data.WordsRepository">
-    <Position X="3.75" Y="0.75" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromFileRepository">
+    <Position X="10.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\WordsFromFileRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository">
+    <Position X="8.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\WordsFromStaticListRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Repositories.WordsRepository">
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
-      <FileName>WordsRepository.cs</FileName>
+      <FileName>Repositories\WordsRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
