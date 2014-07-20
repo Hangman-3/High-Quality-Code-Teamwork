@@ -20,8 +20,26 @@ namespace Hangman.Console.IOEngines
         /// <returns>User input as string</returns>
         public string Read()
         {
-            string @string = Console.ReadLine();
-            return @string;
+            //string @string = Console.ReadLine();
+            //return @string;
+
+            ConsoleKeyInfo key = Console.ReadKey();
+            Console.WriteLine();
+            if (key.Modifiers == ConsoleModifiers.Control)
+            {
+                switch (key.Key)
+                {
+                    case ConsoleKey.E: return "exit";
+                    case ConsoleKey.H: return "help";
+                    case ConsoleKey.R: return "restart";
+                    case ConsoleKey.T: return "top";
+                    default: return String.Empty;
+                }
+            }
+            else
+            {
+                return key.Key.ToString();
+            }
         }
     }
 }
