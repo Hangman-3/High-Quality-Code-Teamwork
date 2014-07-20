@@ -3,14 +3,17 @@
   <project key="1204428251">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <project key="-1486973656">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
   <sourcecode name="NinjectConfiguration.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.17 14:23:46.176</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.670</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -36,10 +39,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.16 15:15:47.386</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.671</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -62,8 +65,8 @@
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CommentsMustContainText" ruleCheckId="SA1120">
         <context>The comment is empty. Add text to the comment or remove it.</context>
         <line>14</line>
-        <index>376</index>
-        <endIndex>377</endIndex>
+        <index>389</index>
+        <endIndex>390</endIndex>
         <startLine>14</startLine>
         <startColumn>5</startColumn>
         <endLine>14</endLine>
@@ -73,6 +76,60 @@
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The class must have a documentation header.</context>
         <line>15</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentsMustNotBeFollowedByBlankLine" ruleCheckId="SA1512">
+        <context>A single-line comment must not be followed by a blank line. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>21</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentsMustNotBeFollowedByBlankLine" ruleCheckId="SA1512">
+        <context>A single-line comment must not be followed by a blank line. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>28</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>19</line>
+        <index>492</index>
+        <endIndex>598</endIndex>
+        <startLine>19</startLine>
+        <startColumn>9</startColumn>
+        <endLine>19</endLine>
+        <endColumn>115</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>25</line>
+        <index>895</index>
+        <endIndex>919</endIndex>
+        <startLine>25</startLine>
+        <startColumn>9</startColumn>
+        <endLine>25</endLine>
+        <endColumn>33</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>27</line>
+        <index>975</index>
+        <endIndex>977</endIndex>
+        <startLine>27</startLine>
+        <startColumn>9</startColumn>
+        <endLine>27</endLine>
+        <endColumn>11</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>28</line>
+        <index>988</index>
+        <endIndex>990</endIndex>
+        <startLine>28</startLine>
+        <startColumn>9</startColumn>
+        <endLine>28</endLine>
+        <endColumn>11</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
@@ -87,22 +144,12 @@
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The field must have a documentation header.</context>
-        <line>19</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The field must have a documentation header.</context>
         <line>23</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
         <context>Variable names and private field names must start with a lower-case letter: NewLine.</context>
         <line>23</line>
-        <warning>False</warning>
-      </violation>
-      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
-        <context>The constructor must have a documentation header.</context>
-        <line>25</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
@@ -117,27 +164,43 @@
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>61</line>
+        <line>63</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>67</line>
+        <line>69</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>73</line>
+        <line>75</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>95</line>
+        <line>97</line>
         <warning>False</warning>
       </violation>
       <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementsMustBeDocumented" ruleCheckId="SA1600">
         <context>The method must have a documentation header.</context>
-        <line>106</line>
+        <line>108</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>121</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>121</line>
+        <index>4054</index>
+        <endIndex>4114</endIndex>
+        <startLine>121</startLine>
+        <startColumn>17</startColumn>
+        <endLine>121</endLine>
+        <endColumn>77</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -146,10 +209,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.16 15:16:46.936</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.671</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -172,8 +235,8 @@
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CommentsMustContainText" ruleCheckId="SA1120">
         <context>The comment is empty. Add text to the comment or remove it.</context>
         <line>11</line>
-        <index>255</index>
-        <endIndex>256</endIndex>
+        <index>278</index>
+        <endIndex>279</endIndex>
         <startLine>11</startLine>
         <startColumn>5</startColumn>
         <endLine>11</endLine>
@@ -196,10 +259,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.16 15:15:42.423</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.675</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -222,8 +285,8 @@
       <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="CommentsMustContainText" ruleCheckId="SA1120">
         <context>The comment is empty. Add text to the comment or remove it.</context>
         <line>9</line>
-        <index>229</index>
-        <endIndex>230</endIndex>
+        <index>237</index>
+        <endIndex>238</endIndex>
         <startLine>9</startLine>
         <startColumn>5</startColumn>
         <endLine>9</endLine>
@@ -246,10 +309,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.17 14:18:15.106</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.678</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -321,10 +384,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.16 15:16:33.374</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.681</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>
@@ -380,10 +443,10 @@
     <timestamps>
       <styleCop>2014.04.01 10:18:24.000</styleCop>
       <settingsFile>2012.09.27 21:03:32.000</settingsFile>
-      <sourceFile>2014.07.16 03:32:46.000</sourceFile>
+      <sourceFile>2014.07.20 10:46:33.683</sourceFile>
       <parser>2014.04.01 10:18:24.000</parser>
       <StyleCop.CSharp.DocumentationRules>2014.04.01 10:18:24.000</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1945363787</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-452204768</StyleCop.CSharp.DocumentationRules.FilesHashCode>
       <StyleCop.CSharp.LayoutRules>2014.04.01 10:18:24.000</StyleCop.CSharp.LayoutRules>
       <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
       <StyleCop.CSharp.MaintainabilityRules>2014.04.01 10:18:24.000</StyleCop.CSharp.MaintainabilityRules>

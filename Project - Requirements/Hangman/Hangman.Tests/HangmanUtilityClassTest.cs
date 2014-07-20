@@ -2,10 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
     using Hangman.Common.Utility;
     using Hangman.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System.Text;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;    
 
     [TestClass]
     public class HangmanUtilityClassTest
@@ -46,6 +46,5 @@
 
             Assert.IsTrue(sampleWord.IsContainsNonLetterSymbols());
         }
-
     }
 }
