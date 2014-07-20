@@ -81,8 +81,9 @@
             }
 
             int numberOfGuessedLetters = base.GuessLetter(command, word, player);
+            bool isAlreadyRevealed = word.Secret.ToString().IndexOf(command) >= 0;
 
-            if (numberOfGuessedLetters == 0)
+            if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {
                 this.writer.ShowMessage(GameMessages.NoSuchLetter + this.NewLine, command);
             }
