@@ -11,12 +11,12 @@ namespace Hangman.Console
     using Hangman.Models;
 
     /// <summary>
-    /// Test class that starts the game
+    /// Class containing a program that starts Hangman game for console
     /// </summary>
     public class ConsoleHangmanDemo
     {
         /// <summary>
-        /// Main method
+        /// Entry point of the application
         /// </summary>
         internal static void Main()
         {

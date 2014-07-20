@@ -41,21 +41,31 @@ namespace Hangman.Models
         protected const string ExitCommand = "exit";
 
         /// <summary>
-        /// gets command from player
+        /// A concrete implementation of IReader interface
         /// </summary>
         private IReader reader;
 
         /// <summary>
-        /// returns messages to player
+        /// A concrete implementation of IWriter interface
         /// </summary>
         private IWriter writer;
 
         /// <summary>
-        /// top players scoreboard
+        /// A concrete implementation of IScoreboard interface
+        /// Represents scoreboard that contains a set of players
         /// </summary>
         private IScoreboard scoreboard;
 
-        // TODO: Simplify object creational
+        /// <summary>
+        /// IPlayer object that holds the information about the player
+        /// </summary>
+        private IPlayer player;
+        
+        /// <summary>
+        /// A concrete implementation of IWord interface
+        /// Represents word as its original and secret (masked) word
+        /// </summary>
+        private IWord word;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HangmanGame"/> class.
@@ -136,6 +146,48 @@ namespace Hangman.Models
         }
 
         /// <summary>
+        /// Gets or sets the IPlayer object that holds the information about the player
+        /// </summary>
+        protected IPlayer Player
+        {
+            get
+            {
+                return this.player;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Player cannot be null");
+                }
+
+                this.player = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the IWord object that holds the original and secret (masked) word
+        /// </summary>
+        protected IWord Word
+        {
+            get
+            {
+                return this.word;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Word cannot be null");
+                }
+
+                this.word = value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets collection of secret words
         /// </summary>
         protected IList<string> Words { get; set; }
@@ -181,10 +233,8 @@ namespace Hangman.Models
         /// <summary>
         /// Executes the commands entered by the player
         /// </summary>
-        /// <param name="command">command entered by player</param>
-        /// <param name="word">secret word</param>
-        /// <param name="player">current player</param>
-        protected void ProcessCommand(string command, IWord word, IPlayer player)
+        /// <param name="command">Command entered by player</param>
+        protected void ProcessCommand(string command)
         {
             var commandToLowerCase = command.ToLower();
 
@@ -204,7 +254,7 @@ namespace Hangman.Models
 
                 case HelpCommand:
                     {
-                        this.ExecuteHelpCommand(word);
+                        this.ExecuteHelpCommand();
                         break;
                     }
 
@@ -216,7 +266,7 @@ namespace Hangman.Models
 
                 default:
                     {
-                        this.GuessLetter(commandToLowerCase, word, player);
+                        this.GuessLetter(commandToLowerCase);
                         break;
                     }
             }
@@ -226,7 +276,7 @@ namespace Hangman.Models
         /// Shows secret word as its unknown letters are masked with specific special symbol
         /// Special symbol in this case is the value of char constant 'EmptyCellLetter'
         /// </summary>
-        /// <param name="@string">unknown @string as original and as revealed letters</param>
+        /// <param name="word">Instance of IWord that contains the secret word</param>
         protected void ShowSecretWord(IWord word)
         {
             this.Writer.ShowSecretWord(word.Secret);
@@ -244,10 +294,8 @@ namespace Hangman.Models
 
         #region [Virtual methods]
 
-        // TODO: Check for valid name
-
         /// <summary>
-        /// Gets the current player name and add him/her in the scoreboard
+        /// Gets the current player name and add it in the scoreboard
         /// </summary>
         /// <param name="player">current player</param>
         protected virtual void AddPlayerInScoreboard(IPlayer player)
@@ -260,28 +308,25 @@ namespace Hangman.Models
         /// <summary>
         /// Reveals the first unknown letter of secret word
         /// </summary>
-        /// <param name="word">secret word</param>
-        protected virtual void ExecuteHelpCommand(IWord word)
+        protected virtual void ExecuteHelpCommand()
         {
             this.IsPlayerUsedHelpCommand = true;
-            this.TipOffFirstUnknownLetter(word);
+            this.TipOffFirstUnknownLetter(this.word);
         }
 
         /// <summary>
         /// Counts how many letters of secret word are guessed
         /// </summary>
         /// <param name="command">checked letter</param>
-        /// <param name="word">secret word</param>
-        /// <param name="player">current player</param>
         /// <returns>number of guessed letters in the secret word</returns>
-        protected virtual int GuessLetter(string command, IWord word, IPlayer player)
+        protected virtual int GuessLetter(string command)
         {
             char letter = char.Parse(command);
-            int numberOfGuessedLetters = word.GetNumberOfGuessedLetters(letter);
+            int numberOfGuessedLetters = this.Word.GetNumberOfGuessedLetters(letter);
 
             if (numberOfGuessedLetters == 0)
             {
-                player.MistakesCount++;
+                this.Player.MistakesCount++;
             }
 
             return numberOfGuessedLetters;

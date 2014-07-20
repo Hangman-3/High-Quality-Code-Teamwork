@@ -10,10 +10,8 @@ namespace Hangman.Console
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Console.IOEngines;
+    using Hangman.Data.Repositories;
     using Hangman.Models;
-
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
 
     /// <summary>
     /// Implements Hangman game. Serves as game engine
@@ -21,14 +19,13 @@ namespace Hangman.Console
     public class ConsoleHangman : HangmanGame
     {
         /// <summary>
-        /// A constant holding the value of a new line according the appropriate environment
+        /// Initializes a new instance of the <see cref="ConsoleHangman" /> class 
+        /// and injects default words repository
         /// </summary>
-        private readonly string newLine = Environment.NewLine;
-
-        /// <summary>
-        /// IPlayer object, hold the information about the player
-        /// </summary>
-        private IPlayer player;
+        public ConsoleHangman()
+            : this(new WordsFromStaticListRepository())
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleHangman" /> class.
@@ -41,27 +38,6 @@ namespace Hangman.Console
             this.SeedPlayers();
         }
 
-        /// <summary>
-        /// Gets or sets the IPlayer object that holds the information about the player
-        /// </summary>
-        protected IPlayer Player
-        {
-            get
-            {
-                return this.player;
-            }
-
-            set
-            {
-                if (value == null)
-                {
-                    throw new NullReferenceException("Player cannot be null");
-                }
-
-                this.player = value;
-            }
-        }
-
         #region [Overriden methods]
 
         /// <summary>
@@ -69,25 +45,24 @@ namespace Hangman.Console
         /// </summary>
         protected override void StartGameProcess()
         {
-            IWord word = new Word();
-            word.SetRandomWord(this.Words);
+            this.Word.SetRandomWord(this.Words);
             this.IsPlayerUsedHelpCommand = false;
             this.Player.MistakesCount = 0;
 
             this.Writer.ShowMessage(ConsoleGameMessages.WelcomeMessage +
-                                    this.newLine +
+                                    ConsoleGameMessages.NewLine +
                                     ConsoleGameMessages.HowToPlayMessage);
 
-            while (!word.IsGuessed())
+            while (!Word.IsGuessed())
             {
-                this.ShowSecretWord(word);
+                this.ShowSecretWord(Word);
                 this.Writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
                 string enteredString = this.Reader.Read();
-                this.ProcessCommand(enteredString, word, this.Player);
+                this.ProcessCommand(enteredString);
             }
 
-            this.ShowResult(word);
+            this.ShowResult(Word);
             this.RestartGame();
         }
 
@@ -96,7 +71,7 @@ namespace Hangman.Console
         /// </summary>
         protected override void RestartGame()
         {
-            this.Writer.ShowMessage(this.newLine);
+            this.Writer.ShowMessage(ConsoleGameMessages.NewLine);
             this.StartGameProcess();
         }
 
@@ -105,7 +80,7 @@ namespace Hangman.Console
         /// </summary>
         protected override void EndGame()
         {
-            this.Writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + this.newLine);
+            this.Writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + ConsoleGameMessages.NewLine);
             Environment.Exit(1);
         }
 
@@ -116,24 +91,24 @@ namespace Hangman.Console
         /// <param name="word">Word object holding the information about the original and the secret word</param>
         /// <param name="player">Player object holding the information about the player</param>
         /// <returns>Integer representing the number of guessed letters</returns>
-        protected override int GuessLetter(string command, IWord word, IPlayer player)
+        protected override int GuessLetter(string command)
         {
             if (!command.IsValidLetter())
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage + this.newLine);
+                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage + ConsoleGameMessages.NewLine);
                 return 0;
             }
 
-            bool isAlreadyRevealed = word.Secret.ToString().IndexOf(command) >= 0;
-            int numberOfGuessedLetters = base.GuessLetter(command, word, player);
+            bool isAlreadyRevealed = this.Word.Secret.ToString().IndexOf(command) >= 0;
+            int numberOfGuessedLetters = base.GuessLetter(command);
 
             if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.NoSuchLetterMessage + this.newLine, command);
+                this.Writer.ShowMessage(ConsoleGameMessages.NoSuchLetterMessage + ConsoleGameMessages.NewLine, command);
             }
             else
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.GuessedLettersMessage + this.newLine, numberOfGuessedLetters);
+                this.Writer.ShowMessage(ConsoleGameMessages.GuessedLettersMessage + ConsoleGameMessages.NewLine, numberOfGuessedLetters);
             }
 
             return numberOfGuessedLetters;
@@ -162,7 +137,7 @@ namespace Hangman.Console
         {
             if (!this.IsPlayerUsedHelpCommand)
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + this.newLine, this.Player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + ConsoleGameMessages.NewLine, this.Player.MistakesCount);
                 this.ShowSecretWord(word);
 
                 this.AddPlayerInScoreboard(this.Player);
@@ -170,7 +145,7 @@ namespace Hangman.Console
             }
             else
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + this.newLine, this.Player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + ConsoleGameMessages.NewLine, this.Player.MistakesCount);
                 //// this.writer.ShowMessage("to enter into the scoreboard.\n");
                 this.ShowSecretWord(word);
             }

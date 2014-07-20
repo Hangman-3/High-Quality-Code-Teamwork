@@ -39,7 +39,7 @@
   <Class Name="Hangman.Data.Repositories.WordsFromDbRepository" Collapsed="true">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAICAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repositories\WordsFromDbRepository.cs</FileName>
     </TypeIdentifier>
   </Class>

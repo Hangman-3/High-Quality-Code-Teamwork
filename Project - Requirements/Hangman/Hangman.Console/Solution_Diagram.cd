@@ -26,7 +26,7 @@
   <Class Name="Hangman.Console.ConsoleHangman" Collapsed="true">
     <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAQBAAQEAAAAAAAABCAAAAAAQgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQBAAQEAAAAAAAAACAAAAAAQgAA=</HashCode>
       <FileName>ConsoleHangman.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
-    <Position X="8.75" Y="4.25" Width="1.5" />
+    <Position X="7" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>NinjectoThreadSafe.cs</FileName>
@@ -78,38 +78,35 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
-    <Position X="7" Y="4.25" Width="1.5" />
+    <Position X="0.5" Y="6" Width="1.5" />
     <TypeIdentifier />
   </Class>
+  <Interface Name="System.ICloneable" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
   <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+    <Position X="5.25" Y="1.25" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IReader" Collapsed="true">
-    <Position X="8.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
+  <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWord" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
+    <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWordsRepository" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Properties" Collapsed="true" />
-    </Compartments>
+    <Position X="7" Y="1.25" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWriter" Collapsed="true">
-    <Position X="8.75" Y="1.5" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
-  <Interface Name="System.ICloneable" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />

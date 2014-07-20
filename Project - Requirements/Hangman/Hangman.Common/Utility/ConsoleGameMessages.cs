@@ -9,11 +9,18 @@
 
 namespace Hangman.Common.Utility
 {
+    using System;
+
     /// <summary>
     /// Static class containing game messages
     /// </summary>
     public static class ConsoleGameMessages
     {
+        /// <summary>
+        /// A constant holding the value of a new line according the appropriate environment
+        /// </summary>
+        public static readonly string NewLine = Environment.NewLine;
+
         /// <summary>
         /// Welcome message
         /// </summary>
