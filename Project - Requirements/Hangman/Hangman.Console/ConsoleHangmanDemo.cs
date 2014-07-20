@@ -7,7 +7,6 @@
 namespace Hangman.Console
 {
     using System;
-    using Hangman.Data.Repositories;
     using Hangman.Models;
 
     /// <summary>
@@ -20,7 +19,7 @@ namespace Hangman.Console
         /// </summary>
         internal static void Main()
         {
-            HangmanGame hangmanGame = new ConsoleHangman(new WordsFromDbRepository());
+            HangmanGame hangmanGame = new ConsoleHangman();
             hangmanGame.Start();
         }
     }

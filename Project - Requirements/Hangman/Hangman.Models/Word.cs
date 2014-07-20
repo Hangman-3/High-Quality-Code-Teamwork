@@ -67,7 +67,7 @@ namespace Hangman.Models
 
             set
             {
-                if (string.IsNullOrEmpty(value.ToString()))
+                if (value == null || string.IsNullOrEmpty(value.ToString()))
                 {
                     throw new ArgumentException("There is no secret word to be assigned!");
                 }
