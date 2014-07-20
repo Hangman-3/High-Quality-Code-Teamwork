@@ -51,10 +51,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CustomHangman.cs" />
-    <Compile Include="HangmanGameUnitTests.cs" />
     <Compile Include="WordUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UtilityUnitTests.cs" />
     <Compile Include="ScoreboardUnitTests.cs" />
     <Compile Include="PlayerUnitTests.cs" />
   </ItemGroup>
