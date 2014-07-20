@@ -1,4 +1,8 @@
-﻿namespace Hangman.Console.Configuration
+﻿// <copyright file="NinjectConfiguration.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+
+namespace Hangman.Console.Configuration
 {
     ////using Hangman.Common.Interfaces;
     ////using Ninject.Modules;
