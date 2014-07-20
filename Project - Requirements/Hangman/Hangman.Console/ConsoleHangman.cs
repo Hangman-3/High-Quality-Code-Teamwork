@@ -35,6 +35,7 @@ namespace Hangman.Console
             : base(new ConsoleReader(), new ConsoleWriter(), wordsRepository, new Scoreboard())
         {
             this.Player = new Player();
+            this.Word = new Word();
             this.SeedPlayers();
         }
 

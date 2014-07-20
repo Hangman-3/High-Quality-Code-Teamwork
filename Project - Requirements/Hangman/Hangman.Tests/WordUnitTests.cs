@@ -1,14 +1,14 @@
 ﻿namespace Hangman.Tests
 {
-    using Hangman.Common.Utility;
-    using Hangman.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using Hangman.Common.Utility;
+    using Hangman.Models;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class HangmanWordClassTests
+    public class WordUnitTests
     {
         [TestMethod]
         public void TestIsOriginalWordValidationWithInvalidSymbolsInTheEnd()
@@ -104,6 +104,16 @@
             word.Secret = new StringBuilder(sampleWord);
 
             Assert.IsTrue(word.IsGuessed());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestWithSetNullSecretWord()
+        {
+            var word = new Word()
+            {
+                Secret = null
+            };
         }
     }
 }

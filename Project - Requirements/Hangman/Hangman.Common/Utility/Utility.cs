@@ -103,7 +103,7 @@ namespace Hangman.Common.Utility
         {
             if (word == null)
             {
-                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+                throw new NullReferenceException("Instance of IWord object cannot be null.");
             }
 
             for (int i = 0; i < word.Secret.Length; i++)
@@ -125,7 +125,7 @@ namespace Hangman.Common.Utility
         {
             if (word == null)
             {
-                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+                throw new NullReferenceException("Instance of IWord object cannot be null.");
             }
 
             for (int i = 0; i < word.Secret.Length; i++)
@@ -149,7 +149,7 @@ namespace Hangman.Common.Utility
         {
             if (word == null)
             {
-                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+                throw new NullReferenceException("Instance of IWord object cannot be null.");
             }
 
             if (!char.IsLetter(letter))

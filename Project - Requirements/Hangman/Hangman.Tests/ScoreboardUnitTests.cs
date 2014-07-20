@@ -1,12 +1,13 @@
 ﻿namespace Hangman.Tests
 {
+    using System;
+    using System.Collections.Generic;
     using Hangman.Common.Interfaces;
     using Hangman.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System.Collections.Generic;
 
     [TestClass]
-    public class TestScoreboard
+    public class ScoreboardUnitTests
     {
         [TestMethod]
         public void TestAddPlayerToScoreboard()
@@ -64,6 +65,15 @@
             Assert.AreEqual(1, players.Count, "There is more than one player");
             Assert.AreEqual(pesho.Name, players[0].Name);
             Assert.AreEqual(pesho.MistakesCount, players[0].MistakesCount, "Player's result is the highest gained");
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void TestAddNullPlayer()
+        {
+            IPlayer nullPlayer = null;
+            IScoreboard scoreboard = new Scoreboard();
+            scoreboard.AddPlayer(nullPlayer);
         }
     }
 }

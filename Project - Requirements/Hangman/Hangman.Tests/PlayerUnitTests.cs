@@ -7,7 +7,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class TestPlayer
+    public class PlayerUnitTests
     {
         [TestMethod]
         public void TestClonePlayer()
