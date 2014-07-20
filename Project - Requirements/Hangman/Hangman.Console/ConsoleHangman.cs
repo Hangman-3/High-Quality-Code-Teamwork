@@ -72,7 +72,7 @@ namespace Hangman.Console
             IWord word = new Word();
             word.SetRandomWord(this.Words);
             this.IsPlayerUsedHelpCommand = false;
-            this.player.MistakesCount = 0;
+            this.Player.MistakesCount = 0;
 
             this.Writer.ShowMessage(ConsoleGameMessages.WelcomeMessage +
                                     this.newLine +
@@ -84,7 +84,7 @@ namespace Hangman.Console
                 this.Writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
                 string enteredString = this.Reader.Read();
-                this.ProcessCommand(enteredString, word, this.player);
+                this.ProcessCommand(enteredString, word, this.Player);
             }
 
             this.ShowResult(word);
@@ -162,15 +162,15 @@ namespace Hangman.Console
         {
             if (!this.IsPlayerUsedHelpCommand)
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + this.newLine, this.player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + this.newLine, this.Player.MistakesCount);
                 this.ShowSecretWord(word);
 
-                this.AddPlayerInScoreboard(this.player);
+                this.AddPlayerInScoreboard(this.Player);
                 this.ShowScoreboard();
             }
             else
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + this.newLine, this.player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + this.newLine, this.Player.MistakesCount);
                 //// this.writer.ShowMessage("to enter into the scoreboard.\n");
                 this.ShowSecretWord(word);
             }

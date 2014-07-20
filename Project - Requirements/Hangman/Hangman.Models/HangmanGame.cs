@@ -229,7 +229,7 @@ namespace Hangman.Models
         /// <param name="word">unknown word as original and as revealed letters</param>
         protected void ShowSecretWord(IWord word)
         {
-            this.writer.ShowSecretWord(word.Secret);
+            this.Writer.ShowSecretWord(word.Secret);
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Hangman.Models
         /// </summary>
         protected void ShowScoreboard()
         {
-            this.writer.ShowScoreboard(this.scoreboard);
+            this.Writer.ShowScoreboard(this.Scoreboard);
         }
 
         #endregion
@@ -252,9 +252,9 @@ namespace Hangman.Models
         /// <param name="player">current player</param>
         protected virtual void AddPlayerInScoreboard(IPlayer player)
         {
-            string playerName = this.reader.Read();
+            string playerName = this.Reader.Read();
             player.Name = playerName;
-            this.scoreboard.AddPlayer(player.Clone() as IPlayer);
+            this.Scoreboard.AddPlayer(player.Clone() as IPlayer);
         }
 
         /// <summary>
