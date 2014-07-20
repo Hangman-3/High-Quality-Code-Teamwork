@@ -1,10 +1,10 @@
 ﻿namespace Hangman.Tests
 {
+    using System;
+    using System.Collections.Generic;
     using Hangman.Common.Interfaces;
     using Hangman.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
-    using System.Collections.Generic;
 
     [TestClass]
     public class TestPlayer
@@ -27,6 +27,13 @@
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestForWrongInitializationOfPlayerName()
+        {
+            var player = new Player() { Name = "", MistakesCount = 2 };
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestForWrongInitializationOfPlayerMistakesCount()
         {
             var player = new Player() { Name = "Gosho", MistakesCount = -2 };
         }

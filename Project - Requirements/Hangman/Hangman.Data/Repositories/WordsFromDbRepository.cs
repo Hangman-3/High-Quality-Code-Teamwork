@@ -23,6 +23,7 @@ namespace Hangman.Data.Repositories
         /// Path to Database file that contains the words
         /// </summary>
         private const string DbFilePath = "../../../Hangman.Data/Database/words.mdb";
+        private const string DbProviderString = @"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsFromDbRepository"/> class.
@@ -38,31 +39,31 @@ namespace Hangman.Data.Repositories
         /// <returns>Collection of words</returns>
         private IList<string> ReadWordsFromDb()
         {
-            IList<string> wordsCollection = new List<string>();
-
             if (!File.Exists(DbFilePath))
             {
-                string fullFilepath = Path.GetFullPath(DbFilePath);
-                string errorMessage = string.Format("Database file: \"{0}\" does not exists.", fullFilepath);
-
-                throw new FileNotFoundException(errorMessage);
+                string fullFilePath = Path.GetFullPath(DbFilePath);
+                string exceptionMessage = string.Format("Database file: \"{0}\" does not exists.", fullFilePath);
+                throw new FileNotFoundException(exceptionMessage);
             }
 
-            OleDbConnection connection = new OleDbConnection(@"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath);
-            connection.Open();
+            var wordsCollection = new List<string>();
 
             string selectString = "SELECT Words FROM English";
-            OleDbCommand createCommand = new OleDbCommand(selectString, connection);
-            createCommand.ExecuteNonQuery();
 
-            OleDbDataReader dataReader = createCommand.ExecuteReader();
-            while (dataReader.Read())
+            using (var connection = new OleDbConnection(DbProviderString))
             {
-                wordsCollection.Add(dataReader["Words"].ToString());
-            }
+                connection.Open();
+                var oldDbCommand = new OleDbCommand(selectString, connection);
+                oldDbCommand.ExecuteNonQuery();
 
-            dataReader.Close();
-            connection.Close();
+                using (var dataReader = oldDbCommand.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        wordsCollection.Add(dataReader["Words"].ToString());
+                    }
+                }
+            }
 
             return wordsCollection;
         }
