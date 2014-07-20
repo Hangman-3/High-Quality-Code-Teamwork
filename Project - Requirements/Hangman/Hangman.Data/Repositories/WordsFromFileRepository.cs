@@ -37,15 +37,14 @@ namespace Hangman.Data.Repositories
         /// <returns>Collection of words</returns>
         private IList<string> ReadWordsFromFile()
         {
-            IList<string> wordsCollection = new List<string>();
-
             if (!File.Exists(WordsFilePath))
             {
-                string fullFilepath = Path.GetFullPath(WordsFilePath);
-                string errorMessage = string.Format("Words file: \"{0}\" does not exists.", fullFilepath);
-
+                string fullFilePath = Path.GetFullPath(WordsFilePath);
+                string errorMessage = string.Format("Words file: \"{0}\" does not exists.", fullFilePath);
                 throw new FileNotFoundException(errorMessage);
             }
+
+            var wordsCollection = new List<string>();
 
             using (var reader = new StreamReader(WordsFilePath))
             {
