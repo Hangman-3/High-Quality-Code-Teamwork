@@ -1,4 +1,7 @@
-﻿namespace Hangman.Console
+﻿// <copyright file="ConsoleHangmanDemo.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Console
 {
     using System;
     using System.Linq;
@@ -8,9 +11,15 @@
     // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
-    //
+
+    /// <summary>
+    /// Test class that starts the game
+    /// </summary>
     public class ConsoleHangmanDemo
     {
+        /// <summary>
+        /// Main method
+        /// </summary>
         internal static void Main()
         {
             try
