@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Hangman.Console_Diagram.cd" />
+    <None Include="HangmanGame_CodeMap.dgml" />
     <None Include="packages.config" />
     <None Include="Solution_Diagram.cd" />
   </ItemGroup>
