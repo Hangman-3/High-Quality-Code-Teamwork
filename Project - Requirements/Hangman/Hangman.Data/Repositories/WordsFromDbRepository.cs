@@ -23,7 +23,11 @@ namespace Hangman.Data.Repositories
         /// Path to Database file that contains the words
         /// </summary>
         private const string DbFilePath = "../../../Hangman.Data/Database/words.mdb";
-        private const string DbProviderString = @"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath;
+
+        /// <summary>
+        /// Connection string used to open the database
+        /// </summary>
+        private const string DbConnectionString = @"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsFromDbRepository"/> class.
@@ -50,7 +54,7 @@ namespace Hangman.Data.Repositories
 
             string selectString = "SELECT Words FROM English";
 
-            using (var connection = new OleDbConnection(DbProviderString))
+            using (var connection = new OleDbConnection(DbConnectionString))
             {
                 connection.Open();
                 var oldDbCommand = new OleDbCommand(selectString, connection);

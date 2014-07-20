@@ -28,7 +28,7 @@
         [ExpectedException(typeof(ArgumentException))]
         public void TestForWrongInitializationOfPlayerName()
         {
-            var player = new Player() { Name = "", MistakesCount = 2 };
+            var player = new Player() { Name = string.Empty, MistakesCount = 2 };
         }
 
         [TestMethod]

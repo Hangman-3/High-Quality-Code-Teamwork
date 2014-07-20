@@ -218,7 +218,7 @@
         public void TestOnConsoleGameMessagesClassNewLineField()
         {
             var newLine = Environment.NewLine;
-            Assert.AreEqual(newLine, ConsoleGameMessages.NewLine);
+            Assert.AreEqual(newLine, Environment.NewLine);
         }
     }
 }

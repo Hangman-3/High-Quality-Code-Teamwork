@@ -17,11 +17,6 @@ namespace Hangman.Common.Utility
     public static class ConsoleGameMessages
     {
         /// <summary>
-        /// A constant holding the value of a new line according the appropriate environment
-        /// </summary>
-        public static readonly string NewLine = Environment.NewLine;
-
-        /// <summary>
         /// Welcome message
         /// </summary>
         public const string WelcomeMessage = "Welcome to “Hangman” game. Please try to guess my secret word.";

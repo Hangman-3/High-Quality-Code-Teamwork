@@ -51,7 +51,7 @@ namespace Hangman.Console
             this.Player.MistakesCount = 0;
 
             this.Writer.ShowMessage(ConsoleGameMessages.WelcomeMessage +
-                                    ConsoleGameMessages.NewLine +
+                                    Environment.NewLine +
                                     ConsoleGameMessages.HowToPlayMessage);
 
             while (!Word.IsGuessed())
@@ -72,7 +72,7 @@ namespace Hangman.Console
         /// </summary>
         protected override void RestartGame()
         {
-            this.Writer.ShowMessage(ConsoleGameMessages.NewLine);
+            this.Writer.ShowMessage(Environment.NewLine);
             this.StartGameProcess();
         }
 
@@ -81,7 +81,7 @@ namespace Hangman.Console
         /// </summary>
         protected override void EndGame()
         {
-            this.Writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + ConsoleGameMessages.NewLine);
+            this.Writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + Environment.NewLine);
             Environment.Exit(1);
         }
 
@@ -89,14 +89,12 @@ namespace Hangman.Console
         /// Receives a command, check if it's valid and if it is, gives you the number of guessed letters
         /// </summary>
         /// <param name="command">String holding the command</param>
-        /// <param name="word">Word object holding the information about the original and the secret word</param>
-        /// <param name="player">Player object holding the information about the player</param>
         /// <returns>Integer representing the number of guessed letters</returns>
         protected override int GuessLetter(string command)
         {
             if (!command.IsValidLetter())
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage + ConsoleGameMessages.NewLine);
+                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage + Environment.NewLine);
                 return 0;
             }
 
@@ -105,11 +103,11 @@ namespace Hangman.Console
 
             if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.NoSuchLetterMessage + ConsoleGameMessages.NewLine, command);
+                this.Writer.ShowMessage(ConsoleGameMessages.NoSuchLetterMessage + Environment.NewLine, command);
             }
             else
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.GuessedLettersMessage + ConsoleGameMessages.NewLine, numberOfGuessedLetters);
+                this.Writer.ShowMessage(ConsoleGameMessages.GuessedLettersMessage + Environment.NewLine, numberOfGuessedLetters);
             }
 
             return numberOfGuessedLetters;
@@ -138,7 +136,7 @@ namespace Hangman.Console
         {
             if (!this.IsPlayerUsedHelpCommand)
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + ConsoleGameMessages.NewLine, this.Player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.WonGameMessage + Environment.NewLine, this.Player.MistakesCount);
                 this.ShowSecretWord(word);
 
                 this.AddPlayerInScoreboard(this.Player);
@@ -146,7 +144,7 @@ namespace Hangman.Console
             }
             else
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + ConsoleGameMessages.NewLine, this.Player.MistakesCount);
+                this.Writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + Environment.NewLine, this.Player.MistakesCount);
                 //// this.writer.ShowMessage("to enter into the scoreboard.\n");
                 this.ShowSecretWord(word);
             }
@@ -181,7 +179,7 @@ namespace Hangman.Console
                 MistakesCount = 2
             });
         }
-        
+
         #endregion
     }
 }

@@ -20,7 +20,7 @@ namespace Hangman.Console.IOEngines
         /// <summary>
         /// Sleeping time when the message is printed
         /// </summary>
-        protected const int sleepTime = 15;
+        protected const int SleepTime = 15;
 
         /// <summary>
         /// Prints message on the console
@@ -29,11 +29,11 @@ namespace Hangman.Console.IOEngines
         /// <param name="params">Placeholders for the message</param>
         public void ShowMessage(string message, params object[] @params)
         {
-            String messageForPrint = String.Format(message, @params);
+            String messageForPrint = string.Format(message, @params);
             for (int i = 0; i < messageForPrint.Length; i++)
             {
                 Console.Write(messageForPrint[i]);
-                Thread.Sleep(sleepTime);
+                Thread.Sleep(SleepTime);
             }
         }
 
