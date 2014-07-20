@@ -1,21 +1,34 @@
-﻿namespace Hangman.Data.Repositories
+﻿// <copyright file="WordsFromFileRepository.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.IO;
-    using System.Linq;
-    using Hangman.Common.Interfaces;
 
+    /// <summary>
+    /// Gets the collection of words from text file
+    /// </summary>
     public class WordsFromFileRepository : WordsRepository
     {
+        /// <summary>
+        /// Path to text file that contains the words
+        /// </summary>
         private const string WordsFilePath = "../../../Hangman.Data/Database/words-en.txt";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordsFromFileRepository"/> class.
+        /// </summary>
         public WordsFromFileRepository()
         {
-            this.Words = ReadWordsFromFile();
+            this.Words = this.ReadWordsFromFile();
         }
 
+        /// <summary>
+        /// Gets the collection of words from the text file
+        /// </summary>
+        /// <returns>Collection of words</returns>
         private IList<string> ReadWordsFromFile()
         {
             IList<string> wordsCollection = new List<string>();
@@ -23,7 +36,7 @@
             if (!File.Exists(WordsFilePath))
             {
                 string fullFilepath = Path.GetFullPath(WordsFilePath);
-                string errorMessage = String.Format("Words file: \"{0}\" does not exists.", fullFilepath);
+                string errorMessage = string.Format("Words file: \"{0}\" does not exists.", fullFilepath);
 
                 throw new FileNotFoundException(errorMessage);
             }

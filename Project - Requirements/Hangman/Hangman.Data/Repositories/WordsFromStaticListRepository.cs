@@ -1,17 +1,18 @@
-﻿namespace Hangman.Data.Repositories
+﻿// <copyright file="WordsFromStaticListRepository.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Data.Repositories
 {
-    using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using Hangman.Common.Interfaces;
 
-    // 1. Document all members
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
-    //
+    /// <summary>
+    /// Gets the collection of words from static collection
+    /// </summary>
     public class WordsFromStaticListRepository : WordsRepository
     {
+        /// <summary>
+        /// collections of words
+        /// </summary>
         private readonly IList<string> staticListWords = new List<string>()
         {
             "computer",
@@ -26,9 +27,12 @@
             "variable"
         };
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordsFromStaticListRepository"/> class.
+        /// </summary>
         public WordsFromStaticListRepository()
         {
-            this.Words = staticListWords;
+            this.Words = this.staticListWords;
         }
     }
 }

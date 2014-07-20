@@ -1,23 +1,35 @@
-﻿namespace Hangman.Data.Repositories
+﻿// <copyright file="WordsFromDbRepository.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using Hangman.Common.Interfaces;
-    using System.IO;
     using System.Data.OleDb;
-    using System.Data;
+    using System.IO;
 
+    /// <summary>
+    /// Gets the collection of words from database
+    /// </summary>
     public class WordsFromDbRepository : WordsRepository
     {
+        /// <summary>
+        /// Path to Database file that contains the words
+        /// </summary>
         private const string DbFilePath = "../../../Hangman.Data/Database/words.mdb";
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WordsFromDbRepository"/> class.
+        /// </summary>
         public WordsFromDbRepository()
         {
-            this.Words = ReadWordsFromDb();
+            this.Words = this.ReadWordsFromDb();
         }
 
+        /// <summary>
+        /// Gets the collection of words from database
+        /// </summary>
+        /// <returns>Collection of words</returns>
         private IList<string> ReadWordsFromDb()
         {
             IList<string> wordsCollection = new List<string>();
@@ -25,7 +37,7 @@
             if (!File.Exists(DbFilePath))
             {
                 string fullFilepath = Path.GetFullPath(DbFilePath);
-                string errorMessage = String.Format("Database file: \"{0}\" does not exists.", fullFilepath);
+                string errorMessage = string.Format("Database file: \"{0}\" does not exists.", fullFilepath);
 
                 throw new FileNotFoundException(errorMessage);
             }
