@@ -9,6 +9,7 @@
 
 namespace Hangman.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Hangman.Common.Interfaces;
@@ -42,22 +43,17 @@ namespace Hangman.Models
         /// <summary>
         /// gets command from player
         /// </summary>
-        protected IReader reader;
+        private IReader reader;
 
         /// <summary>
         /// returns messages to player
         /// </summary>
-        protected IWriter writer;
-
-        /// <summary>
-        /// Collection of secret words
-        /// </summary>
-        protected IWordsRepository wordsRepository;
+        private IWriter writer;
 
         /// <summary>
         /// top players scoreboard
         /// </summary>
-        protected IScoreboard scoreboard;
+        private IScoreboard scoreboard;
 
         // TODO: Simplify object creational
 
@@ -70,11 +66,73 @@ namespace Hangman.Models
         /// <param name="scoreboard">top players scoreboard</param>
         public HangmanGame(IReader reader, IWriter writer, IWordsRepository wordsRepository, IScoreboard scoreboard)
         {
-            this.reader = reader;
-            this.writer = writer;
-            this.wordsRepository = wordsRepository;
-            this.scoreboard = scoreboard;
+            this.Reader = reader;
+            this.Writer = writer;
+            this.Scoreboard = scoreboard;
             this.Words = wordsRepository.Words.ToList();
+        }
+
+        /// <summary>
+        /// Gets or sets the reader interface of the game
+        /// </summary>
+        protected IReader Reader
+        {
+            get
+            {
+                return this.reader;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Reader cannot be null");
+                }
+
+                this.reader = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the writer interface of the game
+        /// </summary>
+        protected IWriter Writer
+        {
+            get
+            {
+                return this.writer;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Writer cannot be null");
+                }
+
+                this.writer = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the scoreboard
+        /// </summary>
+        protected IScoreboard Scoreboard
+        {
+            get
+            {
+                return this.scoreboard;
+            }
+
+            set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("Scoreboard cannot be null");
+                }
+
+                this.scoreboard = value;
+            }
         }
 
         /// <summary>
