@@ -1,13 +1,19 @@
-﻿// <copyright file="Scoreboard.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Scoreboard.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a scoreboard containing a set of players
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Models
 {
-    using Hangman.Common.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// Define the collection of players with their mistake counts

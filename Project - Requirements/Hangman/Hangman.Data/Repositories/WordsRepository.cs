@@ -1,10 +1,16 @@
-﻿// <copyright file="WordsRepository.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WordsRepository.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Abstract class defining words repository interface
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Data.Repositories
 {
-    using Hangman.Common.Interfaces;
     using System.Collections.Generic;
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// Holds the collection of words
@@ -21,15 +27,8 @@ namespace Hangman.Data.Repositories
         /// </summary>
         public IList<string> Words
         {
-            get
-            {
-                return new List<string>(this.words);
-            }
-
-            set
-            {
-                this.words = new HashSet<string>(value);
-            }
+            get { return new List<string>(this.words); }
+            set { this.words = new HashSet<string>(value); }
         }
     }
 }

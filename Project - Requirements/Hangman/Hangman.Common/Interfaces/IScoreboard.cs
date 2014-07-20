@@ -1,6 +1,12 @@
-﻿// <copyright file="IScoreboard.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IScoreboard.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Defines a scoreboard interface
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Common.Interfaces
 {
     using System;

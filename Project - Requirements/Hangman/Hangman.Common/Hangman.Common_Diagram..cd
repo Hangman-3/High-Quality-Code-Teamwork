@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Common.Utility.GameMessages" Collapsed="true">
+  <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIIgAABIAAEAAACAAAACAAAIABAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Utility\GameMessages.cs</FileName>
+      <HashCode>ACAAEggAAAAAAAIAAAAQAAAAAAAABCBAAEAAAAAAAAA=</HashCode>
+      <FileName>Utility\ConsoleGameMessages.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAwQAAAAAAAAAAAAGAAgAEAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAEAAAAAAAwQAAAAAAAAAAAAGAAgAEAAAAAAAAAAQ=</HashCode>
       <FileName>Utility\Utility.cs</FileName>
     </TypeIdentifier>
   </Class>

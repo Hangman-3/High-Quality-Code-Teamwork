@@ -1,9 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Common.Utility.GameMessages" Collapsed="true">
-    <Position X="8.75" Y="3.75" Width="1.5" />
-    <TypeIdentifier />
-  </Class>
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
     <Position X="8.75" Y="2.75" Width="1.5" />
     <TypeIdentifier />

@@ -1,22 +1,24 @@
-﻿// <copyright file="HangmanGame.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HangmanGame.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a console implementation of Hangman game
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Models
 {
-    using Hangman.Common.Interfaces;
-    using Hangman.Common.Utility;
     using System.Collections.Generic;
     using System.Linq;
+    using Hangman.Common.Interfaces;
+    using Hangman.Common.Utility;
 
     /// <summary>
     /// Main abstract class of the Hangman game.
     /// </summary>
     public abstract class HangmanGame
     {
-        //// 4. Separate messages in class
-        //// 5. Implement method -> ShowStartMessage()
-        //// 6. Fix class initialization -> constructor takes too many params
-
         /// <summary>
         /// String for "Top" command
         /// </summary>
@@ -240,7 +242,7 @@ namespace Hangman.Models
             this.IsPlayerUsedHelpCommand = true;
             word.TipOffFirstUnknownLetter();
         }
-
+        
         #endregion
     }
 }

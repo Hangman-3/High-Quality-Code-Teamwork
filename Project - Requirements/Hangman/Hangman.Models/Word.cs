@@ -1,12 +1,18 @@
-﻿// <copyright file="Word.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Word.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a word with its original and secret (masked) representation
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Models
 {
-    using Hangman.Common.Interfaces;
-    using Hangman.Common.Utility;
     using System;
     using System.Text;
+    using Hangman.Common.Interfaces;
+    using Hangman.Common.Utility;
 
     /// <summary>
     /// Class containing the unknown word with all the letters and guessed letters

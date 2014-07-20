@@ -1,6 +1,12 @@
-﻿// <copyright file="WordsFromFileRepository.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WordsFromFileRepository.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a file words repository
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Data.Repositories
 {
     using System;

@@ -1,13 +1,16 @@
-﻿// <copyright file="ConsoleHangman.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ConsoleHangman.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Console
 {
+    using System;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Console.IOEngines;
     using Hangman.Models;
-    using System;
 
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
@@ -50,14 +53,14 @@ namespace Hangman.Console
             this.IsPlayerUsedHelpCommand = false;
             this.player.MistakesCount = 0;
 
-            this.writer.ShowMessage(GameMessages.Welcome +
+            this.writer.ShowMessage(ConsoleGameMessages.WelcomeMessage +
                                     this.newLine +
-                                    GameMessages.HowToPlay);
+                                    ConsoleGameMessages.HowToPlayMessage);
 
             while (!word.IsGuessed())
             {
                 this.ShowSecretWord(word);
-                this.writer.ShowMessage(GameMessages.InviteUserInput);
+                this.writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
                 string enteredString = this.reader.Read();
                 this.ProcessCommand(enteredString, word, this.player);
@@ -81,7 +84,7 @@ namespace Hangman.Console
         /// </summary>
         protected override void EndGame()
         {
-            this.writer.ShowMessage(GameMessages.Goodbye + this.newLine);
+            this.writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + this.newLine);
             Environment.Exit(1);
         }
 
@@ -96,7 +99,7 @@ namespace Hangman.Console
         {
             if (!command.IsValidLetter())
             {
-                this.writer.ShowMessage(GameMessages.WrongInput + this.newLine);
+                this.writer.ShowMessage(ConsoleGameMessages.WrongInputMessage + this.newLine);
                 return 0;
             }
 
@@ -105,11 +108,11 @@ namespace Hangman.Console
 
             if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {
-                this.writer.ShowMessage(GameMessages.NoSuchLetter + this.newLine, command);
+                this.writer.ShowMessage(ConsoleGameMessages.NoSuchLetterMessage + this.newLine, command);
             }
             else
             {
-                this.writer.ShowMessage(GameMessages.GuessedLetters + this.newLine, numberOfGuessedLetters);
+                this.writer.ShowMessage(ConsoleGameMessages.GuessedLettersMessage + this.newLine, numberOfGuessedLetters);
             }
 
             return numberOfGuessedLetters;
@@ -121,7 +124,7 @@ namespace Hangman.Console
         /// <param name="player">Player object holding the player information</param>
         protected override void AddPlayerInScoreboard(IPlayer player)
         {
-            this.writer.ShowMessage(GameMessages.EnterName);
+            this.writer.ShowMessage(ConsoleGameMessages.EnterNameMessage);
             base.AddPlayerInScoreboard(player);
             player.MistakesCount = 0;
         }
@@ -138,7 +141,7 @@ namespace Hangman.Console
         {
             if (!this.IsPlayerUsedHelpCommand)
             {
-                this.writer.ShowMessage(GameMessages.WonGame + this.newLine, this.player.MistakesCount);
+                this.writer.ShowMessage(ConsoleGameMessages.WonGameMessage + this.newLine, this.player.MistakesCount);
                 this.ShowSecretWord(word);
 
                 this.AddPlayerInScoreboard(this.player);
@@ -146,7 +149,7 @@ namespace Hangman.Console
             }
             else
             {
-                this.writer.ShowMessage(GameMessages.CheatedGame + this.newLine, this.player.MistakesCount);
+                this.writer.ShowMessage(ConsoleGameMessages.CheatedGameMessage + this.newLine, this.player.MistakesCount);
                 //// this.writer.ShowMessage("to enter into the scoreboard.\n");
                 this.ShowSecretWord(word);
             }
@@ -181,7 +184,7 @@ namespace Hangman.Console
                 MistakesCount = 2
             });
         }
-
+        
         #endregion
     }
 }

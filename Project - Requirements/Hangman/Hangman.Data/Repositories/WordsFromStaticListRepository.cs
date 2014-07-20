@@ -1,6 +1,12 @@
-﻿// <copyright file="WordsFromStaticListRepository.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WordsFromStaticListRepository.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a static list words repository
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Data.Repositories
 {
     using System.Collections.Generic;

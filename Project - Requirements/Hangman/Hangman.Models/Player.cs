@@ -1,10 +1,16 @@
-﻿// <copyright file="Player.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Player.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a player with name and points
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Models
 {
-    using Hangman.Common.Interfaces;
     using System;
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// Class containing the player with his/her name and mistakes during the letters revealing

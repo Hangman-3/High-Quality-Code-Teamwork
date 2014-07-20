@@ -1,14 +1,14 @@
-﻿// <copyright file="ConsoleHangmanDemo.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ConsoleHangmanDemo.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Console
 {
+    using System;
     using Hangman.Data.Repositories;
     using Hangman.Models;
-    using System;
-
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
 
     /// <summary>
     /// Test class that starts the game

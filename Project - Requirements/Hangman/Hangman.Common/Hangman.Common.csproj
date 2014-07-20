@@ -46,7 +46,7 @@
     <Compile Include="Interfaces\IWordsRepository.cs" />
     <Compile Include="Interfaces\IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\GameMessages.cs" />
+    <Compile Include="Utility\ConsoleGameMessages.cs" />
     <Compile Include="Utility\Utility.cs" />
   </ItemGroup>
   <ItemGroup>

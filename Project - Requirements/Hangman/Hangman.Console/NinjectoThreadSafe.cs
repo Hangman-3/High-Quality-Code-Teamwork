@@ -1,6 +1,9 @@
-﻿// <copyright file="NinjectoThreadSafe.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="NinjectoThreadSafe.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Console
 {
     /// <summary>

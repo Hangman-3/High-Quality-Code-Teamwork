@@ -1,6 +1,12 @@
-﻿// <copyright file="IReader.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IReader.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Defines a reader class interface
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Common.Interfaces
 {
     /// <summary>

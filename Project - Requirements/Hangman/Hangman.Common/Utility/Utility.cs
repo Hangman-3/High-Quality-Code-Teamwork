@@ -1,16 +1,19 @@
-﻿// <copyright file="Utility.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Utility.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class containing useful methods used in Hangman game classes
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Common.Utility
 {
-    using Hangman.Common.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Text;
-
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// Static class responsible for selecting the original word and comparing the secret to the original word
@@ -18,14 +21,14 @@ namespace Hangman.Common.Utility
     public static class Utility
     {
         /// <summary>
-        /// Constant replacing the unknown char of the secret word
-        /// </summary>
-        private const char EmptyCellLetter = '_';
-
-        /// <summary>
         /// Random generator instance
         /// </summary>
         private static readonly Random RandomGenerator = new Random();
+
+        /// <summary>
+        /// Constant replacing the unknown char of the secret word
+        /// </summary>
+        private const char EmptyCellLetter = '_';
 
         /// <summary>
         /// Generates random number between 0 and max

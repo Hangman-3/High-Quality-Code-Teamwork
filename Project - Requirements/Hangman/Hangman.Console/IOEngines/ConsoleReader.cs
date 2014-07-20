@@ -1,13 +1,13 @@
-﻿// <copyright file="ConsoleReader.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ConsoleReader.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Console.IOEngines
 {
-    using Hangman.Common.Interfaces;
     using System;
-
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
+    using Hangman.Common.Interfaces;
 
     /// <summary>
     /// The implementation of IReader for the console version of the game

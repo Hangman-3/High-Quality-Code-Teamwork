@@ -1,12 +1,18 @@
-﻿// <copyright file="WordsFromDbRepository.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WordsFromDbRepository.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Class representing a database words repository
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Data.OleDb;
+    using System.IO;
 
     /// <summary>
     /// Gets the collection of words from database

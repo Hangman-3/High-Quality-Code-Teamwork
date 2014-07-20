@@ -1,6 +1,12 @@
-﻿// <copyright file="IWriter.cs" company="Telerik Academy">
-//   Copyright (c) Telerik Academy. All rights reserved.
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IWriter.cs" company="Telerik">
+//   Telerik Academy 2014
 // </copyright>
+// <summary>
+//   Defines a writer class interface
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 namespace Hangman.Common.Interfaces
 {
     using System;
