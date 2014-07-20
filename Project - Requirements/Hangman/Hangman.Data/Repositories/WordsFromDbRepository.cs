@@ -11,7 +11,7 @@
 
     public class WordsFromDbRepository : WordsRepository
     {
-        private const string DbFilePath = "../../words-en.mdb";
+        private const string DbFilePath = "../../../Hangman.Data/Database/words.mdb";
 
         public WordsFromDbRepository()
         {
@@ -33,7 +33,7 @@
             OleDbConnection connection = new OleDbConnection(@"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath);
             connection.Open();
 
-            string selectString = "SELECT Words FROM Words";
+            string selectString = "SELECT Words FROM English";
             OleDbCommand createCommand = new OleDbCommand(selectString, connection);
             createCommand.ExecuteNonQuery();
 

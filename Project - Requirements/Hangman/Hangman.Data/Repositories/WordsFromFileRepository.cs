@@ -9,7 +9,7 @@
 
     public class WordsFromFileRepository : WordsRepository
     {
-        private const string WordsFilePath = "../../words.txt";
+        private const string WordsFilePath = "../../../Hangman.Data/Database/words-en.txt";
 
         public WordsFromFileRepository()
         {

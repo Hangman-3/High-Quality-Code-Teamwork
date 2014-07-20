@@ -1,21 +1,37 @@
-﻿namespace Hangman.Models
+﻿// <copyright file="Player.cs" company="Telerik Academy">
+//   Copyright (c) Telerik Academy. All rights reserved.
+// </copyright>
+namespace Hangman.Models
 {
     using System;
     using System.Linq;
     using Hangman.Common.Interfaces;
 
-    // 1. Document all members
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
-    //
+    /// <summary>
+    /// Class containing the player with his/her name and mistakes during the letters revealing
+    /// </summary>
     public class Player : IPlayer
     {
+        /// <summary>
+        /// Contains player name
+        /// </summary>
         private string name;
+
+        /// <summary>
+        /// Counts the player mistakes during the letters revealing
+        /// </summary>
         private int mistakesCount;
 
+        /// <summary>
+        /// Gets or sets string property containing player name
+        /// </summary>
         public string Name
         {
-            get { return this.name; }
+            get 
+            { 
+                return this.name; 
+            }
+
             set
             {
                 if (string.IsNullOrEmpty(value))
@@ -27,9 +43,16 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets 32bit integer property for counting the player mistakes
+        /// </summary>
         public int MistakesCount
         {
-            get { return this.mistakesCount; }
+            get 
+            { 
+                return this.mistakesCount; 
+            }
+
             set
             {
                 if (value < 0)
@@ -41,6 +64,10 @@
             }
         }
 
+        /// <summary>
+        /// Duplicate the player object
+        /// </summary>
+        /// <returns>Cloned player</returns>
         public object Clone()
         {
             var clonedPlayer = new Player()
