@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Hangman.Data_Diagram.cd" />
     <None Include="Database\wordsDataSet.xsc">
       <DependentUpon>wordsDataSet.xsd</DependentUpon>
     </None>
@@ -74,7 +75,6 @@
     <None Include="Database\wordsDataSet.xss">
       <DependentUpon>wordsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Hangman.Data_Diagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

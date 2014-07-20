@@ -1,112 +1,115 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Common.Utility.GameMessages">
-    <Position X="11.5" Y="6.5" Width="1.5" />
+  <Class Name="Hangman.Common.Utility.GameMessages" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Common.Utility.Utility">
-    <Position X="13.25" Y="6.5" Width="1.5" />
+  <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
+    <Position X="8.75" Y="2.75" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Models.HangmanGame">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Hangman.Models.HangmanGame" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Models.Player" BaseTypeListCollapsed="true">
-    <Position X="13.25" Y="4" Width="1.5" />
-    <TypeIdentifier />
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Hangman.Models.Scoreboard" BaseTypeListCollapsed="true">
-    <Position X="11.5" Y="2.5" Width="1.5" />
+  <Class Name="Hangman.Models.Player" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Hangman.Models.Word" BaseTypeListCollapsed="true">
-    <Position X="9.75" Y="2.5" Width="1.5" />
+  <Class Name="Hangman.Models.Scoreboard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="2.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Hangman.Console.ConsoleHangman">
-    <Position X="2.5" Y="0.5" Width="1.5" />
+  <Class Name="Hangman.Models.Word" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.Console.ConsoleHangman" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAQBAAQEAAAAAAAABCAACAAAQgAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAQBAAQEAAAAAAAABCAAAAAAQgAA=</HashCode>
       <FileName>ConsoleHangman.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Console.ConsoleHangmanDemo">
-    <Position X="0.5" Y="6.25" Width="1.5" />
+  <Class Name="Hangman.Console.ConsoleHangmanDemo" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>ConsoleHangmanDemo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Console.NinjectoThreadSafe">
-    <Position X="9.75" Y="6.5" Width="1.5" />
+  <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>NinjectoThreadSafe.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Console.IOEngines.ConsoleReader" BaseTypeListCollapsed="true">
-    <Position X="4.5" Y="2.5" Width="1.5" />
+  <Class Name="Hangman.Console.IOEngines.ConsoleReader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IOEngines\ConsoleReader.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Hangman.Console.IOEngines.ConsoleWriter" BaseTypeListCollapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+  <Class Name="Hangman.Console.IOEngines.ConsoleWriter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IOEngines\ConsoleWriter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsFromDbRepository">
-    <Position X="4.5" Y="4.75" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromDbRepository" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsFromFileRepository">
-    <Position X="6.25" Y="4.75" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromFileRepository" Collapsed="true">
+    <Position X="5.25" Y="7" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository">
-    <Position X="8" Y="4.75" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository" Collapsed="true">
+    <Position X="7" Y="7" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsRepository">
-    <Position X="6.25" Y="2.5" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsRepository" Collapsed="true">
+    <Position X="5.25" Y="5.5" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="Hangman.Common.Interfaces.IPlayer">
-    <Position X="13.25" Y="2" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IReader">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IReader" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IScoreboard">
-    <Position X="11.5" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWord">
-    <Position X="9.75" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWord" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWordsRepository">
-    <Position X="6.25" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWordsRepository" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier />
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWriter">
-    <Position X="8" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWriter" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
-  <Interface Name="System.ICloneable">
-    <Position X="13.25" Y="0.5" Width="1.5" />
+  <Interface Name="System.ICloneable" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />

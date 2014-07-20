@@ -1,63 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Common.Utility.GameMessages">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="Hangman.Common.Utility.GameMessages" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIIgAABIAAEAAACAAAACAAAIABAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Utility\GameMessages.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Common.Utility.Utility">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+  <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAAAAAAwQAAAAAAAAAAAAGAAgAEAAAAAAAAAAQ=</HashCode>
+      <HashCode>AAAAAAAAABAAwQAAAAAAAAAAAAGAAgAEAAAAAAAAAAQ=</HashCode>
       <FileName>Utility\Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="Hangman.Common.Interfaces.IPlayer">
-    <Position X="4.25" Y="2" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IReader">
-    <Position X="6" Y="2.25" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IReader" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IScoreboard">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Interfaces\IScoreboard.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWord">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWord" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQ=</HashCode>
       <FileName>Interfaces\IWord.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWordsRepository">
-    <Position X="11.25" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWordsRepository" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Interfaces\IWordsRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Hangman.Common.Interfaces.IWriter">
-    <Position X="6" Y="0.5" Width="1.5" />
+  <Interface Name="Hangman.Common.Interfaces.IWriter" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="System.ICloneable">
-    <Position X="4.25" Y="0.5" Width="1.5" />
+  <Interface Name="System.ICloneable" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Interface>
   <Font Name="Segoe UI" Size="9" />

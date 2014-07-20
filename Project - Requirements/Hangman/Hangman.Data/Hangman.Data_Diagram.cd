@@ -1,27 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Hangman.Data.Repositories.WordsFromDbRepository">
-    <Position X="0.5" Y="3" Width="1.5" />
+  <Class Name="Hangman.Data.Database.wordsDataSet" Collapsed="true">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwIAAAJgRAAASAAAhAgiQBgACAAAAAFABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Database.wordsDataSetTableAdapters.BulgarianTableAdapter" Collapsed="true">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Database.wordsDataSetTableAdapters.EnglishTableAdapter" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Database.wordsDataSetTableAdapters.ItalianTableAdapter" Collapsed="true">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Database.wordsDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAAACACAABABAEJAAAAMAAgAAACgAAAAAQCAIAABQQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Properties.Settings" Collapsed="true">
+    <Position X="1" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hangman.Data.Repositories.WordsFromDbRepository" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repositories\WordsFromDbRepository.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsFromFileRepository">
-    <Position X="5" Y="3" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromFileRepository" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repositories\WordsFromFileRepository.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository">
-    <Position X="2.75" Y="3" Width="1.5" />
+  <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repositories\WordsFromStaticListRepository.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsRepository">
+  <Class Name="Hangman.Data.Repositories.WordsRepository" Collapsed="true">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
