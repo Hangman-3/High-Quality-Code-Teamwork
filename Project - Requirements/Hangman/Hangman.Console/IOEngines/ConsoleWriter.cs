@@ -9,6 +9,7 @@ namespace Hangman.Console.IOEngines
     using System;
     using System.Linq;
     using System.Text;
+    using System.Threading;
     using Hangman.Common.Interfaces;
 
     /// <summary>
@@ -17,13 +18,23 @@ namespace Hangman.Console.IOEngines
     public class ConsoleWriter : IWriter
     {
         /// <summary>
+        /// Sleeping time when the message is printed
+        /// </summary>
+        protected const int sleepTime = 30;
+
+        /// <summary>
         /// Prints message on the console
         /// </summary>
         /// <param name="message">Message to print</param>
         /// <param name="params">Placeholders for the message</param>
         public void ShowMessage(string message, params object[] @params)
         {
-            Console.Write(message, @params);
+            String messageForPrint = String.Format(message, @params);
+            for (int i = 0; i < messageForPrint.Length; i++)
+            {
+                Console.Write(messageForPrint[i]);
+                Thread.Sleep(sleepTime);
+            }
         }
 
         /// <summary>
