@@ -5,8 +5,8 @@ namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.OleDb;
     using System.IO;
+    using System.Data.OleDb;
 
     /// <summary>
     /// Gets the collection of words from database

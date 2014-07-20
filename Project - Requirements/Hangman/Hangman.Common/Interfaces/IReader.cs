@@ -3,8 +3,6 @@
 // </copyright>
 namespace Hangman.Common.Interfaces
 {
-    using System;
-
     /// <summary>
     /// Interface that reader classes must implement
     /// </summary>

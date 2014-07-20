@@ -3,11 +3,10 @@
 // </copyright>
 namespace Hangman.Models
 {
-    using System;
-    using System.Linq;
-    using System.Text;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
+    using System;
+    using System.Text;
 
     /// <summary>
     /// Class containing the unknown word with all the letters and guessed letters

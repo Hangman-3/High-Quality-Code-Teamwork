@@ -3,12 +3,10 @@
 // </copyright>
 namespace Hangman.Console
 {
-    using System;
-    using System.Linq;
     using Hangman.Data.Repositories;
     using Hangman.Models;
+    using System;
 
-    // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
 

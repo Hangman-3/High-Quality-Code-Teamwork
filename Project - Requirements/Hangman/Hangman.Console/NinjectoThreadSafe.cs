@@ -3,9 +3,6 @@
 // </copyright>
 namespace Hangman.Console
 {
-    using System;
-    using System.Linq;
-
     /// <summary>
     /// Thread safe class
     /// </summary>

@@ -4,7 +4,6 @@
 namespace Hangman.Common.Interfaces
 {
     using System;
-    using System.Linq;
 
     /// <summary>
     /// Interface that player classes must implement

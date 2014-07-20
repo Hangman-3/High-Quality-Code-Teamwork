@@ -3,11 +3,10 @@
 // </copyright>
 namespace Hangman.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
+    using System.Collections.Generic;
+    using System.Linq;
 
     /// <summary>
     /// Main abstract class of the Hangman game.
@@ -241,7 +240,7 @@ namespace Hangman.Models
             this.IsPlayerUsedHelpCommand = true;
             word.TipOffFirstUnknownLetter();
         }
-        
+
         #endregion
     }
 }

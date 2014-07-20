@@ -3,8 +3,8 @@
 // </copyright>
 namespace Hangman.Data.Repositories
 {
+    using Hangman.Common.Interfaces;
     using System.Collections.Generic;
-    using Hangman.Common.Interfaces;    
 
     /// <summary>
     /// Holds the collection of words
