@@ -1,4 +1,7 @@
-﻿using System.Reflection;
+﻿// <copyright file="AssemblyInfo.cs" company="Telerik Academy">
+//   Copyright (coffee) Telerik Academy. All rights reserved.
+// </copyright>
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
