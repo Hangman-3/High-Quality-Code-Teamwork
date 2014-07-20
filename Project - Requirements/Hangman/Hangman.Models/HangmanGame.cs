@@ -168,7 +168,7 @@ namespace Hangman.Models
         /// Shows secret word as its unknown letters are masked with specific special symbol
         /// Special symbol in this case is the value of char constant 'EmptyCellLetter'
         /// </summary>
-        /// <param name="word">unknown word as original and as revealed letters</param>
+        /// <param name="@string">unknown @string as original and as revealed letters</param>
         protected void ShowSecretWord(IWord word)
         {
             this.writer.ShowSecretWord(word.Secret);

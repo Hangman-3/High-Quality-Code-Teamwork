@@ -20,15 +20,8 @@ namespace Hangman.Console
         /// </summary>
         internal static void Main()
         {
-            try
-            {
-                HangmanGame hangmanGame = new ConsoleHangman(new WordsFromDbRepository());
-                hangmanGame.Start();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            HangmanGame hangmanGame = new ConsoleHangman(new WordsFromDbRepository());
+            hangmanGame.Start();
         }
     }
 }

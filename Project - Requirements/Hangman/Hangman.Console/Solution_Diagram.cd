@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
-    <Position X="8.75" Y="2.75" Width="1.5" />
+    <Position X="5.25" Y="4.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Models.HangmanGame" Collapsed="true">
@@ -9,17 +9,17 @@
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Models.Player" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="4" Width="1.5" />
+    <Position X="5.25" Y="3" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Models.Scoreboard" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="2.75" Width="1.5" />
+    <Position X="8.75" Y="3" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Models.Word" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="2.75" Width="1.5" />
+    <Position X="7" Y="3" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -38,7 +38,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
-    <Position X="8.75" Y="4.75" Width="1.5" />
+    <Position X="8.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>NinjectoThreadSafe.cs</FileName>
@@ -61,21 +61,25 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Data.Repositories.WordsFromDbRepository" Collapsed="true">
-    <Position X="3.5" Y="7" Width="1.5" />
+    <Position X="5.25" Y="7.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Data.Repositories.WordsFromFileRepository" Collapsed="true">
-    <Position X="5.25" Y="7" Width="1.5" />
+    <Position X="7" Y="7.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Data.Repositories.WordsFromStaticListRepository" Collapsed="true">
-    <Position X="7" Y="7" Width="1.5" />
+    <Position X="8.75" Y="7.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Data.Repositories.WordsRepository" Collapsed="true">
-    <Position X="5.25" Y="5.5" Width="1.5" />
+    <Position X="7" Y="5.75" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
     <Position X="5.25" Y="1.5" Width="1.5" />

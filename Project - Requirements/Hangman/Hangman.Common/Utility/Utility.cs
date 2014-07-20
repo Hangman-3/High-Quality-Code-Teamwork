@@ -11,7 +11,6 @@ namespace Hangman.Common.Utility
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Text;
     using Hangman.Common.Interfaces;
 
@@ -60,14 +59,14 @@ namespace Hangman.Common.Utility
         /// <param name="words">Collection of word to choose from</param>
         public static void SetRandomWord(this IWord word, IList<string> words)
         {
-            if (words == null || words.Count == 0)
-            {
-                throw new ArgumentException("Words collection cannot be null or empty.");
-            }
-
             if (word == null)
             {
                 throw new ArgumentNullException("Instance of IWord object cannot be null.");
+            }
+
+            if (words == null || words.Count == 0)
+            {
+                throw new ArgumentException("Words collection cannot be null or empty.");
             }
 
             var randomIndex = Utility.GetRandomNumber(words.Count);
@@ -85,6 +84,11 @@ namespace Hangman.Common.Utility
         /// <returns>Boolean value depending on whether the letter is valid</returns>
         public static bool IsValidLetter(this string @string)
         {
+            if (string.IsNullOrEmpty(@string))
+            {
+                throw new NullReferenceException("Value to check for valid letter cannot be null or empty.");
+            }
+
             char letter;
             var isValidLetter = char.TryParse(@string, out letter) && char.IsLetter(letter);
             return isValidLetter;
@@ -97,11 +101,10 @@ namespace Hangman.Common.Utility
         /// <returns>Boolean value depending on whether the word is guess</returns>
         public static bool IsGuessed(this IWord word)
         {
-            Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
-            Debug.Assert(word.Secret.Length != 0, "maskedWord length cannot be equal to zero!");
-            Debug.Assert(word.Original != null, "originalWord cannot be null!");
-            Debug.Assert(word.Original.Length != 0, "originalWord length cannot be equal to zero!");
-            Debug.Assert(word.Secret.Length == word.Original.Length, "maskedWord length must be equal to originalWord length!");
+            if (word == null)
+            {
+                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+            }
 
             for (int i = 0; i < word.Secret.Length; i++)
             {
@@ -120,11 +123,10 @@ namespace Hangman.Common.Utility
         /// <param name="word">Word object containing the original and the secret word</param>
         public static void TipOffFirstUnknownLetter(this IWord word)
         {
-            Debug.Assert(word.Secret != null, "maskedWord cannot be null!");
-            Debug.Assert(word.Secret.Length != 0, "maskedWord length cannot be equal to zero!");
-            Debug.Assert(word.Original != null, "originalWord cannot be null!");
-            Debug.Assert(word.Original.Length != 0, "originalWord length cannot be equal to zero!");
-            Debug.Assert(word.Secret.Length == word.Original.Length, "maskedWord length must be equals to originalWord length!");
+            if (word == null)
+            {
+                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+            }
 
             for (int i = 0; i < word.Secret.Length; i++)
             {
@@ -145,6 +147,16 @@ namespace Hangman.Common.Utility
         /// <returns>Integer counting the guessed letters</returns>
         public static int GetNumberOfGuessedLetters(this IWord word, char letter)
         {
+            if (word == null)
+            {
+                throw new ArgumentNullException("Instance of IWord object cannot be null.");
+            }
+
+            if (!char.IsLetter(letter))
+            {
+                throw new ArgumentException("The specified Unicode character is not categorized as Unicode letter.");
+            }
+
             int numberOfGuessedLetters = 0;
 
             for (int i = 0; i < word.Secret.Length; i++)
@@ -162,13 +174,18 @@ namespace Hangman.Common.Utility
         /// <summary>
         /// Check for non-letter symbols
         /// </summary>
-        /// <param name="value">Value to check for non-letter symbols</param>
-        /// <returns>Boolean depending on whether the value contains non-letter symbols</returns>
-        public static bool IsContainsNonLetterSymbols(this StringBuilder value)
+        /// <param name="@string">Value to check for non-letter symbols</param>
+        /// <returns>Boolean depending on whether the @string contains non-letter symbols</returns>
+        public static bool IsContainsNonLetterSymbols(this StringBuilder @string)
         {
-            for (int i = 0; i < value.Length; i++)
+            if (@string == null)
             {
-                if (!char.IsLetter(value[i]) && value[i] != '-')
+                throw new NullReferenceException("Value to check for non-letter symbols cannot be null.");
+            }
+
+            for (int i = 0; i < @string.Length; i++)
+            {
+                if (!char.IsLetter(@string[i]) && @string[i] != '-')
                 {
                     return true;
                 }
