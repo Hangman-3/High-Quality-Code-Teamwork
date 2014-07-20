@@ -3,9 +3,8 @@
 // </copyright>
 namespace Hangman.Models
 {
-    using System;
-    using System.Linq;
     using Hangman.Common.Interfaces;
+    using System;
 
     /// <summary>
     /// Class containing the player with his/her name and mistakes during the letters revealing

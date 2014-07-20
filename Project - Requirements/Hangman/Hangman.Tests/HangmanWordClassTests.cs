@@ -1,11 +1,11 @@
 ﻿namespace Hangman.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using Hangman.Common.Utility;
     using Hangman.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     [TestClass]
     public class HangmanWordClassTests

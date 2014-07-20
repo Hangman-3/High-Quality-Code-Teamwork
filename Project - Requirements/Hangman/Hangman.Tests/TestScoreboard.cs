@@ -1,10 +1,9 @@
 ﻿namespace Hangman.Tests
 {
-    using System;
-    using System.Collections.Generic;
     using Hangman.Common.Interfaces;
     using Hangman.Models;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System.Collections.Generic;
 
     [TestClass]
     public class TestScoreboard

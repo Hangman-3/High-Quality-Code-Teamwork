@@ -3,15 +3,12 @@
 // </copyright>
 namespace Hangman.Console
 {
-    using System;
-    using System.Linq;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Console.IOEngines;
-    using Hangman.Data.Repositories;
     using Hangman.Models;
+    using System;
 
-    // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
 
@@ -25,19 +22,10 @@ namespace Hangman.Console
         /// </summary>
         protected IPlayer player;
 
-        //// private const string StartMessage = "Welcome to “Hangman” game. Please try to guess my secret word. \n" +
-        ////                                    "Use 'top' to view the top scoreboard, 'restart' to start a new game, 'help' \nto cheat and 'exit' " +
-        ////                                    "to quit the game.";
-
         /// <summary>
         /// A constant holding the value of a new line according the appropriate environment
         /// </summary>
         private readonly string newLine = Environment.NewLine;
-
-        //// public ConsoleHangman()
-        ////     : this(new WordsRepository())
-        //// {
-        //// }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleHangman" /> class.
@@ -112,8 +100,8 @@ namespace Hangman.Console
                 return 0;
             }
 
-            int numberOfGuessedLetters = base.GuessLetter(command, word, player);
             bool isAlreadyRevealed = word.Secret.ToString().IndexOf(command) >= 0;
+            int numberOfGuessedLetters = base.GuessLetter(command, word, player);
 
             if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {

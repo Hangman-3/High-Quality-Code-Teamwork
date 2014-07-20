@@ -3,12 +3,11 @@
 // </copyright>
 namespace Hangman.Console.IOEngines
 {
+    using Hangman.Common.Interfaces;
     using System;
     using System.Linq;
     using System.Text;
-    using Hangman.Common.Interfaces;
 
-    // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
 
@@ -20,8 +19,8 @@ namespace Hangman.Console.IOEngines
         /// <summary>
         /// Prints message on the console
         /// </summary>
-        /// <param name="message">message to print</param>
-        /// <param name="params">placeholders for the message</param>
+        /// <param name="message">Message to print</param>
+        /// <param name="params">Placeholders for the message</param>
         public void ShowMessage(string message, params object[] @params)
         {
             Console.Write(message, @params);

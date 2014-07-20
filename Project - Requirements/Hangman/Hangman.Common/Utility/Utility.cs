@@ -3,14 +3,12 @@
 // </copyright>
 namespace Hangman.Common.Utility
 {
+    using Hangman.Common.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Linq;
     using System.Text;
-    using Hangman.Common.Interfaces;
 
-    // 1. Document all members
     // 2. Ensure all methods are unit-testable
     // 3. Ensure property/members/methods validation
 
@@ -20,7 +18,7 @@ namespace Hangman.Common.Utility
     public static class Utility
     {
         /// <summary>
-        /// constant replacing the unknown char of the secret word
+        /// Constant replacing the unknown char of the secret word
         /// </summary>
         private const char EmptyCellLetter = '_';
 
