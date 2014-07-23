@@ -217,15 +217,6 @@ namespace Hangman.Models
         /// </summary>
         protected abstract void RestartGame();
 
-        // Figure out that application works on Console, WPF, ASP.NET, Win8 Phone
-        // How is the right way to exit from application on all this 'platforms'?
-        // Solution: derivers make decision how to..
-
-        /// <summary>
-        /// Executes 'exit' command to quit the game
-        /// </summary>
-        protected abstract void EndGame();
-
         #endregion
 
         #region [Non-virtual shared methods]
@@ -330,6 +321,14 @@ namespace Hangman.Models
             }
 
             return numberOfGuessedLetters;
+        }
+
+        /// <summary>
+        /// Executes 'exit' command to quit the game
+        /// </summary>
+        protected virtual void EndGame()
+        {
+            Environment.Exit(0);
         }
 
         #endregion
