@@ -20,7 +20,7 @@ namespace Hangman.Console.IOEngines
         /// <summary>
         /// Sleeping time when the message is printed
         /// </summary>
-        protected const int SleepTime = 15;
+        protected const int SleepTime = 0;
 
         /// <summary>
         /// Prints message on the console

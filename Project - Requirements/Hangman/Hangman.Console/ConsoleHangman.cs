@@ -82,7 +82,7 @@ namespace Hangman.Console
         protected override void EndGame()
         {
             this.Writer.ShowMessage(ConsoleGameMessages.GoodbyeMessage + Environment.NewLine);
-            Environment.Exit(1);
+            base.EndGame();
         }
 
         /// <summary>

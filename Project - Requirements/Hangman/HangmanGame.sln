@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman.Console", "Hangman.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman.Common", "Hangman.Common\Hangman.Common.csproj", "{C0CDDCC1-C870-4A40-91E1-1ED48C790EAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman.WPF", "Hangman.WPF\Hangman.WPF.csproj", "{2AB3F245-782E-4ADE-B159-F8B4F6F38D42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C0CDDCC1-C870-4A40-91E1-1ED48C790EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CDDCC1-C870-4A40-91E1-1ED48C790EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0CDDCC1-C870-4A40-91E1-1ED48C790EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB3F245-782E-4ADE-B159-F8B4F6F38D42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB3F245-782E-4ADE-B159-F8B4F6F38D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB3F245-782E-4ADE-B159-F8B4F6F38D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB3F245-782E-4ADE-B159-F8B4F6F38D42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
