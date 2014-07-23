@@ -29,7 +29,7 @@ namespace Hangman.Console.IOEngines
         /// <param name="params">Placeholders for the message</param>
         public void ShowMessage(string message, params object[] @params)
         {
-            String messageForPrint = string.Format(message, @params);
+            string messageForPrint = string.Format(message, @params);
             for (int i = 0; i < messageForPrint.Length; i++)
             {
                 Console.Write(messageForPrint[i]);

@@ -174,7 +174,7 @@ namespace Hangman.Common.Utility
         /// <summary>
         /// Check for non-letter symbols
         /// </summary>
-        /// <param name="@string">Value to check for non-letter symbols</param>
+        /// <param name="string">Value to check for non-letter symbols</param>
         /// <returns>Boolean depending on whether the @string contains non-letter symbols</returns>
         public static bool IsContainsNonLetterSymbols(this StringBuilder @string)
         {

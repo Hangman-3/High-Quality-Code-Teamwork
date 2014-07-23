@@ -54,16 +54,16 @@ namespace Hangman.Console
                                     Environment.NewLine +
                                     ConsoleGameMessages.HowToPlayMessage);
 
-            while (!Word.IsGuessed())
+            while (!this.Word.IsGuessed())
             {
-                this.ShowSecretWord(Word);
+                this.ShowSecretWord(this.Word);
                 this.Writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
                 string enteredString = this.Reader.Read();
                 this.ProcessCommand(enteredString);
             }
 
-            this.ShowResult(Word);
+            this.ShowResult(this.Word);
             this.RestartGame();
         }
 
@@ -179,7 +179,7 @@ namespace Hangman.Console
                 MistakesCount = 2
             });
         }
-
+        
         #endregion
     }
 }
