@@ -71,6 +71,10 @@
       <Project>{e1b08f6b-64b4-45a1-ac16-cf764428e8ed}</Project>
       <Name>Hangman.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Hangman.WPF\Hangman.WPF.csproj">
+      <Project>{2ab3f245-782e-4ade-b159-f8b4f6f38d42}</Project>
+      <Name>Hangman.WPF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

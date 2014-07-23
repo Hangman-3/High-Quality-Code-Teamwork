@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
-    <Position X="5.25" Y="4.25" Width="1.5" />
+    <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Models.HangmanGame" Collapsed="true">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Models.Player" Collapsed="true" BaseTypeListCollapsed="true">
@@ -14,12 +14,12 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Models.Scoreboard" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="3" Width="1.5" />
+    <Position X="5.25" Y="4" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Models.Word" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7" Y="3" Width="1.5" />
+    <Position X="7.25" Y="3" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -31,21 +31,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.ConsoleHangmanDemo" Collapsed="true">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>ConsoleHangmanDemo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
-    <Position X="7" Y="4.25" Width="1.5" />
+    <Position X="11" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>NinjectoThreadSafe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.IOEngines.ConsoleReader" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="4" Width="1.5" />
+    <Position X="0.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IOEngines\ConsoleReader.cs</FileName>
@@ -53,9 +53,9 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Console.IOEngines.ConsoleWriter" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="5" Width="1.5" />
+    <Position X="0.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IOEngines\ConsoleWriter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -78,7 +78,34 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
-    <Position X="0.5" Y="6" Width="1.5" />
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Hangman.WPF.AbstractMediator" Collapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Hangman.WPF.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.WPF.WpfHangman" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Hangman.WPF.IOEngines.WpfReader" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.Console.IOEngines.WpfWriter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.WPF.Mediator" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Interface Name="System.ICloneable" Collapsed="true">
