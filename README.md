@@ -5,7 +5,7 @@
 * Martin Tonkov ([@ mTonkov](https://github.com/mTonkov))
 * Stefan Mihailov ([@ StefanMihaylov](https://github.com/StefanMihaylov))
 * Stanislav Iliev ([@ Termininja](https://github.com/Termininja))
-* Aleksandyr Djajev ([@ adzhazhev](https://github.com/adzhazhev))
+* Aleksandyr Dzhazhev ([@ adzhazhev](https://github.com/adzhazhev))
 
 ##Team Work Requirements
 * **Each team member** should have contributions to the project and **commits in the source control
