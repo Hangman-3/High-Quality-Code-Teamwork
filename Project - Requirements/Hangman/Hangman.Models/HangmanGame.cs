@@ -20,25 +20,6 @@ namespace Hangman.Models
     /// </summary>
     public abstract class HangmanGame
     {
-        /// <summary>
-        /// String for "Top" command
-        /// </summary>
-        protected const string TopCommand = "top";
-
-        /// <summary>
-        /// String for "Restart" command
-        /// </summary>
-        protected const string RestartCommand = "restart";
-
-        /// <summary>
-        /// String for "help" command
-        /// </summary>
-        protected const string HelpCommand = "help";
-
-        /// <summary>
-        /// String for "Exit" command
-        /// </summary>
-        protected const string ExitCommand = "exit";
 
         /// <summary>
         /// A concrete implementation of IReader interface
@@ -225,31 +206,30 @@ namespace Hangman.Models
         /// Executes the commands entered by the player
         /// </summary>
         /// <param name="command">Command entered by player</param>
-        protected void ProcessCommand(string command)
+        protected void ProcessCommand(Command command)
         {
-            var commandToLowerCase = command.ToLower();
 
-            switch (commandToLowerCase)
+            switch (command.Type)
             {
-                case TopCommand:
+                case CommandsEnum.Top:
                     {
                         this.ShowScoreboard();
                         break;
                     }
 
-                case RestartCommand:
+                case CommandsEnum.Restart:
                     {
                         this.RestartGame();
                         break;
                     }
 
-                case HelpCommand:
+                case CommandsEnum.Help:
                     {
                         this.ExecuteHelpCommand();
                         break;
                     }
 
-                case ExitCommand:
+                case CommandsEnum.Exit:
                     {
                         this.EndGame();
                         break;
@@ -257,7 +237,7 @@ namespace Hangman.Models
 
                 default:
                     {
-                        this.GuessLetter(commandToLowerCase);
+                        this.GuessLetter(command.Name);
                         break;
                     }
             }
