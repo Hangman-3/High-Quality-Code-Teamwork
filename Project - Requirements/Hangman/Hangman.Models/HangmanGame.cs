@@ -12,6 +12,7 @@ namespace Hangman.Models
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
 
@@ -20,7 +21,6 @@ namespace Hangman.Models
     /// </summary>
     public abstract class HangmanGame
     {
-
         /// <summary>
         /// A concrete implementation of IReader interface
         /// </summary>
@@ -206,30 +206,29 @@ namespace Hangman.Models
         /// Executes the commands entered by the player
         /// </summary>
         /// <param name="command">Command entered by player</param>
-        protected void ProcessCommand(Command command)
+        protected void ProcessCommand(ICommand command)
         {
-
             switch (command.Type)
             {
-                case CommandsEnum.Top:
+                case CommandType.Top:
                     {
                         this.ShowScoreboard();
                         break;
                     }
 
-                case CommandsEnum.Restart:
+                case CommandType.Restart:
                     {
                         this.RestartGame();
                         break;
                     }
 
-                case CommandsEnum.Help:
+                case CommandType.Help:
                     {
                         this.ExecuteHelpCommand();
                         break;
                     }
 
-                case CommandsEnum.Exit:
+                case CommandType.Exit:
                     {
                         this.EndGame();
                         break;
@@ -237,7 +236,7 @@ namespace Hangman.Models
 
                 default:
                     {
-                        this.GuessLetter(command.Name);
+                        this.GuessLetter(command.Arguments);
                         break;
                     }
             }

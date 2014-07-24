@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Interfaces\IReader.cs" />
     <Compile Include="Interfaces\IScoreboard.cs" />
@@ -46,11 +47,9 @@
     <Compile Include="Interfaces\IWordsRepository.cs" />
     <Compile Include="Interfaces\IWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Command.cs" />
-    <Compile Include="Utility\CommandsEnum.cs" />
-    <Compile Include="Utility\CommandsTypeFactory.cs" />
+    <Compile Include="Enums\CommandType.cs" />
     <Compile Include="Utility\ConsoleGameMessages.cs" />
-    <Compile Include="Utility\RandomProvider.cs" />
+    <Compile Include="Utility\RandomNumberProvider.cs" />
     <Compile Include="Utility\Utility.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -60,7 +60,7 @@ namespace Hangman.Console
                 this.Writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
                 string enteredString = this.Reader.Read().ToLower();
-                var currentCommand = new Command(enteredString);
+                var currentCommand = CommandFactory.ParseCommand(enteredString);
                 this.ProcessCommand(currentCommand);
             }
 
