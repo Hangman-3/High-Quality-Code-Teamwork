@@ -59,7 +59,7 @@ namespace Hangman.Console
                 this.ShowSecretWord(this.Word);
                 this.Writer.ShowMessage(ConsoleGameMessages.InviteUserInputMessage);
 
-                string enteredString = this.Reader.Read();
+                string enteredString = this.Reader.Read().ToLower();
                 var currentCommand = new Command(enteredString);
                 this.ProcessCommand(currentCommand);
             }

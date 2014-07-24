@@ -22,7 +22,7 @@ namespace Hangman.Common.Utility
         /// <summary>
         /// Random generator instance
         /// </summary>
-        private static readonly Random RandomGenerator = RandomNumberProvider.NewRandomizer;
+        private static readonly Random RandomGenerator = RandomProvider.NewRandomizer;
 
         /// <summary>
         /// Constant replacing the unknown char of the secret word
