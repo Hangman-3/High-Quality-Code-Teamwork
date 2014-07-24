@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
-    <Position X="7.25" Y="4" Width="1.5" />
+    <Position X="9.25" Y="4" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.Models.HangmanGame" Collapsed="true">
@@ -19,7 +19,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Models.Word" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="7.25" Y="3" Width="1.5" />
+    <Position X="9.25" Y="3" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
@@ -38,7 +38,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
-    <Position X="11" Y="3" Width="1.5" />
+    <Position X="13" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>NinjectoThreadSafe.cs</FileName>
@@ -82,7 +82,7 @@
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.WPF.AbstractMediator" Collapsed="true">
-    <Position X="9.25" Y="3" Width="1.5" />
+    <Position X="11.25" Y="3" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Class Name="Hangman.WPF.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
@@ -105,7 +105,20 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.WPF.Mediator" Collapsed="true">
-    <Position X="9.25" Y="4" Width="1.5" />
+    <Position X="11.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Hangman.Common.Utility.RandomNumberProvider" Collapsed="true">
+    <Position X="13" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Hangman.Models.Command" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hangman.Models.CommandFactory" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier />
   </Class>
   <Interface Name="System.ICloneable" Collapsed="true">
@@ -136,5 +149,13 @@
     <Position X="8.75" Y="1.25" Width="1.5" />
     <TypeIdentifier />
   </Interface>
+  <Interface Name="Hangman.Common.Interfaces.ICommand" Collapsed="true">
+    <Position X="10.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Hangman.Common.Enums.CommandType" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
