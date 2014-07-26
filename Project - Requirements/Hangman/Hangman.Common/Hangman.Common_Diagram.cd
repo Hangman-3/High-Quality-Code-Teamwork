@@ -1,64 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAEggAAAAAAAIAAAAQAAAAAAAABCBAAEACAAAAAAA=</HashCode>
+      <HashCode>ACAAEggAAAAAAAIAAAAQAAAAAAAABCBAAEAAAAAAAAA=</HashCode>
       <FileName>Utility\ConsoleGameMessages.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Hangman.Common.Utility.RandomNumberProvider" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Utility\RandomNumberProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="Hangman.Common.Utility.Utility" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAwQAAAAAAAAAAAAGAAgAEAAAAAAAAAAQ=</HashCode>
       <FileName>Utility\Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Interface Name="Hangman.Common.Interfaces.ICommand" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Interface Name="Hangman.Common.Interfaces.IPlayer" Collapsed="true">
-    <Position X="3" Y="1.5" Width="1.5" />
+    <Position X="2.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IReader" Collapsed="true">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="4" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IReader.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IScoreboard" Collapsed="true">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Interfaces\IScoreboard.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWord" Collapsed="true">
-    <Position X="4.75" Y="1.5" Width="1.5" />
+    <Position X="2.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAQ=</HashCode>
       <FileName>Interfaces\IWord.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWordsRepository" Collapsed="true">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+    <Position X="4" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Interfaces\IWordsRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Hangman.Common.Interfaces.IWriter" Collapsed="true">
-    <Position X="6.5" Y="1.5" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IWriter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="System.ICloneable" Collapsed="true">
-    <Position X="3" Y="0.5" Width="1.5" />
-    <TypeIdentifier />
-  </Interface>
+  <Enum Name="Hangman.Common.Enums.CommandType" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAIAAAAAAAAIAAAAAAIAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Enums\CommandType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

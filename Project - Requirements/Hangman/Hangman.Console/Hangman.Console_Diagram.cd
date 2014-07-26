@@ -3,7 +3,7 @@
   <Class Name="Hangman.Console.ConsoleHangman" Collapsed="true">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAQBAAQEAAAAAAAABCAAAAAAQgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQBAAQEAAAAAAAAACAAAAAAQgAA=</HashCode>
       <FileName>ConsoleHangman.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,7 +32,7 @@
   <Class Name="Hangman.Console.IOEngines.ConsoleWriter" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="3" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>BgAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IOEngines\ConsoleWriter.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
