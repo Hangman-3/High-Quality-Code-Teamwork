@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CustomHangman.cs" />
     <Compile Include="HangmanGameUnitTests.cs" />
+    <Compile Include="CommandUnitTests.cs" />
     <Compile Include="UtilityUnitTests.cs" />
     <Compile Include="WordUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
