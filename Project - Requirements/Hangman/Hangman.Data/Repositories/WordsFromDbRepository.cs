@@ -17,7 +17,7 @@ namespace Hangman.Data.Repositories
     /// <summary>
     /// Gets the collection of words from database
     /// </summary>
-    public class WordsFromDbRepository : WordsRepository
+    public class WordsFromDbRepository : AbstractWordsRepository
     {
         /// <summary>
         /// Path to Database file that contains the words

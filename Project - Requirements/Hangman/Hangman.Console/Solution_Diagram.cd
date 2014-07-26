@@ -72,11 +72,6 @@
     <Position X="8.75" Y="7.25" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="Hangman.Data.Repositories.WordsRepository" Collapsed="true">
-    <Position X="7" Y="5.75" Width="1.5" />
-    <TypeIdentifier />
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="Hangman.Common.Utility.ConsoleGameMessages" Collapsed="true">
     <Position X="0.5" Y="6.75" Width="1.5" />
     <TypeIdentifier />

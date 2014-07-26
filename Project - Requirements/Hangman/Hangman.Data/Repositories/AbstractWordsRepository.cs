@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="WordsRepository.cs" company="Telerik">
+// <copyright file="AbstractWordsRepository.cs" company="Telerik">
 //   Telerik Academy 2014
 // </copyright>
 // <summary>
@@ -15,7 +15,7 @@ namespace Hangman.Data.Repositories
     /// <summary>
     /// Holds the collection of words
     /// </summary>
-    public abstract class WordsRepository : IWordsRepository
+    public abstract class AbstractWordsRepository : IWordsRepository
     {
         /// <summary>
         /// collection of words

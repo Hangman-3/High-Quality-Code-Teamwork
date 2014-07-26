@@ -14,7 +14,7 @@ namespace Hangman.Data.Repositories
     /// <summary>
     /// Gets the collection of words from static collection
     /// </summary>
-    public class WordsFromStaticListRepository : WordsRepository
+    public class WordsFromStaticListRepository : AbstractWordsRepository
     {
         /// <summary>
         /// collections of words
