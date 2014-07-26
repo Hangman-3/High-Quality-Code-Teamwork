@@ -1,4 +1,13 @@
-﻿namespace Hangman.Common.Utility
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RandomNumberProvider.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// <summary>
+//   Defines a random number provider singleton
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Hangman.Common.Utility
 {
     using System;
     using System.Linq;
@@ -11,7 +20,7 @@
         private static readonly Random Instance = new Random();
 
         /// <summary>
-        /// Returns one and the same instanse of the 'Random' class
+        /// Gets one and the same instance of the 'Random' class
         /// </summary>
         public static Random Generator
         {

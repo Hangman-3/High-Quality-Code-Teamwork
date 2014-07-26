@@ -1,4 +1,13 @@
-﻿namespace Hangman.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Command.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// <summary>
+//   Class representing a command with arguments and enumerated type
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Hangman.Models
 {
     using System;
     using System.Linq;
@@ -10,19 +19,22 @@
     /// </summary>
     public class Command : ICommand
     {
+        /// <summary>
+        /// Private field keeps the command's arguments
+        /// </summary>
         private string arguments;
 
         /// <summary>
         ///  Initializes a new instance of the <see cref="Command" /> class.
         /// </summary>
-        /// <param arguments="arguments">Command's arguments based on user input</param>
+        /// <param name="arguments">Command's arguments based on user input</param>
         public Command(string arguments)
         {
             this.Arguments = arguments;
         }
 
         /// <summary>
-        /// Keeps the command's arguments
+        /// Gets or sets command's arguments
         /// </summary>
         public string Arguments
         {
@@ -38,12 +50,12 @@
                     throw new ArgumentNullException("Command arguments cannot be null or empty.");
                 }
 
-                arguments = value;
+                this.arguments = value;
             }
         }
 
         /// <summary>
-        /// Keeps the command type (enumeration)
+        /// Gets or sets command type (enumeration)
         /// </summary>
         public CommandType Type { get; set; }
     }

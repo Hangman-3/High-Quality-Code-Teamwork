@@ -1,4 +1,13 @@
-﻿namespace Hangman.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CommandFactory.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// <summary>
+//   Class representing a command factory
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Hangman.Models
 {
     using System;
     using System.Linq;
@@ -13,7 +22,7 @@
         /// <summary>
         /// Gets the Command's type based on its name
         /// </summary>
-        /// <param arguments="commandArgs">Command's arguments</param>
+        /// <param name="commandArgs">Command's arguments</param>
         /// <returns>Command type as an enumeration</returns>
         public static ICommand ParseCommand(string commandArgs)
         {
