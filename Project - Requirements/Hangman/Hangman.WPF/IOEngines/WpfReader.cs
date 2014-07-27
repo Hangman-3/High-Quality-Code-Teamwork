@@ -4,36 +4,32 @@
     using System.Windows.Controls;
     using Hangman.Common.Interfaces;
 
-    // 1. Document all members
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
-    //
     public class WpfReader : IReader
     {
-        private TextBox textbox;
+        private TextBlock textBlock;
 
-        public WpfReader(TextBox textBox)
+        public WpfReader(TextBlock textBlock)
         {
-            this.TextBox = textBox;
+            this.TextBlock = textBlock;
         }
 
-        public TextBox TextBox
+        public TextBlock TextBlock
         {
-            get { return this.textbox; }
+            get { return this.textBlock; }
             private set
             { 
                 if (value == null)
                 {
-                    //throw new NullReferenceException("TextBox instance cannot be null.");
+                    throw new NullReferenceException("TextBox instance cannot be null.");
                 }
 
-                this.textbox = value;
+                this.textBlock = value;
             }
         }
 
         public string Read()
         {
-            return this.TextBox.Text;
+            return this.TextBlock.Text;
         }
     }
 }

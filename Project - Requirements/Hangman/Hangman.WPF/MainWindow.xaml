@@ -4,59 +4,63 @@
         Title="Hangman" 
         Height="350"
         Width="525" 
-        ResizeMode="NoResize"
-        Loaded="OnWindowLoaded">
+        ResizeMode="NoResize">
 
     <Grid>
-        <TextBox Name="textBox"
-                 HorizontalAlignment="Left" 
-                 Height="44" 
-                 Margin="10,10,0,0" 
-                 TextWrapping="Wrap" 
-                 Text="TextBox" 
-                 VerticalAlignment="Top" 
-                 Width="208" />
-
-        <TextBlock Name="textBlock"
-                   HorizontalAlignment="Left" 
-                   Margin="43,59,0,0" 
+        <TextBlock x:Name="SecretWordTextBlock"
+                   TextAlignment="Center" 
+                   Height="44" 
+                   Margin="10,96,10,0" 
                    TextWrapping="Wrap" 
-                   Text="TextBlock" 
+                   VerticalAlignment="Top" FontSize="30" FontFamily="Consolas" Text="Secret Word" />
+
+        <TextBlock Name="CommandHiddenTextBlock"
+                   HorizontalAlignment="Left" 
+                   Margin="34,164,0,0" 
+                   TextWrapping="Wrap" 
                    VerticalAlignment="Top" 
                    Height="32" 
-                   Width="208" RenderTransformOrigin="0.091,0.188" />
-        
-        <Button Click="OnLetterButtonClick" Content="Q" HorizontalAlignment="Left" Margin="110,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="W" HorizontalAlignment="Left" Margin="139,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="E" HorizontalAlignment="Left" Margin="168,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="R" HorizontalAlignment="Left" Margin="197,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="T" HorizontalAlignment="Left" Margin="227,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="Y" HorizontalAlignment="Left" Margin="256,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="U" HorizontalAlignment="Left" Margin="285,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="I" HorizontalAlignment="Left" Margin="314,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="O" HorizontalAlignment="Left" Margin="343,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="P" HorizontalAlignment="Left" Margin="372,200,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="A" HorizontalAlignment="Left" Margin="125,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="S" HorizontalAlignment="Left" Margin="154,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="D" HorizontalAlignment="Left" Margin="183,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="F" HorizontalAlignment="Left" Margin="212,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="G" HorizontalAlignment="Left" Margin="241,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="H" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="J" HorizontalAlignment="Left" Margin="299,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="K" HorizontalAlignment="Left" Margin="328,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="L" HorizontalAlignment="Left" Margin="357,229,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="Z" HorizontalAlignment="Left" Margin="154,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="X" HorizontalAlignment="Left" Margin="183,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="C" HorizontalAlignment="Left" Margin="212,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="V" HorizontalAlignment="Left" Margin="241,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="B" HorizontalAlignment="Left" Margin="270,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="N" HorizontalAlignment="Left" Margin="299,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
-        <Button Click="OnLetterButtonClick" Content="M" HorizontalAlignment="Left" Margin="328,258,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+                   Width="208" RenderTransformOrigin="0.091,0.188"
+                   Visibility="Hidden"/>
 
-        <Button Content="Start" HorizontalAlignment="Left" Margin="418,20,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Restart" HorizontalAlignment="Left" Margin="418,45,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Help" HorizontalAlignment="Left" Margin="418,70,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Ranklist" HorizontalAlignment="Left" Margin="418,95,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="418,120,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock Visibility="Visible"
+                   TextAlignment="Center" 
+                   FontSize="18px"
+                   Name="MessageTextBlock" Margin="10,33,10,0" TextWrapping="Wrap" Text="Welcome to Hangman!" VerticalAlignment="Top" Height="126"/>
+
+        <Button Click="OnLetterButtonClick" Content="Q" HorizontalAlignment="Left" Margin="116,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="W" HorizontalAlignment="Left" Margin="145,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="E" HorizontalAlignment="Left" Margin="174,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="R" HorizontalAlignment="Left" Margin="203,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="T" HorizontalAlignment="Left" Margin="233,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="Y" HorizontalAlignment="Left" Margin="262,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="U" HorizontalAlignment="Left" Margin="291,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="I" HorizontalAlignment="Left" Margin="320,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="O" HorizontalAlignment="Left" Margin="349,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="P" HorizontalAlignment="Left" Margin="378,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="A" HorizontalAlignment="Left" Margin="131,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="S" HorizontalAlignment="Left" Margin="160,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="D" HorizontalAlignment="Left" Margin="189,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="F" HorizontalAlignment="Left" Margin="218,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="G" HorizontalAlignment="Left" Margin="247,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="H" HorizontalAlignment="Left" Margin="276,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="J" HorizontalAlignment="Left" Margin="305,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="K" HorizontalAlignment="Left" Margin="334,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="L" HorizontalAlignment="Left" Margin="363,225,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="Z" HorizontalAlignment="Left" Margin="160,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="X" HorizontalAlignment="Left" Margin="189,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="C" HorizontalAlignment="Left" Margin="218,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="V" HorizontalAlignment="Left" Margin="247,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="B" HorizontalAlignment="Left" Margin="276,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="N" HorizontalAlignment="Left" Margin="305,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+        <Button Click="OnLetterButtonClick" Content="M" HorizontalAlignment="Left" Margin="334,254,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
+
+        <Menu HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="519">
+            <MenuItem Header="_Start" Name="StartButton" Click="OnStartButtonClick" IsCheckable="True" />
+            <MenuItem Header="_Restart" Click="OnRestartButtonClick" />
+            <MenuItem Header="_Help" Click="OnHelpButtonClick"/>
+            <MenuItem Header="_Ranklist" Click="OnRankListButtonClick" />
+            <MenuItem Header="_Exit" Click="OnExitButtonClick"/>
+        </Menu>
     </Grid>
 </Window>

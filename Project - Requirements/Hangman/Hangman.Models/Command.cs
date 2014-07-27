@@ -50,7 +50,7 @@ namespace Hangman.Models
                     throw new ArgumentNullException("Command arguments cannot be null or empty.");
                 }
 
-                this.arguments = value;
+                this.arguments = value.ToLower();
             }
         }
 

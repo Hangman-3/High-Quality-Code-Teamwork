@@ -4,27 +4,70 @@
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
+    using Hangman.Common.Enums;
     using Hangman.Data.Repositories;
+    using Hangman.WPF.IOEngines;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        WpfHangman wpfHangman;
+
         public MainWindow()
         {
             this.InitializeComponent();
         }
 
-        public void OnWindowLoaded(object sender, RoutedEventArgs e)
+        public void RunGameEngine()
         {
-            var wpfHangman = new WpfHangman(new WordsFromFileRepository());
-            wpfHangman.Start();
+            var wpfReader = new WpfReader(this.CommandHiddenTextBlock);
+            var wpfWriter = new WpfWriter(this.MessageTextBlock, this.SecretWordTextBlock);
+            this.wpfHangman = new WpfHangman(wpfReader, wpfWriter, new WordsFromStaticListRepository());
+            this.wpfHangman.Start();
         }
 
-        public void OnLetterButtonClick(object sender, RoutedEventArgs e)
+        private void OnStartButtonClick(object sender, RoutedEventArgs e)
         {
-            this.textBlock.Text = (sender as Button).Content as string;
+            this.RunGameEngine();
+            this.StartButton.IsEnabled = false;
+        }
+
+        private void OnLetterButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ResponseCommand((sender as Button).Content as string);
+        }
+
+        private void OnRestartButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ResponseCommand(CommandType.Restart.ToString());
+        }
+
+        private void OnHelpButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ResponseCommand(CommandType.Help.ToString());
+        }
+
+        private void OnRankListButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ResponseCommand(CommandType.Top.ToString());
+        }
+
+        private void OnExitButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.ResponseCommand(CommandType.Exit.ToString());
+        }
+
+        private void ResponseCommand(string command)
+        {
+            if (this.wpfHangman == null)
+            {
+                return;
+            }
+
+            this.CommandHiddenTextBlock.Text = command;
+            this.wpfHangman.Response();
         }
     }
 }

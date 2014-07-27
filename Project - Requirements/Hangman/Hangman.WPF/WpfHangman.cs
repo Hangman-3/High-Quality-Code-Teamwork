@@ -2,26 +2,44 @@
 {
     using System;
     using System.Linq;
+    using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
-    using Hangman.Console.IOEngines;
-    using Hangman.Data.Repositories;
     using Hangman.Models;
-    using Hangman.WPF.IOEngines;
 
     public class WpfHangman : HangmanGame
     {
-        public WpfHangman()
-            : this(new WordsFromStaticListRepository())
-        {
-        }
-
-        public WpfHangman(IWordsRepository wordsRepository)
-            : base(new WpfReader(null), new WpfWriter(null), wordsRepository, new Scoreboard())
+        public WpfHangman(IReader reader, IWriter writer, IWordsRepository wordsRepository)
+            : base(reader, writer, wordsRepository, new Scoreboard())
         {
             this.Player = new Player();
             this.Word = new Word();
             this.SeedPlayers();
+        }
+
+        public void Response()
+        {
+            string enteredString = this.Reader.Read();
+            var command = CommandFactory.ParseCommand(enteredString);
+
+            if (this.Word.IsGuessed() && (command.Type == CommandType.Default || command.Type == CommandType.Help))
+            {
+                return;
+            }
+
+            this.ProcessCommand(command);
+
+            if (command.Type == CommandType.Top)
+            {
+                return;
+            }
+
+            this.ShowSecretWord(this.Word);
+
+            if (this.Word.IsGuessed())
+            {
+                this.ShowResult();
+            }
         }
 
         protected override void StartGameProcess()
@@ -29,15 +47,8 @@
             this.Word.SetRandomWord(this.Words);
             this.IsPlayerUsedHelpCommand = false;
             this.Player.MistakesCount = 0;
-            //while (!this.word.IsGuessed())
-            //{
-            //    this.ShowSecretWord(this.word);
-            //    this.writer.ShowMessage("Enter your guess: ");
-            //    string enteredString = this.reader.Read();
-            //    this.ProcessCommand(enteredString, this.word, this.player);
-            //}
-            // this.ShowResult(this.word);
-            //  this.RestartGame();
+            this.ShowSecretWord(this.Word);
+            this.Writer.ShowMessage("Enter your guess: ");
         }
 
         protected override void AddPlayerInScoreboard(IPlayer player)
@@ -46,39 +57,51 @@
             base.AddPlayerInScoreboard(player);
         }
 
-        protected override int GuessLetter(string command)
-        {
-            if (!command.IsValidLetter())
-            {
-                return 0;
-            }
-
-            int numberOfGuessedLetters = base.GuessLetter(command);
-            return numberOfGuessedLetters;
-        }
-
         protected override void RestartGame()
         {
             this.StartGameProcess();
         }
 
-        #region [Private methods]
-        
-        private void ShowResult(IWord word)
+        /// <summary>
+        /// Receives a command, check if it's valid and if it is, gives you the number of guessed letters
+        /// </summary>
+        /// <param name="command">String holding the command</param>
+        /// <returns>Integer representing the number of guessed letters</returns>
+        protected override int GuessLetter(string command)
         {
-            if (!this.IsPlayerUsedHelpCommand)
+            if (!command.IsValidLetter())
             {
-                this.Writer.ShowMessage("You won with {0} mistakes.\n", this.Player.MistakesCount);
-                this.ShowSecretWord(word);
-                
-                this.AddPlayerInScoreboard(this.Player);
-                this.ShowScoreboard();
+                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage);
+                return 0;
+            }
+
+            bool isAlreadyRevealed = this.Word.Secret.ToString().IndexOf(command) >= 0;
+            int numberOfGuessedLetters = base.GuessLetter(command);
+
+            if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
+            {
+                this.Writer.ShowMessage(string.Format(ConsoleGameMessages.NoSuchLetterMessage, command));
             }
             else
             {
-                this.Writer.ShowMessage("You won with {0} mistakes but you have cheated. You are not allowed\n", this.Player.MistakesCount);
-                this.Writer.ShowMessage("to enter into the Scoreboard.\n");
-                this.ShowSecretWord(word);
+                this.Writer.ShowMessage(string.Format(ConsoleGameMessages.GuessedLettersMessage, numberOfGuessedLetters));
+            }
+
+            return numberOfGuessedLetters;
+        }
+
+        #region [Private methods]
+        
+        private void ShowResult()
+        {
+            if (!this.IsPlayerUsedHelpCommand)
+            {
+                this.Writer.ShowMessage(string.Format("You won with {0} mistakes.", this.Player.MistakesCount));
+            }
+            else
+            {
+                this.Writer.ShowMessage(string.Format(@"You won with {0} mistakes but you have cheated.{1}You are not allowed to enter into the scoreboard.",
+                    this.Player.MistakesCount, Environment.NewLine));
             }
         }
         

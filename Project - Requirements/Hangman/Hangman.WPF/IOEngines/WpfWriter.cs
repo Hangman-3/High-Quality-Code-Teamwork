@@ -1,51 +1,80 @@
-﻿namespace Hangman.Console.IOEngines
+﻿namespace Hangman.WPF.IOEngines
 {
     using System;
     using System.Linq;
     using System.Text;
+    using System.Windows.Controls;
     using Hangman.Common.Interfaces;
-    using Hangman.WPF;
 
-    // 1. Document all members
-    // 2. Ensure all methods are unit-testable
-    // 3. Ensure property/members/methods validation
-    //
     public class WpfWriter : IWriter
     {
-        private MainWindow mainWindow;
+        private TextBlock messageBlock;
+        private TextBlock secretWordBlock;
 
-        public WpfWriter(MainWindow mainWindow)
+        public WpfWriter(TextBlock messageBlock, TextBlock secretWordBlock)
         {
-            this.MainWindow = mainWindow;
+            this.MessageBlock = messageBlock;
+            this.SecretWordBlock = secretWordBlock;
         }
 
-        public MainWindow MainWindow
+        public TextBlock MessageBlock
         {
-            get { return this.mainWindow; }
+            get { return this.messageBlock; }
             private set
             { 
                 if (value == null)
                 {
-                    // throw new NullReferenceException("Window instance cannot be null.");
+                    throw new NullReferenceException("MessageBlock instance cannot be null.");
                 }
 
-                this.mainWindow = value;
+                this.messageBlock = value;
+            }
+        }
+
+        public TextBlock SecretWordBlock
+        {
+            get { return this.secretWordBlock; }
+            private set
+            {
+                if (value == null)
+                {
+                    throw new NullReferenceException("SecretWordBlock instance cannot be null.");
+                }
+
+                this.secretWordBlock = value;
             }
         }
 
         public void ShowMessage(string message, params object[] @params)
         {
-            //this.MainWindow.Text = string.Format(message, @params);
+            this.MessageBlock.Text = message.ToString();
         }
 
         public void ShowSecretWord(StringBuilder secretWord)
         {
-            // TODO: Implement this method
-            // throw new NotImplementedException();
+            this.SecretWordBlock.Text = secretWord.ToString();
         }
 
-        public void ShowScoreboard(IScoreboard Scoreboard)
+        public void ShowScoreboard(IScoreboard scoreboard)
         {
+            this.SecretWordBlock.Text = "";
+
+            var output = new StringBuilder();
+            var players = scoreboard.Players.Take(5).OrderBy(p => p.MistakesCount).ToList();
+            if (players.Count == 0)
+            {
+                output.AppendLine("Empty Scoreboard!");
+                this.MessageBlock.Text = output.ToString();
+                return;
+            }
+
+            output.AppendLine("Scoreboard:");
+            for (int i = 0; i < players.Count; i++)
+            {
+                output.AppendFormat("#{0}. {1} - {2} mistakes\n", i + 1, players[i].Name, players[i].MistakesCount);
+            }
+
+            this.MessageBlock.Text = output.ToString();
         }
     }
 }
