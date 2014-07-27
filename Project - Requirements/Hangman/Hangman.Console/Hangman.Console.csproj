@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,14 +45,11 @@
     <Compile Include="ConsoleHangmanDemo.cs" />
     <Compile Include="IOEngines\ConsoleReader.cs" />
     <Compile Include="IOEngines\ConsoleWriter.cs" />
-    <Compile Include="Configuration\NinjectConfiguration.cs" />
-    <Compile Include="NinjectoThreadSafe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Hangman.Console_Diagram.cd" />
     <None Include="HangmanGame_CodeMap.dgml" />
-    <None Include="packages.config" />
     <None Include="Solution_Diagram.cd" />
   </ItemGroup>
   <ItemGroup>
