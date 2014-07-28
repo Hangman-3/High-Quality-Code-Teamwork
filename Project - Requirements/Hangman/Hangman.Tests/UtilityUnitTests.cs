@@ -162,6 +162,19 @@
         }
 
         [TestMethod]
+        public void TestOnIsGuessedMethodOnGuessedWordInCyrillic()
+        {
+            IWord word = new Word()
+            {
+                Original = new StringBuilder("компютър"),
+                Secret = new StringBuilder("компютър")
+            };
+
+            var isGuessed = word.IsGuessed();
+            Assert.AreEqual(true, isGuessed);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void TestOnGetNumberOfGuessedLetterOnNullWord()
         {
