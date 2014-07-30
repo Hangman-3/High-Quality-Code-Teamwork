@@ -60,7 +60,10 @@
             this.SecretWordBlock.Text = "";
 
             var output = new StringBuilder();
-            var players = scoreboard.Players.Take(numberOfPlayers).OrderBy(p => p.MistakesCount).ToList();
+            var players = scoreboard.Players
+                .OrderBy(p => p.MistakesCount)
+                .Take(numberOfPlayers)
+                .ToList();
 
             if (players.Count == 0)
             {
