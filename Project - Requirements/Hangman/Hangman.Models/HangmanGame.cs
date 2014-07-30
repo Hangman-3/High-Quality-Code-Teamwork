@@ -23,6 +23,11 @@ namespace Hangman.Models
     public abstract class HangmanGame
     {
         /// <summary>
+        /// The maximal number of top players shown in the ranklist
+        /// </summary>
+        private const int maxNumberOfPlayers = 5;
+
+        /// <summary>
         /// A concrete implementation of IReader interface
         /// </summary>
         private IReader reader;
@@ -258,7 +263,7 @@ namespace Hangman.Models
         /// </summary>
         protected void ShowScoreboard()
         {
-            this.Writer.ShowScoreboard(this.Scoreboard);
+            this.Writer.ShowScoreboard(this.Scoreboard, maxNumberOfPlayers);
         }
 
         #endregion

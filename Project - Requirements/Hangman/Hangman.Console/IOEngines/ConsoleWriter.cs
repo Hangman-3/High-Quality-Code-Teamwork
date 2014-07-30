@@ -53,9 +53,13 @@ namespace Hangman.Console.IOEngines
         /// Displays the scoreboard on the console
         /// </summary>
         /// <param name="scoreboard">Scoreboard object holding info about the score</param>
-        public void ShowScoreboard(IScoreboard scoreboard)
+        public void ShowScoreboard(IScoreboard scoreboard, int numberOfPlayers)
         {
-            var players = scoreboard.Players.OrderBy(p => p.MistakesCount).ToList();
+            var players = scoreboard.Players
+                .OrderBy(p => p.MistakesCount)
+                .Take(numberOfPlayers)
+                .ToList();
+
             if (players.Count == 0)
             {
                 this.ShowMessage("\nEmpty Scoreboard!\n");

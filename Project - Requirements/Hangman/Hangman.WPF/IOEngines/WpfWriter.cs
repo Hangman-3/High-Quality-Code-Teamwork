@@ -21,7 +21,7 @@
         {
             get { return this.messageBlock; }
             private set
-            { 
+            {
                 if (value == null)
                 {
                     throw new NullReferenceException("MessageBlock instance cannot be null.");
@@ -55,12 +55,13 @@
             this.SecretWordBlock.Text = secretWord.ToString();
         }
 
-        public void ShowScoreboard(IScoreboard scoreboard)
+        public void ShowScoreboard(IScoreboard scoreboard, int numberOfPlayers)
         {
             this.SecretWordBlock.Text = "";
 
             var output = new StringBuilder();
-            var players = scoreboard.Players.Take(5).OrderBy(p => p.MistakesCount).ToList();
+            var players = scoreboard.Players.Take(numberOfPlayers).OrderBy(p => p.MistakesCount).ToList();
+
             if (players.Count == 0)
             {
                 output.AppendLine("Empty Scoreboard!");
