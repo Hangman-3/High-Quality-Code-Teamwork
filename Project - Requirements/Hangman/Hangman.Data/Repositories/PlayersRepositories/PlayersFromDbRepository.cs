@@ -1,4 +1,13 @@
-﻿namespace Hangman.Data.Repositories
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PlayersFromDbRepository.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// <summary>
+//   Class representing a database players repository
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Hangman.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
@@ -7,14 +16,29 @@
     using Hangman.Common.Interfaces;
     using System.Data;
 
+    /// <summary>
+    /// Store all game players in database
+    /// </summary>
     public class PlayersFromDbRepository
     {
+        /// <summary>
+        /// Path to Database file that contains all players
+        /// </summary>
         private const string DbFilePath = "../../../Hangman.Data/Database/Players/players.mdb";
 
+        /// <summary>
+        /// Connection string used to open the database
+        /// </summary>
         private const string DbConnectionString = @"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath;
 
+        /// <summary>
+        /// Collection of players
+        /// </summary>
         private HashSet<KeyValuePair<string, int>> players = new HashSet<KeyValuePair<string, int>>();
 
+        /// <summary>
+        /// Gets or sets the collections of players
+        /// </summary>
         public IList<KeyValuePair<string, int>> Players
         {
             get
@@ -27,11 +51,18 @@
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlayersFromDbRepository"/> class.
+        /// </summary>
         public PlayersFromDbRepository()
         {
             this.Players = this.ReadPlayersFromDb();
         }
 
+        /// <summary>
+        /// Gets the collection of players from database
+        /// </summary>
+        /// <returns>Collection of players</returns>
         private IList<KeyValuePair<string, int>> ReadPlayersFromDb()
         {
             CheckDbFilePath();
@@ -63,6 +94,10 @@
             return playersCollection;
         }
 
+        /// <summary>
+        /// Insert some player in the collection of players in database
+        /// </summary>
+        /// <param name="player">The player</param>
         public void InsertPlayerInDb(KeyValuePair<string, int> player)
         {
             CheckDbFilePath();
@@ -98,6 +133,11 @@
             }
         }
 
+        /// <summary>
+        /// Update the information about some player in the database
+        /// </summary>
+        /// <param name="connection">Database connection</param>
+        /// <param name="player">The updated player</param>
         private static void UpdateDb(OleDbConnection connection, KeyValuePair<string, int> player)
         {
             connection.Open();
@@ -109,6 +149,9 @@
             oleDbCommand.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Check whether the database file with the players exist
+        /// </summary>
         private static void CheckDbFilePath()
         {
             if (!File.Exists(DbFilePath))
