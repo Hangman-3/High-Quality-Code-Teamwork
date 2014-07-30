@@ -4,6 +4,7 @@
     using System.Linq;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Windows.Input;
     using Hangman.Common.Enums;
     using Hangman.Data.Repositories;
     using Hangman.WPF.IOEngines;
@@ -18,6 +19,7 @@
         public MainWindow()
         {
             this.InitializeComponent();
+            TextCompositionManager.AddTextInputHandler(this, new TextCompositionEventHandler(OnTextComposition));
         }
 
         public void RunGameEngine()
@@ -68,6 +70,12 @@
 
             this.CommandHiddenTextBlock.Text = command;
             this.wpfHangman.Response();
+        }
+
+        private void OnTextComposition(object sender, TextCompositionEventArgs e)
+        {
+            string key = e.Text;
+            this.ResponseCommand(key);
         }
     }
 }
