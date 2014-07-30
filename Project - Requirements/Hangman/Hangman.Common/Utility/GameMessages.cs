@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ConsoleGameMessages.cs" company="Telerik">
+// <copyright file="GameMessages.cs" company="Telerik">
 //   Telerik Academy 2014
 // </copyright>
 // <summary>
@@ -14,7 +14,7 @@ namespace Hangman.Common.Utility
     /// <summary>
     /// Static class containing game messages
     /// </summary>
-    public static class ConsoleGameMessages
+    public static class GameMessages
     {
         /// <summary>
         /// Welcome message
@@ -64,6 +64,6 @@ namespace Hangman.Common.Utility
         /// <summary>
         /// Trying to cheat message
         /// </summary>
-        public const string CheatedGameMessage = "You won with {0} mistakes but you have cheated. You are not allowed to enter into the scoreboard.";
+        public const string CheatedGameMessage = "You won with {0} mistakes but you have cheated.{1}You are not allowed to enter into the scoreboard.";
     }
 }

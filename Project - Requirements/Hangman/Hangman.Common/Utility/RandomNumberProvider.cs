@@ -13,10 +13,13 @@ namespace Hangman.Common.Utility
     using System.Linq;
 
     /// <summary>
-    /// Provides a single instance of the 'Random' class
+    /// Provides a single instance of the <see cref="Random" /> class
     /// </summary>
     public sealed class RandomNumberProvider
     {
+        /// <summary>
+        /// A single instance of the <see cref="Random" /> class
+        /// </summary>
         private static readonly Random Instance = new Random();
 
         /// <summary>

@@ -1,16 +1,30 @@
-﻿namespace Hangman.WPF
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="WpfHangman.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+namespace Hangman.WPF
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Data.Repositories;
     using Hangman.Models;
 
+    /// <summary>
+    /// Implements Hangman game for WPF
+    /// </summary>
     public class WpfHangman : HangmanGame
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WpfHangman" /> class.
+        /// </summary>
+        /// <param name="reader">The reader</param>
+        /// <param name="writer">The writer</param>
+        /// <param name="wordsRepository">IWordRepository containing original words, one of which the user must guess</param>
         public WpfHangman(IReader reader, IWriter writer, IWordsRepository wordsRepository)
             : base(reader, writer, wordsRepository, new Scoreboard())
         {
@@ -19,6 +33,9 @@
             this.SeedPlayers();
         }
 
+        /// <summary>
+        /// Response to the entered string
+        /// </summary>
         public void Response()
         {
             string enteredString = this.Reader.Read();
@@ -44,6 +61,9 @@
             }
         }
 
+        /// <summary>
+        /// Starts the game logic
+        /// </summary>
         protected override void StartGameProcess()
         {
             this.Word.SetRandomWord(this.Words);
@@ -53,12 +73,19 @@
             this.Writer.ShowMessage("Enter your guess: ");
         }
 
+        /// <summary>
+        /// Adds some player in the scoreboard
+        /// </summary>
+        /// <param name="player">The player</param>
         protected override void AddPlayerInScoreboard(IPlayer player)
         {
             this.Writer.ShowMessage("Please enter your name for the top Scoreboard: ");
             base.AddPlayerInScoreboard(player);
         }
 
+        /// <summary>
+        /// Restart the game
+        /// </summary>
         protected override void RestartGame()
         {
             this.StartGameProcess();
@@ -73,7 +100,7 @@
         {
             if (!command.IsValidLetter())
             {
-                this.Writer.ShowMessage(ConsoleGameMessages.WrongInputMessage);
+                this.Writer.ShowMessage(GameMessages.WrongInputMessage);
                 return 0;
             }
 
@@ -82,11 +109,11 @@
 
             if (numberOfGuessedLetters == 0 || isAlreadyRevealed)
             {
-                this.Writer.ShowMessage(string.Format(ConsoleGameMessages.NoSuchLetterMessage, command));
+                this.Writer.ShowMessage(string.Format(GameMessages.NoSuchLetterMessage, command));
             }
             else
             {
-                this.Writer.ShowMessage(string.Format(ConsoleGameMessages.GuessedLettersMessage, numberOfGuessedLetters));
+                this.Writer.ShowMessage(string.Format(GameMessages.GuessedLettersMessage, numberOfGuessedLetters));
             }
 
             return numberOfGuessedLetters;
@@ -94,16 +121,18 @@
 
         #region [Private methods]
 
+        /// <summary>
+        /// Show some message at the end of the game
+        /// </summary>
         private void ShowResult()
         {
             if (!this.IsPlayerUsedHelpCommand)
             {
-                this.Writer.ShowMessage(string.Format("You won with {0} mistakes.", this.Player.MistakesCount));
+                this.Writer.ShowMessage(string.Format(GameMessages.WonGameMessage, this.Player.MistakesCount));
             }
             else
             {
-                this.Writer.ShowMessage(string.Format(@"You won with {0} mistakes but you have cheated.{1}You are not allowed to enter into the scoreboard.",
-                    this.Player.MistakesCount, Environment.NewLine));
+                this.Writer.ShowMessage(string.Format(GameMessages.CheatedGameMessage, this.Player.MistakesCount, Environment.NewLine));
             }
         }
 

@@ -34,6 +34,7 @@ namespace Hangman.Common.Interfaces
         /// Displays the scoreboard
         /// </summary>
         /// <param name="scoreboard">Scoreboard to be displayed</param>
+        /// <param name="numberOfPlayers">The maximal number of top players shown in the rank list</param>
         void ShowScoreboard(IScoreboard scoreboard, int numberOfPlayers);
     }
 }

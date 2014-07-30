@@ -20,14 +20,14 @@ namespace Hangman.Common.Utility
     public static class Utility
     {
         /// <summary>
-        /// Random generator instance
-        /// </summary>
-        private static readonly Random RandomGenerator = RandomNumberProvider.Generator;
-
-        /// <summary>
         /// Constant replacing the unknown char of the secret word
         /// </summary>
         private const char EmptyCellLetter = '_';
+
+        /// <summary>
+        /// Random generator instance
+        /// </summary>
+        private static readonly Random RandomGenerator = RandomNumberProvider.Generator;
 
         /// <summary>
         /// Generates random number between 0 and max

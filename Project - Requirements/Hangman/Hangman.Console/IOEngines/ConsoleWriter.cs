@@ -20,7 +20,7 @@ namespace Hangman.Console.IOEngines
         /// <summary>
         /// Sleeping time when the message is printed
         /// </summary>
-        protected const int SleepTime = 0;
+        protected const int SleepTime = 2;
 
         /// <summary>
         /// Prints message on the console
@@ -38,7 +38,7 @@ namespace Hangman.Console.IOEngines
         }
 
         /// <summary>
-        /// Displays the secret word(or what is guessed of it)
+        /// Displays the secret word (or what is guessed of it)
         /// </summary>
         /// <param name="secretWord">StringBuilder object that hold the secret word</param>
         public void ShowSecretWord(StringBuilder secretWord)
@@ -53,6 +53,7 @@ namespace Hangman.Console.IOEngines
         /// Displays the scoreboard on the console
         /// </summary>
         /// <param name="scoreboard">Scoreboard object holding info about the score</param>
+        /// <param name="numberOfPlayers">The maximal number of top players shown in the rank list</param>
         public void ShowScoreboard(IScoreboard scoreboard, int numberOfPlayers)
         {
             var players = scoreboard.Players

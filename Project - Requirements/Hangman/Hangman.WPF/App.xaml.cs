@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="App.xaml.cs" company="Telerik">
+//   Telerik Academy 2014
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace Hangman.WPF
 {
+    using System.Windows;
+
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Interaction logic for App XAML
     /// </summary>
     public partial class App : Application
     {
