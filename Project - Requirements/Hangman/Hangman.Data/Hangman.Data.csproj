@@ -39,7 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\wordsDataSet.Designer.cs">
+    <Compile Include="Database\Players\playersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>playersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Words\wordsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>wordsDataSet.xsd</DependentUpon>
@@ -50,10 +55,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\WordsFromDbRepository.cs" />
-    <Compile Include="Repositories\WordsFromStaticListRepository.cs" />
-    <Compile Include="Repositories\WordsFromFileRepository.cs" />
-    <Compile Include="Repositories\AbstractWordsRepository.cs" />
+    <Compile Include="Repositories\PlayersRepositories\PlayersFromDbRepository.cs" />
+    <Compile Include="Repositories\WordsRepositories\WordsFromDbRepository.cs" />
+    <Compile Include="Repositories\WordsRepositories\WordsFromStaticListRepository.cs" />
+    <Compile Include="Repositories\WordsRepositories\WordsFromFileRepository.cs" />
+    <Compile Include="Repositories\WordsRepositories\AbstractWordsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">
@@ -63,16 +69,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Database\Players\playersDataSet.xsc">
+      <DependentUpon>playersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database\Players\playersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>playersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database\Players\playersDataSet.xss">
+      <DependentUpon>playersDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Hangman.Data_Diagram.cd" />
-    <None Include="Database\wordsDataSet.xsc">
+    <None Include="Database\Words\wordsDataSet.xsc">
       <DependentUpon>wordsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\wordsDataSet.xsd">
+    <None Include="Database\Words\wordsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>wordsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Database\wordsDataSet.xss">
+    <None Include="Database\Words\wordsDataSet.xss">
       <DependentUpon>wordsDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -82,10 +99,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Database\words-bg.txt" />
-    <Content Include="Database\words-en.txt" />
-    <Content Include="Database\words-it.txt" />
-    <Content Include="Database\words.mdb">
+    <Content Include="Database\Players\players.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database\Words\words-bg.txt" />
+    <Content Include="Database\Words\words-en.txt" />
+    <Content Include="Database\Words\words-it.txt" />
+    <Content Include="Database\Words\words.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

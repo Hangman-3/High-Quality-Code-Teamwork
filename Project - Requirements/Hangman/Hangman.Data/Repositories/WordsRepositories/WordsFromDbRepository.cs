@@ -22,7 +22,7 @@ namespace Hangman.Data.Repositories
         /// <summary>
         /// Path to Database file that contains the words
         /// </summary>
-        private const string DbFilePath = "../../../Hangman.Data/Database/words.mdb";
+        private const string DbFilePath = "../../../Hangman.Data/Database/Words/words.mdb";
 
         /// <summary>
         /// Connection string used to open the database

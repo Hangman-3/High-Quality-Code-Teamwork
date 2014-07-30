@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Hangman.Data.Database {
+namespace Hangman.Data.Database.Words {
     
     
     /// <summary>
@@ -1435,7 +1435,7 @@ namespace Hangman.Data.Database {
         }
     }
 }
-namespace Hangman.Data.Database.wordsDataSetTableAdapters {
+namespace Hangman.Data.Database.Words.wordsDataSetTableAdapters {
     
     
     /// <summary>
