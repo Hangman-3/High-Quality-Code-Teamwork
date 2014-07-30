@@ -1,10 +1,12 @@
 ﻿namespace Hangman.WPF
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
+    using Hangman.Data.Repositories;
     using Hangman.Models;
 
     public class WpfHangman : HangmanGame
@@ -91,7 +93,7 @@
         }
 
         #region [Private methods]
-        
+
         private void ShowResult()
         {
             if (!this.IsPlayerUsedHelpCommand)
@@ -104,37 +106,24 @@
                     this.Player.MistakesCount, Environment.NewLine));
             }
         }
-        
+
         /// <summary>
-        /// Seeds players for test purposes
+        /// Seeds players from DB for test purposes
         /// </summary>
         private void SeedPlayers()
         {
-            this.Scoreboard.AddPlayer(new Player()
+            PlayersFromDbRepository dbPlayers = new PlayersFromDbRepository();
+            IList<KeyValuePair<string, int>> players = dbPlayers.Players;
+            for (int i = 0; i < players.Count; i++)
             {
-                Name = "Martin Nikolov",
-                MistakesCount = 5
-            });
-            
-            this.Scoreboard.AddPlayer(new Player()
-            {
-                Name = "Martin Tonkov",
-                MistakesCount = 4
-            });
-            
-            this.Scoreboard.AddPlayer(new Player()
-            {
-                Name = "Slavi",
-                MistakesCount = 6
-            });
-            
-            this.Scoreboard.AddPlayer(new Player()
-            {
-                Name = "Stefan",
-                MistakesCount = 2
-            });
+                IPlayer player = new Player();
+                player.Name = players[i].Key;
+                player.MistakesCount = players[i].Value;
+
+                this.Scoreboard.AddPlayer(player);
+            }
         }
-        
+
         #endregion
     }
 }

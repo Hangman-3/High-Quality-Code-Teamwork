@@ -15,6 +15,7 @@ namespace Hangman.Models
     using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
+    using Hangman.Data.Repositories;
 
     /// <summary>
     /// Main abstract class of the Hangman game.
@@ -41,7 +42,7 @@ namespace Hangman.Models
         /// IPlayer object that holds the information about the player
         /// </summary>
         private IPlayer player;
-        
+
         /// <summary>
         /// A concrete implementation of IWord interface
         /// Represents word as its original and secret (masked) word
@@ -273,6 +274,11 @@ namespace Hangman.Models
             string playerName = this.Reader.Read();
             player.Name = playerName;
             this.Scoreboard.AddPlayer(player.Clone() as IPlayer);
+
+            // Add player in Database
+            PlayersFromDbRepository dbPlayers = new PlayersFromDbRepository();
+            KeyValuePair<string, int> dbPlayer = new KeyValuePair<string, int>(player.Name, player.MistakesCount);
+            dbPlayers.InsertPlayerInDb(dbPlayer);
         }
 
         /// <summary>
@@ -323,7 +329,7 @@ namespace Hangman.Models
             this.IsPlayerUsedHelpCommand = true;
             word.TipOffFirstUnknownLetter();
         }
-        
+
         #endregion
     }
 }
