@@ -5,7 +5,6 @@
         Height="350"
         Width="525" 
         ResizeMode="NoResize">
-
     <Grid>
         <Border Grid.Row="1" Grid.ColumnSpan="2">
             <Border.Background>
@@ -35,7 +34,11 @@
         <TextBlock Visibility="Visible"
                    TextAlignment="Center" 
                    FontSize="18px"
-                   Name="MessageTextBlock" Margin="10,33,10,0" TextWrapping="Wrap" Text="Welcome to Hangman!" VerticalAlignment="Top" Height="126"/>
+                   Name="MessageTextBlock" Margin="10,33,10,0" TextWrapping="Wrap" Text="Welcome to Hangman!" VerticalAlignment="Top" Height="149"/>
+
+        <TextBlock HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"
+                   Margin="12,290,0,0" Foreground="White" Text="V 1.0"/>
 
         <Button Click="OnLetterButtonClick" Content="Q" HorizontalAlignment="Left" Margin="116,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
         <Button Click="OnLetterButtonClick" Content="W" HorizontalAlignment="Left" Margin="145,196,0,0" VerticalAlignment="Top" Width="24" Height="24"/>
