@@ -21,7 +21,7 @@ namespace Hangman.Data.Repositories
         /// <summary>
         /// Path to text file that contains the words
         /// </summary>
-        private const string WordsFilePath = "../../../Hangman.Data/Database/words-en.txt";
+        private const string WordsFilePath = "../../../Hangman.Data/Database/Words/words-en.txt";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="WordsFromFileRepository"/> class.

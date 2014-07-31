@@ -78,7 +78,7 @@ namespace Hangman.Data.Repositories
                         isExistNameInDb = true;
                         if (player.Value < this.Players[i].Value)
                         {
-                            this.UpdateDb(connection, player);
+                            this.UpdatePlayersDb(connection, player);
                         }
 
                         break;
@@ -139,7 +139,7 @@ namespace Hangman.Data.Repositories
         /// </summary>
         /// <param name="connection">Database connection</param>
         /// <param name="player">The updated player</param>
-        private void UpdateDb(OleDbConnection connection, KeyValuePair<string, int> player)
+        private void UpdatePlayersDb(OleDbConnection connection, KeyValuePair<string, int> player)
         {
             connection.Open();
             var updateString = "UPDATE Players SET Mistakes = @mistakes WHERE Players = @player";
