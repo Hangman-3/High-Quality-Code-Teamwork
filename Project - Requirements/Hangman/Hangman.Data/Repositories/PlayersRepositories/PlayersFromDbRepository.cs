@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Hangman.Data.Repositories
+namespace Hangman.Data.Repositories.PlayersRepositories
 {
     using System;
     using System.Collections.Generic;

@@ -11,7 +11,7 @@ namespace Hangman.WPF
     using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
-    using Hangman.Data.Repositories;
+    using Hangman.Data.Repositories.PlayersRepositories;
     using Hangman.Models;
 
     /// <summary>

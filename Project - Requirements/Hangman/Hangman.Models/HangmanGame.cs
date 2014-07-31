@@ -15,7 +15,7 @@ namespace Hangman.Models
     using Hangman.Common.Enums;
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
-    using Hangman.Data.Repositories;
+    using Hangman.Data.Repositories.PlayersRepositories;
 
     /// <summary>
     /// Main abstract class of the Hangman game.
@@ -74,8 +74,8 @@ namespace Hangman.Models
         /// </summary>
         protected IReader Reader
         {
-            get 
-            { 
+            get
+            {
                 return this.reader;
             }
 
@@ -95,9 +95,9 @@ namespace Hangman.Models
         /// </summary>
         protected IWriter Writer
         {
-            get 
-            { 
-                return this.writer; 
+            get
+            {
+                return this.writer;
             }
 
             set
@@ -116,9 +116,9 @@ namespace Hangman.Models
         /// </summary>
         protected IScoreboard Scoreboard
         {
-            get 
-            { 
-                return this.scoreboard; 
+            get
+            {
+                return this.scoreboard;
             }
 
             set
@@ -137,9 +137,9 @@ namespace Hangman.Models
         /// </summary>
         protected IPlayer Player
         {
-            get 
-            { 
-                return this.player; 
+            get
+            {
+                return this.player;
             }
 
             set
@@ -158,9 +158,9 @@ namespace Hangman.Models
         /// </summary>
         protected IWord Word
         {
-            get 
-            { 
-                return this.word; 
+            get
+            {
+                return this.word;
             }
 
             set
@@ -272,8 +272,8 @@ namespace Hangman.Models
 
             // Add player in Database
             PlayersFromDbRepository playersRepository = new PlayersFromDbRepository();
-            KeyValuePair<string, int> playersFromDatabase = new KeyValuePair<string, int>(player.Name, player.MistakesCount);
-            playersRepository.InsertPlayerInDb(playersFromDatabase);
+            KeyValuePair<string, int> playerFromDatabase = new KeyValuePair<string, int>(player.Name, player.MistakesCount);
+            playersRepository.InsertPlayerInDb(playerFromDatabase);
         }
 
         /// <summary>
