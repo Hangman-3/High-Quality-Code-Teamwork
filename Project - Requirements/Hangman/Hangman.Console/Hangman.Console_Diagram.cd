@@ -14,13 +14,6 @@
       <FileName>ConsoleHangmanDemo.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Console.NinjectoThreadSafe" Collapsed="true">
-    <Position X="5.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>NinjectoThreadSafe.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Hangman.Console.IOEngines.ConsoleReader" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
