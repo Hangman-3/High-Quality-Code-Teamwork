@@ -2,13 +2,61 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Hangman.Common.Interfaces;
     using Hangman.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Hangman.Data.Repositories;
 
     [TestClass]
     public class PlayerUnitTests
     {
+        private int timestamp;
+        private int timestampCountdown;
+        private PlayersFromDbRepository playersFromDb;
+
+        [TestInitialize]
+        public void InitializeTimestamp()
+        {
+            timestamp = int.Parse(DateTime.Now.ToString("MMddHHmmss"));
+            timestampCountdown = int.MaxValue - timestamp;
+            playersFromDb = new PlayersFromDbRepository();
+        }
+
+        [TestMethod]
+        public void TestInsertPlayerInDbRepository()
+        {
+            string NewTestPlayerName = "NewTestPlayer " + timestamp;
+            var player = new KeyValuePair<string, int>(NewTestPlayerName, timestamp);
+            playersFromDb.InsertPlayerInDb(player);
+
+            var newPlayersFromDb = new PlayersFromDbRepository();
+
+            var listOfPlayers = newPlayersFromDb.Players;
+            var lastPlayer = listOfPlayers[listOfPlayers.Count - 1];
+
+            Assert.AreEqual(NewTestPlayerName, lastPlayer.Key);
+            Assert.AreEqual(timestamp, lastPlayer.Value);
+        }
+
+        [TestMethod]
+        public void TestUpdatePlayerInDbRepository()
+        {
+            string updateTestPlayerName = "UpdateTestPlayer";
+            var player = new KeyValuePair<string, int>(updateTestPlayerName, timestampCountdown);
+            playersFromDb.InsertPlayerInDb(player);
+
+            var newPlayersFromDb = new PlayersFromDbRepository();
+
+            var listOfPlayers = newPlayersFromDb.Players;
+            var updatedPlayer =
+                from p in listOfPlayers
+                where p.Key == updateTestPlayerName
+                select p.Value;
+
+            Assert.AreEqual(timestampCountdown, updatedPlayer.ToArray()[0]);
+        }
+
         [TestMethod]
         public void TestClonePlayer()
         {

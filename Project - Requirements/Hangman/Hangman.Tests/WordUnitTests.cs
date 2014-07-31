@@ -3,13 +3,41 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Hangman.Common.Utility;
     using Hangman.Models;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Hangman.Data.Repositories;
 
     [TestClass]
     public class WordUnitTests
     {
+        [TestMethod]
+        public void TestWordsFromStaticListRepository()
+        {
+            var wordsFromStaticList = new WordsFromStaticListRepository();
+            string firstWord = wordsFromStaticList.Words[0];
+
+            Assert.AreEqual("computer", firstWord);
+        }
+
+        [TestMethod]
+        public void TestWordsFromFileRepository()
+        {
+            var wordsFromFile = new WordsFromFileRepository();
+            string firstWord = wordsFromFile.Words[0];
+
+            Assert.AreEqual("abandon", firstWord);
+        }
+
+        [TestMethod]
+        public void TestWordsFromDbRepository()
+        {
+            var wordsFromDb = new WordsFromDbRepository();
+            string firstWord = wordsFromDb.Words[0];
+
+            Assert.AreEqual("abandon", firstWord);
+        }
+
         [TestMethod]
         public void TestIsOriginalWordValidationWithInvalidSymbolsInTheEnd()
         {
