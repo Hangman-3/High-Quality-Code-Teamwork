@@ -5,8 +5,8 @@
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Hangman.Common.Interfaces;
+    using Hangman.Data.Repositories.PlayersRepositories;
     using Hangman.Models;
-    using Hangman.Data.Repositories;
 
     [TestClass]
     public class PlayerUnitTests
