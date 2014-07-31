@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Hangman.Data.Repositories
+namespace Hangman.Data.Repositories.WordsRepositories
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Hangman.Data.Repositories
     using System.IO;
 
     /// <summary>
-    /// Gets the collection of words from database
+    /// The 'ConcreteHandler' class. Gets the collection of words from database
     /// </summary>
     public class WordsFromDbRepository : AbstractWordsRepository
     {
@@ -30,24 +30,14 @@ namespace Hangman.Data.Repositories
         private const string DbConnectionString = @"provider=microsoft.jet.oledb.4.0;data source=" + DbFilePath;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WordsFromDbRepository"/> class.
+        /// Reads a words from external database repository
         /// </summary>
-        public WordsFromDbRepository()
-        {
-            this.Words = this.ReadWordsFromDb();
-        }
-
-        /// <summary>
-        /// Gets the collection of words from database
-        /// </summary>
-        /// <returns>Collection of words</returns>
-        private IList<string> ReadWordsFromDb()
+        /// <returns>Returns a list of collection of words</returns>
+        public override IList<string> ReadWords()
         {
             if (!File.Exists(DbFilePath))
             {
-                string fullFilePath = Path.GetFullPath(DbFilePath);
-                string exceptionMessage = string.Format("Database file: \"{0}\" does not exists.", fullFilePath);
-                throw new FileNotFoundException(exceptionMessage);
+                return this.Successor.ReadWords();
             }
 
             var wordsCollection = new List<string>();

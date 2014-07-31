@@ -7,17 +7,17 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Hangman.Data.Repositories
+namespace Hangman.Data.Repositories.WordsRepositories
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// Gets the collection of words from static collection
+    /// The 'ConcreteHandler' class. Gets the collection of words from static collection.
     /// </summary>
     public class WordsFromStaticListRepository : AbstractWordsRepository
     {
         /// <summary>
-        /// collections of words
+        /// Collection of static words
         /// </summary>
         private readonly IList<string> staticListWords = new List<string>()
         {
@@ -34,11 +34,12 @@ namespace Hangman.Data.Repositories
         };
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WordsFromStaticListRepository"/> class.
+        /// Reads a words from static list repository
         /// </summary>
-        public WordsFromStaticListRepository()
+        /// <returns>Returns a list of collection of static words</returns>
+        public override IList<string> ReadWords()
         {
-            this.Words = this.staticListWords;
+            return this.staticListWords;
         }
     }
 }

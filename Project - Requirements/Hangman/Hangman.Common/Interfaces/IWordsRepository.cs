@@ -20,5 +20,11 @@ namespace Hangman.Common.Interfaces
         /// Gets or sets a collection containing words to guess (original words)
         /// </summary>
         IList<string> Words { get; set; }
+
+        /// <summary>
+        /// Reads a list of words from some repository
+        /// </summary>
+        /// <returns>Returns a collection of words</returns>
+        IList<string> ReadWords();
     }
 }

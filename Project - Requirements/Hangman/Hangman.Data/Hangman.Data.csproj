@@ -60,6 +60,7 @@
     <Compile Include="Repositories\WordsRepositories\WordsFromStaticListRepository.cs" />
     <Compile Include="Repositories\WordsRepositories\WordsFromFileRepository.cs" />
     <Compile Include="Repositories\WordsRepositories\AbstractWordsRepository.cs" />
+    <Compile Include="Repositories\WordsRepositories\WordsFromRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hangman.Common\Hangman.Common.csproj">

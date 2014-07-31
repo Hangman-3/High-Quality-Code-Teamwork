@@ -11,7 +11,8 @@ namespace Hangman.Console
     using Hangman.Common.Interfaces;
     using Hangman.Common.Utility;
     using Hangman.Console.IOEngines;
-    using Hangman.Data.Repositories;
+    using Hangman.Data.Repositories.PlayersRepositories;
+    using Hangman.Data.Repositories.WordsRepositories;
     using Hangman.Models;
 
     /// <summary>
@@ -24,7 +25,7 @@ namespace Hangman.Console
         /// and injects default words repository
         /// </summary>
         public ConsoleHangman()
-            : this(new WordsFromStaticListRepository())
+            : this(new WordsFromRepository())
         {
         }
 

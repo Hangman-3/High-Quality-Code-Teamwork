@@ -11,7 +11,7 @@ namespace Hangman.WPF
     using System.Windows.Controls;
     using System.Windows.Input;
     using Hangman.Common.Enums;
-    using Hangman.Data.Repositories;
+    using Hangman.Data.Repositories.WordsRepositories;
     using Hangman.WPF.IOEngines;
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace Hangman.WPF
         {
             var wpfReader = new WpfReader(this.CommandHiddenTextBlock);
             var wpfWriter = new WpfWriter(this.MessageTextBlock, this.SecretWordTextBlock);
-            this.wpfHangman = new WpfHangman(wpfReader, wpfWriter, new WordsFromStaticListRepository());
+            this.wpfHangman = new WpfHangman(wpfReader, wpfWriter, new WordsFromRepository());
             this.wpfHangman.Start();
         }
 

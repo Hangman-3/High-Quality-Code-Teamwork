@@ -7,14 +7,14 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Hangman.Data.Repositories
+namespace Hangman.Data.Repositories.WordsRepositories
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// Gets the collection of words from text file
+    /// The 'ConcreteHandler' class. Gets the collection of words from text file
     /// </summary>
     public class WordsFromFileRepository : AbstractWordsRepository
     {
@@ -24,24 +24,14 @@ namespace Hangman.Data.Repositories
         private const string WordsFilePath = "../../../Hangman.Data/Database/Words/words-en.txt";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WordsFromFileRepository"/> class.
+        /// Reads a words from external file repository
         /// </summary>
-        public WordsFromFileRepository()
-        {
-            this.Words = this.ReadWordsFromFile();
-        }
-
-        /// <summary>
-        /// Gets the collection of words from the text file
-        /// </summary>
-        /// <returns>Collection of words</returns>
-        private IList<string> ReadWordsFromFile()
+        /// <returns>Returns a list of collection of words</returns>
+        public override IList<string> ReadWords()
         {
             if (!File.Exists(WordsFilePath))
             {
-                string fullFilePath = Path.GetFullPath(WordsFilePath);
-                string errorMessage = string.Format("Words file: \"{0}\" does not exists.", fullFilePath);
-                throw new FileNotFoundException(errorMessage);
+                return this.Successor.ReadWords();
             }
 
             var wordsCollection = new List<string>();

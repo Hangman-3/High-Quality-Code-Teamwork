@@ -7,18 +7,18 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Hangman.Data.Repositories
+namespace Hangman.Data.Repositories.WordsRepositories
 {
     using System.Collections.Generic;
     using Hangman.Common.Interfaces;
 
     /// <summary>
-    /// Holds the collection of words
+    /// The 'Handler' abstract class. Holds the collection of words.
     /// </summary>
     public abstract class AbstractWordsRepository : IWordsRepository
     {
         /// <summary>
-        /// collection of words
+        /// Collection of words
         /// </summary>
         private HashSet<string> words = new HashSet<string>();
 
@@ -30,5 +30,25 @@ namespace Hangman.Data.Repositories
             get { return new List<string>(this.words); }
             set { this.words = new HashSet<string>(value); }
         }
+
+        /// <summary>
+        /// Gets or sets the successor for some words repository class
+        /// </summary>
+        protected AbstractWordsRepository Successor { get; set; }
+
+        /// <summary>
+        /// Sets a successor for some words repository class
+        /// </summary>
+        /// <param name="successor">The successor</param>
+        public void SetSuccessor(AbstractWordsRepository successor)
+        {
+            this.Successor = successor;
+        }
+
+        /// <summary>
+        /// Abstract method which reads a list of words from some repository
+        /// </summary>
+        /// <returns>Returns a collection of words</returns>
+        public abstract IList<string> ReadWords();
     }
 }
