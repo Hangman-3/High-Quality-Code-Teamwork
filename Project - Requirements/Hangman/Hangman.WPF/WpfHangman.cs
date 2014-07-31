@@ -119,8 +119,6 @@ namespace Hangman.WPF
             return numberOfGuessedLetters;
         }
 
-        #region [Private methods]
-
         /// <summary>
         /// Show some message at the end of the game
         /// </summary>
@@ -152,7 +150,5 @@ namespace Hangman.WPF
                 this.Scoreboard.AddPlayer(player);
             }
         }
-
-        #endregion
     }
 }

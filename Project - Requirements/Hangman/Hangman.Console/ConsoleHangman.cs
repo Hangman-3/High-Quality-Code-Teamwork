@@ -40,8 +40,6 @@ namespace Hangman.Console
             this.SeedPlayers();
         }
 
-        #region [Overriden methods]
-
         /// <summary>
         /// Starts the game logic
         /// </summary>
@@ -126,10 +124,6 @@ namespace Hangman.Console
             player.MistakesCount = 0;
         }
 
-        #endregion
-
-        #region [Private methods]
-
         /// <summary>
         /// Shows the original word, with a winning game message
         /// </summary>
@@ -167,7 +161,5 @@ namespace Hangman.Console
                 this.Scoreboard.AddPlayer(player);
             }
         }
-
-        #endregion
     }
 }

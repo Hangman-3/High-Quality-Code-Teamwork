@@ -74,10 +74,7 @@ namespace Hangman.Models
         /// </summary>
         protected IReader Reader
         {
-            get
-            {
-                return this.reader;
-            }
+            get { return this.reader; }
 
             set
             {
@@ -95,10 +92,7 @@ namespace Hangman.Models
         /// </summary>
         protected IWriter Writer
         {
-            get
-            {
-                return this.writer;
-            }
+            get { return this.writer; }
 
             set
             {
@@ -116,10 +110,7 @@ namespace Hangman.Models
         /// </summary>
         protected IScoreboard Scoreboard
         {
-            get
-            {
-                return this.scoreboard;
-            }
+            get { return this.scoreboard; }
 
             set
             {
@@ -137,10 +128,7 @@ namespace Hangman.Models
         /// </summary>
         protected IPlayer Player
         {
-            get
-            {
-                return this.player;
-            }
+            get { return this.player; }
 
             set
             {
@@ -158,10 +146,7 @@ namespace Hangman.Models
         /// </summary>
         protected IWord Word
         {
-            get
-            {
-                return this.word;
-            }
+            get { return this.word; }
 
             set
             {
@@ -192,8 +177,6 @@ namespace Hangman.Models
             this.StartGameProcess();
         }
 
-        #region [Abstract methods]
-
         /// <summary>
         /// Contains the sequence of game actions
         /// </summary>
@@ -203,10 +186,6 @@ namespace Hangman.Models
         /// Executes restarting of the game
         /// </summary>
         protected abstract void RestartGame();
-
-        #endregion
-
-        #region [Non-virtual shared methods]
 
         /// <summary>
         /// Executes the commands entered by the player
@@ -266,10 +245,6 @@ namespace Hangman.Models
             this.Writer.ShowScoreboard(this.Scoreboard, MaxNumberOfPlayers);
         }
 
-        #endregion
-
-        #region [Virtual methods]
-
         /// <summary>
         /// Gets the current player name and add it in the scoreboard
         /// </summary>
@@ -321,10 +296,6 @@ namespace Hangman.Models
             Environment.Exit(0);
         }
 
-        #endregion
-
-        #region [Private methods]
-
         /// <summary>
         /// Executes 'help' command
         /// </summary>
@@ -334,7 +305,5 @@ namespace Hangman.Models
             this.IsPlayerUsedHelpCommand = true;
             word.TipOffFirstUnknownLetter();
         }
-
-        #endregion
     }
 }
