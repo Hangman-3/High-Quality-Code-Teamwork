@@ -74,7 +74,10 @@ namespace Hangman.Models
         /// </summary>
         protected IReader Reader
         {
-            get { return this.reader; }
+            get 
+            { 
+                return this.reader;
+            }
 
             set
             {
@@ -92,7 +95,10 @@ namespace Hangman.Models
         /// </summary>
         protected IWriter Writer
         {
-            get { return this.writer; }
+            get 
+            { 
+                return this.writer; 
+            }
 
             set
             {
@@ -110,7 +116,10 @@ namespace Hangman.Models
         /// </summary>
         protected IScoreboard Scoreboard
         {
-            get { return this.scoreboard; }
+            get 
+            { 
+                return this.scoreboard; 
+            }
 
             set
             {
@@ -128,7 +137,10 @@ namespace Hangman.Models
         /// </summary>
         protected IPlayer Player
         {
-            get { return this.player; }
+            get 
+            { 
+                return this.player; 
+            }
 
             set
             {
@@ -146,7 +158,10 @@ namespace Hangman.Models
         /// </summary>
         protected IWord Word
         {
-            get { return this.word; }
+            get 
+            { 
+                return this.word; 
+            }
 
             set
             {
@@ -256,9 +271,9 @@ namespace Hangman.Models
             this.Scoreboard.AddPlayer(player.Clone() as IPlayer);
 
             // Add player in Database
-            PlayersFromDbRepository dbPlayers = new PlayersFromDbRepository();
-            KeyValuePair<string, int> dbPlayer = new KeyValuePair<string, int>(player.Name, player.MistakesCount);
-            dbPlayers.InsertPlayerInDb(dbPlayer);
+            PlayersFromDbRepository playersRepository = new PlayersFromDbRepository();
+            KeyValuePair<string, int> playersFromDatabase = new KeyValuePair<string, int>(player.Name, player.MistakesCount);
+            playersRepository.InsertPlayerInDb(playersFromDatabase);
         }
 
         /// <summary>

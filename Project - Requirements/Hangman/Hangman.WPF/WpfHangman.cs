@@ -139,8 +139,8 @@ namespace Hangman.WPF
         /// </summary>
         private void SeedPlayers()
         {
-            PlayersFromDbRepository dbPlayers = new PlayersFromDbRepository();
-            IList<KeyValuePair<string, int>> players = dbPlayers.Players;
+            PlayersFromDbRepository playersDatabase = new PlayersFromDbRepository();
+            IList<KeyValuePair<string, int>> players = playersDatabase.Players;
             for (int i = 0; i < players.Count; i++)
             {
                 IPlayer player = new Player();
