@@ -30,40 +30,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Hangman.Data.Repositories.PlayersRepositories.PlayersFromDbRepository" Collapsed="true">
-    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAAAAAgAAAIQAAAAiAAAAIAAAAAAACAA=</HashCode>
       <FileName>Repositories\PlayersRepositories\PlayersFromDbRepository.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Hangman.Data.Database.Players.playersDataSet" Collapsed="true">
-    <Position X="0.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAwAAAAJABAAAQAAAAAgCQBgAAAAAAAEABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Hangman.Data.Database.Words.wordsDataSet" Collapsed="true">
-    <Position X="2.75" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAwIAAAJgRAAASAAAhAgiQBgACAAAAAFABBA=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Hangman.Data.Database.Words.wordsDataSetTableAdapters.TableAdapterManager" Collapsed="true">
-    <Position X="0.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AwAAACACAABABAEJAAAAMAAgAAACgAAAAAQCAIAABQQ=</HashCode>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Hangman.Data.Properties.Settings" Collapsed="true">
-    <Position X="5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIIAAAAAABAAAAAAAAAAAQAAA=</HashCode>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Hangman.Data.Repositories.WordsRepositories.WordsFromRepository" Collapsed="true">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABEAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repositories\WordsRepositories\WordsFromRepository.cs</FileName>
     </TypeIdentifier>
   </Class>

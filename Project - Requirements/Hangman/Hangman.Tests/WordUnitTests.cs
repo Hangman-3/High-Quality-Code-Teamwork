@@ -12,10 +12,28 @@
     public class WordUnitTests
     {
         [TestMethod]
-        public void TestGetWordsFromRepository()
+        public void TestGetWordsFromStaticListRepository()
         {
-            var wordsFromStaticList = new WordsFromRepository();
-            string firstWord = wordsFromStaticList.Words[0];
+            var wordsFromStaticList = new WordsFromStaticListRepository();
+            string firstWord = wordsFromStaticList.ReadWords()[0];
+
+            Assert.AreEqual("computer", firstWord);
+        }
+
+        [TestMethod]
+        public void TestGetWordsFromFileRepository()
+        {
+            var wordsFromFile = new WordsFromFileRepository();
+            string firstWord = wordsFromFile.ReadWords()[0];
+
+            Assert.AreEqual("abandon", firstWord);
+        }
+
+        [TestMethod]
+        public void TestGetWordsFromDatabaseRepository()
+        {
+            var wordsFromDb = new WordsFromDbRepository();
+            string firstWord = wordsFromDb.ReadWords()[0];
 
             Assert.AreEqual("abandon", firstWord);
         }

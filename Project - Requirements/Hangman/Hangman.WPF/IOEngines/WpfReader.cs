@@ -30,7 +30,7 @@ namespace Hangman.WPF.IOEngines
         }
 
         /// <summary>
-        /// Gets or sets WPF text block
+        /// Gets and sets WPF text block
         /// </summary>
         public TextBlock TextBlock
         {

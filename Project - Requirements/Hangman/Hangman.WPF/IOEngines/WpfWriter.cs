@@ -39,7 +39,7 @@ namespace Hangman.WPF.IOEngines
         }
 
         /// <summary>
-        /// Gets or sets the WPF message block
+        /// Gets and sets the WPF message block
         /// </summary>
         public TextBlock MessageBlock
         {
@@ -60,7 +60,7 @@ namespace Hangman.WPF.IOEngines
         }
 
         /// <summary>
-        /// Gets or sets the WPF secret word block
+        /// Gets and sets the WPF secret word block
         /// </summary>
         public TextBlock SecretWordBlock
         {

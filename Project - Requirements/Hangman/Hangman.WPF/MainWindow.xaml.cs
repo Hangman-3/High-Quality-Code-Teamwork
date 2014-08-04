@@ -40,7 +40,11 @@ namespace Hangman.WPF
         {
             var wpfReader = new WpfReader(this.CommandHiddenTextBlock);
             var wpfWriter = new WpfWriter(this.MessageTextBlock, this.SecretWordTextBlock);
-            this.wpfHangman = new WpfHangman(wpfReader, wpfWriter, new WordsFromRepository());
+            var wordsFromDb = new WordsFromDbRepository();
+            var wordsFromFile = new WordsFromFileRepository();
+            var wordsFromStaticList = new WordsFromStaticListRepository();
+            var wordsFromRepository = new WordsFromRepository(wordsFromDb, wordsFromFile, wordsFromStaticList);
+            this.wpfHangman = new WpfHangman(wpfReader, wpfWriter, wordsFromRepository);
             this.wpfHangman.Start();
         }
 

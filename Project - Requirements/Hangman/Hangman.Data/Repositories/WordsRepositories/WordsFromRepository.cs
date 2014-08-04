@@ -15,10 +15,31 @@ namespace Hangman.Data.Repositories.WordsRepositories
     public class WordsFromRepository : AbstractWordsRepository
     {
         /// <summary>
+        /// Words from database repository
+        /// </summary>
+        private WordsFromDbRepository wordsFromDb;
+
+        /// <summary>
+        /// Words from file repository
+        /// </summary>
+        private WordsFromFileRepository wordsFromFile;
+
+        /// <summary>
+        /// Words from static list repository
+        /// </summary>
+        private WordsFromStaticListRepository wordsFromStaticList;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WordsFromRepository"/> class.
         /// </summary>
-        public WordsFromRepository()
+        /// <param name="wordsFromDb">Words from database repository</param>
+        /// <param name="wordsFromFile">Words from file repository</param>
+        /// <param name="wordsFromStaticList">Words from static list repository</param>
+        public WordsFromRepository(WordsFromDbRepository wordsFromDb, WordsFromFileRepository wordsFromFile, WordsFromStaticListRepository wordsFromStaticList)
         {
+            this.wordsFromDb = wordsFromDb;
+            this.wordsFromFile = wordsFromFile;
+            this.wordsFromStaticList = wordsFromStaticList;
             this.Words = this.ReadWords();
         }
 
@@ -28,14 +49,10 @@ namespace Hangman.Data.Repositories.WordsRepositories
         /// <returns>Returns a collection of words</returns>
         public override IList<string> ReadWords()
         {
-            AbstractWordsRepository wordsFromDb = new WordsFromDbRepository();
-            AbstractWordsRepository wordsFromFile = new WordsFromFileRepository();
-            AbstractWordsRepository wordsFromStaticList = new WordsFromStaticListRepository();
+            this.wordsFromDb.SetSuccessor(this.wordsFromFile);
+            this.wordsFromFile.SetSuccessor(this.wordsFromStaticList);
 
-            wordsFromDb.SetSuccessor(wordsFromFile);
-            wordsFromFile.SetSuccessor(wordsFromStaticList);
-
-            return wordsFromDb.ReadWords();
+            return this.wordsFromDb.ReadWords();
         }
     }
 }

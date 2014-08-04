@@ -21,15 +21,6 @@ namespace Hangman.Console
     public class ConsoleHangman : HangmanGame
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConsoleHangman" /> class 
-        /// and injects default words repository
-        /// </summary>
-        public ConsoleHangman()
-            : this(new WordsFromRepository())
-        {
-        }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="ConsoleHangman" /> class.
         /// </summary>
         /// <param name="wordsRepository">IWordRepository containing original words, one of which the user must guess</param>
